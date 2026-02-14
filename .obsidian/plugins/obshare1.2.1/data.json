@@ -1,0 +1,13 @@
+{
+  "appId": "",
+  "appSecret": "",
+  "folderToken": "",
+  "userId": "",
+  "uploadHistory": [],
+  "uploadCount": 0,
+  "agreedToTerms": true,
+  "apiCallCount": 0,
+  "lastResetDate": "2026-02",
+  "enableDoubleLinkMode": true,
+  "debugLoggingEnabled": false
+}
