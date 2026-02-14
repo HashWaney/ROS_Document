@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "10cc54b69d967674",
+        "id": "1fcc4becd819d97c",
         "type": "tabs",
         "children": [
           {
-            "id": "b394ef9e3c73be28",
+            "id": "e1ff518cc8994a5d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -177,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,8 +191,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b394ef9e3c73be28",
+  "active": "e1ff518cc8994a5d",
   "lastOpenFiles": [
+    "2026-02-14.md",
+    "Untitled 1.canvas",
+    "ROS 2 与 Gazebo 仿真开发实战手册.md",
     "欢迎.md",
     "Untitled.base",
     "Untitled.canvas"
