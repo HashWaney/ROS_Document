@@ -3,10 +3,22 @@
   "appSecret": "2pxht4twv3B1MUIMWGYj7mdyA/HtkiL6u+UZ2QPDGYUnUs6J3Kp+IBDi2Ie4y7prNkvWg7ZHYHgmxKl0",
   "folderToken": "0bi5DfwTp4MfbV2TaFVfobBUnpHoOIxE3X+xVdL9FpqxNhvKQwHMJn6McOXPMechsmwYxuLbjA==",
   "userId": "wMI/YNcqAqsgwq45vh7UzpWqvgKDMmqFaeprcrhw3HBiEMhA",
-  "uploadHistory": [],
-  "uploadCount": 0,
+  "uploadHistory": [
+    {
+      "title": "ROS 2 与 Gazebo 仿真开发实战手册",
+      "url": "https://kjpzcwe93vyp.jp.larksuite.com/docx/V3TGdWlMooNygHxLDLGjmqXypWh",
+      "uploadTime": "2026-02-14 12:09",
+      "docToken": "V3TGdWlMooNygHxLDLGjmqXypWh",
+      "permissions": {
+        "isPublic": true,
+        "allowCopy": false,
+        "allowCreateCopy": false
+      }
+    }
+  ],
+  "uploadCount": 1,
   "agreedToTerms": true,
-  "apiCallCount": 4,
+  "apiCallCount": 10,
   "lastResetDate": "2026-02",
   "enableDoubleLinkMode": true,
   "debugLoggingEnabled": false

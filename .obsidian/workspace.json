@@ -11,10 +11,14 @@
             "id": "6760964cba8b2a81",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "ROS 2 与 Gazebo 仿真开发实战手册.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "ROS 2 与 Gazebo 仿真开发实战手册"
             }
           }
         ]
@@ -152,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "ROS 2 与 Gazebo 仿真开发实战手册.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of ROS 2 与 Gazebo 仿真开发实战手册"
             }
           },
           {
