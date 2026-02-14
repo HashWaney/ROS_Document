@@ -186,10 +186,11 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obshare:分享当前页面": false
     }
   },
-  "active": "f7c259379a96b027",
+  "active": "6760964cba8b2a81",
   "lastOpenFiles": [
     "2026-02-14.md",
     "Untitled 1.canvas",
