@@ -4,20 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "dc7d543271b4b5b7",
+        "id": "b038b36574123451",
         "type": "tabs",
         "children": [
           {
-            "id": "49b7c02775f83213",
+            "id": "77381d8c973cd0e0",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled 3.base",
-                "viewName": "Table"
+                "file": "欢迎.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled 3"
+              "icon": "lucide-file",
+              "title": "欢迎"
             }
           }
         ]
@@ -155,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled 3.base",
+                "file": "欢迎.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled 3"
+              "title": "Outline of 欢迎"
             }
           },
           {
@@ -194,17 +195,18 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "49b7c02775f83213",
+  "active": "77381d8c973cd0e0",
   "lastOpenFiles": [
-    "Untitled 2.base",
+    "Untitled.base",
+    "欢迎.md",
+    "创建链接.md",
     "Untitled 3.base",
+    "Untitled 1.canvas",
+    "Untitled 2.base",
     "测试.md",
     "Untitled.canvas",
     "Untitled 1.base",
-    "欢迎.md",
     "ROS 2 与 Gazebo 仿真开发实战手册.md",
-    "Untitled.base",
-    "2026-02-14.md",
-    "Untitled 1.canvas"
+    "2026-02-14.md"
   ]
 }
