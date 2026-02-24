@@ -8,23 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6760964cba8b2a81",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Untitled"
-            }
-          },
-          {
             "id": "49b7c02775f83213",
             "type": "leaf",
             "state": {
@@ -38,8 +21,7 @@
               "title": "测试"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -215,10 +197,11 @@
   },
   "active": "49b7c02775f83213",
   "lastOpenFiles": [
-    "欢迎.md",
-    "测试.md",
-    "ROS 2 与 Gazebo 仿真开发实战手册.md",
     "Untitled.canvas",
+    "测试.md",
+    "Untitled 1.base",
+    "欢迎.md",
+    "ROS 2 与 Gazebo 仿真开发实战手册.md",
     "Untitled.base",
     "2026-02-14.md",
     "Untitled 1.canvas"
