@@ -11,14 +11,13 @@
             "id": "49b7c02775f83213",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "测试.md",
-                "mode": "source",
-                "source": false
+                "file": "Untitled 3.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "测试"
+              "icon": "lucide-table",
+              "title": "Untitled 3"
             }
           }
         ]
@@ -156,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "测试.md",
+                "file": "Untitled 3.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 测试"
+              "title": "Outline of Untitled 3"
             }
           },
           {
@@ -197,8 +196,10 @@
   },
   "active": "49b7c02775f83213",
   "lastOpenFiles": [
-    "Untitled.canvas",
+    "Untitled 2.base",
+    "Untitled 3.base",
     "测试.md",
+    "Untitled.canvas",
     "Untitled 1.base",
     "欢迎.md",
     "ROS 2 与 Gazebo 仿真开发实战手册.md",
