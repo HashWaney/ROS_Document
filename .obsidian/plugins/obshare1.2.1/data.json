@@ -1,8 +1,8 @@
 {
-  "appId": "E8P7fGTtcCbq2/w6yN8fyd6C5K8aUbMVX7mlrbYH1Yz8Z6Ob3zd8E+80tMy3DzBESBX1F975E/wMw64/rk1kb1sJMMYTpiavap84+r8=",
-  "appSecret": "qetGwc83SCTmQ5I6L/UkWU25xmbmIa/lDmVRhlXEQGjsBnsmE53APci1QpMF6X1E3qfP8r9VIbTsEIwX",
-  "folderToken": "SWdWFFQN4L3QoW70BKJnDemxFmAh1PTgQmPIE54DDMW4HpzbJWdHI9w6K1SOtLCr2WZnU7ijjNLR",
-  "userId": "kM78SQ8ZQBgeqKs47KTSaKa0mGE1SjKEpd0dSjO+bOhZLwidxo+32KnnXmfENSQINtCSxq4mggNMzxLe/5Ytl1VN24gOXJuh0SY4CQ==",
+  "appId": "2WrDSN89PE3h0NugHuZVWEi/FTytjQCPYLM3SIPlCHXngmwN4bGKj+YDLD1FSjIOaMW1gdA+xD32J91/w3F/KpbJtYg+hvD76mt+GDg=",
+  "appSecret": "oaitwJSFyzq3OM3jN0dWOzL/4ms0obj7AWxo+zoubXFxe+VDK6EjkEHavP6dDMRkvaS7eE81S2NncSrx",
+  "folderToken": "6GUV49JMdNyG6+Pf5kV4W50hnE3yzHSBUMEY6jhtr1o4KzZuTcEHBauK7smdsXui8/n/fgjyShF8",
+  "userId": "lOjx/9pueANeb7DDUOhQ3dd+XaxUxcwS7rB4Zp1yRZlRYcD1",
   "uploadHistory": [
     {
       "title": "测试",
@@ -29,7 +29,7 @@
   ],
   "uploadCount": 2,
   "agreedToTerms": true,
-  "apiCallCount": 9,
+  "apiCallCount": 19,
   "lastResetDate": "2026-03",
   "enableDoubleLinkMode": true,
   "debugLoggingEnabled": false
