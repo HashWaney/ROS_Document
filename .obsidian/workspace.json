@@ -11,10 +11,13 @@
             "id": "77381d8c973cd0e0",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "bases",
+              "state": {
+                "file": "未命名.base",
+                "viewName": "表格"
+              },
+              "icon": "lucide-table",
+              "title": "未命名"
             }
           }
         ]
@@ -193,10 +196,11 @@
   },
   "active": "77381d8c973cd0e0",
   "lastOpenFiles": [
+    "欢迎.md",
+    "未命名.base",
     "Untitled.base",
     "Untitled.canvas",
     "2026-02-14.md",
-    "欢迎.md",
     "测试.md",
     "创建链接.md",
     "Untitled 3.base",

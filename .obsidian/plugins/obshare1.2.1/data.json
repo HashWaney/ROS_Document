@@ -1,8 +1,8 @@
 {
-  "appId": "V+2WvTxbyCRXnU0mTiBakat5R9txMrZbd5QecUzrbYWxAxTm0Ny4ZQrJ8k3X8WB2JkzLRNFirChdwwRj15ympK8Z5objFIwH8FA8XqWCiQJJ0gWxr9nOM+pNAUA=",
-  "appSecret": "y50kFVASKbP/0JDnLbmw63d0l5DxxDhwuldtOic3iLkr5uwBsuxTwRVwuyx4DYBAXEfqkSLZjm7hXuuzpKtYqIlxkb8XPuns6V93x+azk84taQnyo3gyHjdTWjt+zyvLi07AS8m4L/INC6TY",
-  "folderToken": "WirzOz/x4XWA01LQNJDiuWLSyJxxJ0cZbqgCjsuQKnjtEueWmdJcGkswqjDG75d+3PlNa19saNT0OSg0CIqGnnI1uZospgtBCBTN8RJr+IjkdUMfj/GE2Qu4oj9hL/3jyshcjK2tPtg=",
-  "userId": "GFdnblZCIKPku2FOR/8n+YjIYOK23sZJtp0Btf+G48hwZyIFgjYrLQh/IyU4FllQkjksiOTg86xg6q3n+W2Czd3v96tkk43KkhkdSQ==",
+  "appId": "E8P7fGTtcCbq2/w6yN8fyd6C5K8aUbMVX7mlrbYH1Yz8Z6Ob3zd8E+80tMy3DzBESBX1F975E/wMw64/rk1kb1sJMMYTpiavap84+r8=",
+  "appSecret": "qetGwc83SCTmQ5I6L/UkWU25xmbmIa/lDmVRhlXEQGjsBnsmE53APci1QpMF6X1E3qfP8r9VIbTsEIwX",
+  "folderToken": "SWdWFFQN4L3QoW70BKJnDemxFmAh1PTgQmPIE54DDMW4HpzbJWdHI9w6K1SOtLCr2WZnU7ijjNLR",
+  "userId": "kM78SQ8ZQBgeqKs47KTSaKa0mGE1SjKEpd0dSjO+bOhZLwidxo+32KnnXmfENSQINtCSxq4mggNMzxLe/5Ytl1VN24gOXJuh0SY4CQ==",
   "uploadHistory": [
     {
       "title": "测试",
@@ -29,7 +29,7 @@
   ],
   "uploadCount": 2,
   "agreedToTerms": true,
-  "apiCallCount": 6,
+  "apiCallCount": 9,
   "lastResetDate": "2026-03",
   "enableDoubleLinkMode": true,
   "debugLoggingEnabled": false
