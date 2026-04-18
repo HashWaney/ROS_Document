@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2 服务入门.md",
+                "file": "ROS2话题之RCLPY实现.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ROS2 服务入门"
+              "title": "ROS2话题之RCLPY实现"
             }
           }
         ]
@@ -197,6 +197,7 @@
   },
   "active": "c50ee379a8793235",
   "lastOpenFiles": [
+    "ROS2 服务入门.md",
     "Service-MultipleServiceClient.gif",
     "Service-SingleServiceClient.gif",
     "ROS2话题之RCLPY实现.md",
@@ -205,7 +206,6 @@
     "未命名.base",
     "未命名 1.base",
     "2026-04-18.md",
-    "ROS2 服务入门.md",
     "Pasted image 20260418170439.png",
     "Pasted image 20260418170251.png",
     "Untitled.canvas",
