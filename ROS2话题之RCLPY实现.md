@@ -13,7 +13,7 @@ cd example_topic_rclpy
 touch topic_subscribe_02.py
 touch topic_publisher_02.py
 ```
-编写发布者和订阅节点代码
+编写发布者代码
 
 ```
 #!/usr/bin/env python3 
@@ -45,7 +45,7 @@ def main(args=None):
 
 ```
 
-
+编写发布者代码
 ```
 #!/usr/bin/env python3
 from rclpy.node import Node
@@ -64,7 +64,20 @@ class NodeSubscribe02(Node):
 
 def main(args=Node):
 	rclpy.init(args=args)
-	rclpy.
+	node = NodeSubscribe02("topic_subscribe_02")
+	rclpy.spin(node)
+	rclpy.shutdown()
 		
+```
 
+# 运行测试
+## 发布节点
+```
+source install/setup.bash
+ros2 run example_topic_rclpy topic_publisher_02
+```
+## 订阅节点
+```
+source install/setup.bash
+ros2 run example_topic_rclpy topic_subscribe_02
 ```
