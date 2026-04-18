@@ -13,3 +13,22 @@ cd example_topic_rclpy
 touch topic_subscribe_02.py
 touch topic_publisher_02.py
 ```
+编写发布者和订阅节点代码
+```
+#!/usr/bin/env python3 
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class NodePublisher02(Node):
+	def __init__(self,name):
+		super().__init__(name)
+		self.get_logger().info("hello i am %s" % name)
+	
+
+
+
+
+
+
+```
