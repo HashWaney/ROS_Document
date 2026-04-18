@@ -81,3 +81,9 @@ ros2 run example_topic_rclpy topic_publisher_02
 source install/setup.bash
 ros2 run example_topic_rclpy topic_subscribe_02
 ```
+![[Pasted image 20260418170251.png|697]]
+## RQT
+```
+ros2 run rqt_graph rqt_graph
+```
+![[Pasted image 20260418170439.png]]

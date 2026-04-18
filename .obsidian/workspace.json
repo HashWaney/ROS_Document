@@ -4,38 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "b038b36574123451",
+        "id": "bfe42b64d225aed1",
         "type": "tabs",
         "children": [
           {
-            "id": "77381d8c973cd0e0",
+            "id": "78a415b76d34254a",
             "type": "leaf",
             "state": {
-              "type": "bases",
-              "state": {
-                "file": "Untitled.base",
-                "viewName": "表格"
-              },
-              "icon": "lucide-table",
-              "title": "Untitled"
-            }
-          },
-          {
-            "id": "1597971c37c2ca65",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ROS2话题之RCLPY实现.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "ROS2话题之RCLPY实现"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -210,15 +192,18 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "1597971c37c2ca65",
+  "active": "78a415b76d34254a",
   "lastOpenFiles": [
+    "ROS2 服务入门.md",
     "Untitled.base",
+    "未命名.canvas",
     "ROS2话题之RCLPY实现.md",
+    "Pasted image 20260418170439.png",
+    "Pasted image 20260418170251.png",
     "未命名.base",
     "Untitled.canvas",
     "欢迎.md",
     "2026-02-14.md",
-    "测试.md",
     "创建链接.md",
     "Untitled 3.base",
     "Untitled 1.canvas",
