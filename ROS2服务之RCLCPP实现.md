@@ -93,4 +93,31 @@ ros2 interfaces show example_interfaces/srv/AddTwoInts
 导入接口的三个步骤:
 1、在CMakeLists.txt中导入, 具体是先find_packages再ament_target_dependencies
 2、在packages.xml中导入, 具体是添加depend标签并将消息接口写入.
-3、在代码中导入,C++中是#include ”消息功能包/xxx x
+3、在代码中导入,C++中是#include ”消息功能包/xxxx/xxx.hpp“.
+
+更改后的CMakeLists.txt文件:
+```
+find_package(example_interfaces REQUIRED)
+
+
+add_executable(service_client_01 src/service_client_01.cpp)
+ament_target_dependencies(service_client_01 rclcpp example_interfaces)
+
+add_executable(service_server_01 src/service_server_01.cpp)
+ament_target_dependencies(service_server_01 rclcpp example_interfaces)
+```
+
+package.xml文件
+```
+<depend>example_interfaces</depend>
+```
+导包:
+```
+#include "example_interfaces/srv/add_two_ints.hpp"
+```
+
+## 编写代码
+```
+#include "example_interfaces/srv/add_two_ints.hpp"
+#include "rclcpp/rclcpp"
+```
