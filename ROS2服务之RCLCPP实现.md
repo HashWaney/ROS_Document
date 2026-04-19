@@ -191,7 +191,17 @@ public:
 			}
 			RCLCPP_INFO(this->get_logger(),"waitint for service");
 		}
-	}
+		// 请求
+		auto request = std::make_shared<example_interfaces::srv::AddTwoInts_Request>();
+		request->a =a;
+		request->b =b;
+		// send request 
+		client_->async_send_request(
+			request, std::bind(&ServiceClient01::result_callback_,this,std::placeholders::_1)
+		);
+	
+	};
+	
 
 private:
 	// 声明客户端
@@ -206,6 +216,14 @@ private:
 	}
 
 };
+int main(int argc, char** argv){
+	rclcpp::init(argc, argv);
+	auto node =std::make_shared<ServiceClient01>("service_client_01");
+	node->send_request(5,6);
+	rclcpp::spin(node);
+	rclcpp::sh
+	return 0;
 
+}
 
 ```
