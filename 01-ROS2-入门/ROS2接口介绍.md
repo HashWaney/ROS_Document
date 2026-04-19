@@ -67,3 +67,26 @@ int32[] partial_sequence
 ## 接口数据类型
 
 根据引用方式不同可以分为基础类型和包装类型两类
+基础类型有(同时后面加上[]可形成数组)
+```
+bool
+byte
+char
+float32、float64
+int8、uint8
+int16、uint16
+int32、uint32
+int64、uint64
+string
+```
+包装类型
+即在已有的接口类型上进行包含, 比如:
+```
+uint32 id
+string image_name
+sensor_msgs/Image
+```
+
+## 接口如何生成代码
+
+转化过程:通过ROS2的IDL模块
