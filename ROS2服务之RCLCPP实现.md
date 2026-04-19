@@ -81,4 +81,16 @@ ros2 run example_service_rclcpp service_server_01
 source install/setup.bash
 ros2 run example_service_rclcpp service_client_01
 ```
-# 
+# 服务端实现
+
+## 导入接口
+两数相加,需要利用ROS2自带的example_interfaces接口, 使用命令行可以查看这个接口的定义.
+```
+ros2 interfaces show example_interfaces/srv/AddTwoInts
+```
+
+![[Pasted image 20260419155721.png]] 
+导入接口的三个步骤:
+1、在CMakeLists.txt中导入, 具体是先find_packages再ament_target_dependencies
+2、在packages.xml中导入, 具体是添加depend标签并将消息接口写入.
+3、在代码中导入,C++中是#include ”消息功能包/xxx x
