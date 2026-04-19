@@ -14,3 +14,7 @@
 
 
 ![[Service-SingleServiceClient.gif]]![[Service-MultipleServiceClient.gif]]
+# 服务初体验
+
+## 启动服务端
+打开终端, 运行下面命令, 这个命令用于运行一个服务节点, 这个服务的功能是将两个数字相加,给定a,b两个数, 返回sum也就是ahe
