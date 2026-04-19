@@ -17,4 +17,19 @@
 # 服务初体验
 
 ## 启动服务端
-打开终端, 运行下面命令, 这个命令用于运行一个服务节点, 这个服务的功能是将两个数字相加,给定a,b两个数, 返回sum也就是ahe
+打开终端, 运行下面命令, 这个命令用于运行一个服务节点, 这个服务的功能是将两个数字相加,给定a,b两个数, 返回sum也就是a和b之和.
+```
+ros2 run example_rclpy_minimal_service service
+```
+## 使用命令查看服务列表
+```
+ros2 service list
+```
+
+![[Pasted image 20260419134608.png]]
+
+## 手动调用服务
+再启动一个终端, 输入下面的命令(注: a: 、b:后的空格)
+```
+ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a:5,b:10}"
+```
