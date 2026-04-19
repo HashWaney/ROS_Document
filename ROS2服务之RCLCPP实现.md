@@ -160,3 +160,10 @@ int main(int argc, char** argv){
 ## API 接口
 
 ### create_client
+
+参数: service_name , qos_profile, group
+### async_send_request
+参数: request , CallBack
+
+### wait_for_service
+参数: 等待时间, 返回值是bool类型, true 则为上线, false为不上线.
