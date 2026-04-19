@@ -115,5 +115,10 @@ float32 pose
 话题接口, 采用基础类型 RobotStatus.msg
 
 ```
-
+uint32 STATUS_MOVEING = 1
+uint32 STATUS_STOP = 1
+unint32 status
+float32 pose
 ```
+
+话题

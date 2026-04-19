@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d5d0f7900ac073b2",
@@ -197,7 +198,8 @@
   },
   "active": "f0ac6565f7ddec38",
   "lastOpenFiles": [
-    "Pasted image 20260419174522.png",
+    "01-ROS2-入门/Pasted image 20260419174522.png",
+    "01-ROS2-入门/ROS2接口介绍.md",
     "01-ROS2-入门/ROS2话题之RCLPY实现.md",
     "06-ROS2-移动机器人控制系统",
     "05-ROS2-硬件控制",
@@ -210,7 +212,6 @@
     "2026-04-18.md",
     "01-ROS2-入门/Service-SingleServiceClient.gif",
     "01-ROS2-入门/Service-MultipleServiceClient.gif",
-    "01-ROS2-入门/ROS2接口介绍.md",
     "欢迎.md",
     "01-ROS2-入门/ROS2服务入门.md",
     "01-ROS2-入门/ROS2服务之RCLCPP实现.md",
@@ -223,7 +224,6 @@
     "01-ROS2-入门/Pasted image 20260419135428.png",
     "01-ROS2-入门/Pasted image 20260419135213.png",
     "01-ROS2-入门/Pasted image 20260419135116.png",
-    "01-ROS2-入门/Pasted image 20260419135055.png",
     "未命名.canvas",
     "未命名.base",
     "未命名 1.base",
