@@ -11,13 +11,14 @@
             "id": "f0ac6565f7ddec38",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "ROS2机器人.base",
-                "viewName": "表格"
+                "file": "01-ROS2-入门/ROS2话题之RCLPY实现.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "ROS2机器人"
+              "icon": "lucide-file",
+              "title": "ROS2话题之RCLPY实现"
             }
           }
         ]
@@ -196,35 +197,38 @@
   },
   "active": "5e5ca0f859dd30f8",
   "lastOpenFiles": [
-    "ROS2入门",
+    "06-ROS2-移动机器人控制系统",
+    "05-ROS2-硬件控制",
+    "04-ROS2-Nav2导航",
+    "03-ROS2-建模仿真",
+    "02-ROS2-机器人学",
+    "01-ROS2-入门/ROS2机器人.base",
+    "01-ROS2-入门",
     "2026-02-14.md",
     "2026-04-18.md",
-    "ROS2机器人.base",
-    "Service-SingleServiceClient.gif",
-    "Service-MultipleServiceClient.gif",
-    "ROS2接口介绍.md",
+    "01-ROS2-入门/Service-SingleServiceClient.gif",
+    "01-ROS2-入门/Service-MultipleServiceClient.gif",
+    "01-ROS2-入门/ROS2接口介绍.md",
     "欢迎.md",
-    "ROS2入门/ROS2服务入门.md",
-    "ROS2入门/ROS2服务之RCLCPP实现.md",
-    "ROS2入门/Pasted image 20260419170940.png",
-    "ROS 2 与 Gazebo 仿真开发实战手册.md",
-    "ROS2入门/Pasted image 20260419155721.png",
+    "01-ROS2-入门/ROS2服务入门.md",
+    "01-ROS2-入门/ROS2服务之RCLCPP实现.md",
+    "01-ROS2-入门/Pasted image 20260419170940.png",
+    "01-ROS2-入门/ROS 2 与 Gazebo 仿真开发实战手册.md",
+    "01-ROS2-入门/Pasted image 20260419155721.png",
     "ROS2",
-    "ROS2入门/Pasted image 20260419135603.png",
-    "ROS2入门/Pasted image 20260419135431.png",
-    "ROS2入门/Pasted image 20260419135428.png",
-    "ROS2入门/Pasted image 20260419135213.png",
-    "ROS2入门/Pasted image 20260419135116.png",
-    "ROS2入门/Pasted image 20260419135055.png",
-    "ROS2入门/ROS2话题之RCLPY实现.md",
+    "01-ROS2-入门/Pasted image 20260419135603.png",
+    "01-ROS2-入门/Pasted image 20260419135431.png",
+    "01-ROS2-入门/Pasted image 20260419135428.png",
+    "01-ROS2-入门/Pasted image 20260419135213.png",
+    "01-ROS2-入门/Pasted image 20260419135116.png",
+    "01-ROS2-入门/Pasted image 20260419135055.png",
+    "01-ROS2-入门/ROS2话题之RCLPY实现.md",
     "未命名.canvas",
     "未命名.base",
     "未命名 1.base",
     "Untitled.canvas",
     "创建链接.md",
     "Untitled 3.base",
-    "Untitled 1.canvas",
-    "Untitled 2.base",
-    "Untitled 1.base"
+    "Untitled 1.canvas"
   ]
 }
