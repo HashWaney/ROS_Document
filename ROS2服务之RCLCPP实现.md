@@ -58,5 +58,26 @@ CMakeLists.txt
 add_executable(service_client_01 src/service_client_01.cpp)
 ament_target_dependencies(service_client_01 rclcpp)
 
-add_executable(service)
+add_executable(service_service_01 src/service_server_01.cpp)
+ament_target_dependencies(service_server_01 rclcpp)
+
+install(
+	TARGETS
+	service_server_01 
+	service_client_01
+	DESTINATION lib/${PROJECT_NAME}
+)
+```
+
+编译:
+```
+colcon build -packages-select example_service_rclcpp
+
+source install/setup.bash
+ros2 run example_service_rclcpp service_server_01
+
+#新终端
+
+source install/setup.bash
+ros2 run example_service_rclcpp service_client_01
 ```
