@@ -228,4 +228,5 @@ int main(int argc, char** argv){
 
 ```
 
-开启两个zho g n
+开启两个终端,执行service和client节点
+![[Pasted image 20260419170940.png]]
