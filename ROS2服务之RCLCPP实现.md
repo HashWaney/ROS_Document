@@ -119,5 +119,33 @@ package.xml文件
 ## 编写代码
 ```
 #include "example_interfaces/srv/add_two_ints.hpp"
-#include "rclcpp/rclcpp"
+#include "rclcpp/rclcpp.hpp"
+
+class ServiceServer01 : public rclcpp::Node{
+
+public:
+	ServiceServer01(std::string name) : Node(name){
+		RCLCPP_INFO(this->get_logger(),"节点已经启动 %s.“,name.c_str());
+		
+		//创建服务
+		
+	
+	}
+
+
+private:
+	// 声明一个服务
+	rclcpp::Service<example_interfaces::srv::AddTwoInts>::SharedPtr add_ints_server_;
+	
+	void handle_add_two_ints(
+		const std::shared_ptr<example_interfaces::srv::AddTwoInts::Request> request,std::shared_ptr<example_interfaces::srv::AddTwoInts::Response> response
+	){
+		RCLCPP_INFO(this->get_logger(),"recv a: %ld, b: %ld",request->a, request->b);
+		response->sum = request->a + request->b;
+	};
+
+};
+
+
+
 ```
