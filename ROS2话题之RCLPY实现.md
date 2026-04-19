@@ -45,7 +45,7 @@ def main(args=None):
 
 ```
 
-编写发布者代码
+编写订阅者代码
 ```
 #!/usr/bin/env python3
 from rclpy.node import Node
