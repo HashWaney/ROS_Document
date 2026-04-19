@@ -15,4 +15,19 @@ std_msgs/msg/UInt32
 
 在ROS2中定义了一个统一的接口叫做sensor_msgs/msg/LaserScan, 现在几乎每个雷达的厂家都会编写程序将自己雷达的数据变成sensor_msgs/msg/LaserScan格式,提供给用户使用.
 
+## ROS2自带的接口
 
+使用ros2 interface package sensor_msgs 命令可以查看某一个接口包下所有的接口
+比如: 传感器类的消息包 sensor_msgs
+```
+ros2 interface package sensor_msgs
+sensor_msgs/msg/JointState #机器人关节数据
+sensor_msgs/msg/Temperature #温度数据
+sensor_msgs/msg/Imu #加速度传感器
+sensor_msgs/msg/Image #图像
+sensor_msgs/msg/LaserScan #雷达数据
+.......
+```
+
+# 接口文件内容
+## 可以定义的接口
