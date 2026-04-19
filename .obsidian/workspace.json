@@ -11,14 +11,13 @@
             "id": "f0ac6565f7ddec38",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "ROS2接口介绍.md",
-                "mode": "source",
-                "source": false
+                "file": "ROS2机器人.base",
+                "viewName": "表格"
               },
-              "icon": "lucide-file",
-              "title": "ROS2接口介绍"
+              "icon": "lucide-table",
+              "title": "ROS2机器人"
             }
           }
         ]
@@ -78,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d5d0f7900ac073b2",
@@ -196,32 +194,33 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "f0ac6565f7ddec38",
+  "active": "5e5ca0f859dd30f8",
   "lastOpenFiles": [
-    "ROS2服务入门.md",
-    "ROS2服务之RCLCPP实现.md",
-    "Pasted image 20260419170940.png",
+    "ROS2入门",
+    "2026-02-14.md",
+    "2026-04-18.md",
+    "ROS2机器人.base",
+    "Service-SingleServiceClient.gif",
+    "Service-MultipleServiceClient.gif",
     "ROS2接口介绍.md",
+    "欢迎.md",
+    "ROS2入门/ROS2服务入门.md",
+    "ROS2入门/ROS2服务之RCLCPP实现.md",
+    "ROS2入门/Pasted image 20260419170940.png",
     "ROS 2 与 Gazebo 仿真开发实战手册.md",
-    "Pasted image 20260419155721.png",
+    "ROS2入门/Pasted image 20260419155721.png",
     "ROS2",
-    "Pasted image 20260419135603.png",
-    "Pasted image 20260419135431.png",
-    "Pasted image 20260419135428.png",
-    "Pasted image 20260419135213.png",
-    "Pasted image 20260419135116.png",
-    "Pasted image 20260419135055.png",
-    "Pasted image 20260419134608.png",
-    "Pasted image 20260419134538.png",
-    "ROS2话题之RCLPY实现.md",
-    "Untitled.base",
+    "ROS2入门/Pasted image 20260419135603.png",
+    "ROS2入门/Pasted image 20260419135431.png",
+    "ROS2入门/Pasted image 20260419135428.png",
+    "ROS2入门/Pasted image 20260419135213.png",
+    "ROS2入门/Pasted image 20260419135116.png",
+    "ROS2入门/Pasted image 20260419135055.png",
+    "ROS2入门/ROS2话题之RCLPY实现.md",
     "未命名.canvas",
     "未命名.base",
     "未命名 1.base",
-    "2026-04-18.md",
     "Untitled.canvas",
-    "欢迎.md",
-    "2026-02-14.md",
     "创建链接.md",
     "Untitled 3.base",
     "Untitled 1.canvas",
