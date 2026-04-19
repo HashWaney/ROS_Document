@@ -30,4 +30,40 @@ sensor_msgs/msg/LaserScan #雷达数据
 ```
 
 # 接口文件内容
-## 可以定义的接口
+
+
+## 可以定义的接口三种类型
+ROS2 提供了四种通信方式:
+- 话题-Topics
+- 服务-Services
+- 动作-Action
+- 参数-Parameters
+除了参数之外, 话题、动作和服务都支持自定义接口, 每一种通信方式所适用的场景各不相同,所定义的接口也被分为话题接口、服务接口、动作接口三种.
+
+
+## 接口形式
+
+这三种接口定义形式:
+话题接口格式: xxx.msg
+```
+int64 num
+```
+服务接口格式: xxx.srv
+```
+int64 a 
+int64 b 
+---
+int64 sum
+```
+动作接口格式: xxx.action
+```
+int32 order
+----
+int32[] sequence
+---
+int32[] partial_sequence
+```
+
+## 接口数据类型
+
+根据引用方式不同可以分为基础类型和包装类型两类
