@@ -221,7 +221,7 @@ int main(int argc, char** argv){
 	auto node =std::make_shared<ServiceClient01>("service_client_01");
 	node->send_request(5,6);
 	rclcpp::spin(node);
-	rclcpp::sh
+	rclcpp::shutdown();
 	return 0;
 
 }

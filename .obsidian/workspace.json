@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2 服务入门.md",
+                "file": "ROS2服务入门.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ROS2 服务入门"
+              "title": "ROS2服务入门"
+            }
+          },
+          {
+            "id": "f0e480fcd26b5cd8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ROS2接口介绍.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ROS2接口介绍"
             }
           },
           {
@@ -93,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d5d0f7900ac073b2",
@@ -211,11 +224,13 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "f0ac6565f7ddec38",
+  "active": "f0e480fcd26b5cd8",
   "lastOpenFiles": [
-    "Pasted image 20260419155721.png",
-    "ROS2 服务入门.md",
+    "ROS2服务入门.md",
+    "ROS 2 与 Gazebo 仿真开发实战手册.md",
+    "ROS2接口介绍.md",
     "ROS2服务之RCLCPP实现.md",
+    "Pasted image 20260419155721.png",
     "ROS2",
     "Pasted image 20260419135603.png",
     "Pasted image 20260419135431.png",
@@ -227,7 +242,6 @@
     "Pasted image 20260419134538.png",
     "Pasted image 20260419132831.png",
     "ROS2话题之RCLPY实现.md",
-    "Service-MultipleServiceClient.gif",
     "Untitled.base",
     "未命名.canvas",
     "未命名.base",
@@ -240,7 +254,6 @@
     "Untitled 3.base",
     "Untitled 1.canvas",
     "Untitled 2.base",
-    "Untitled 1.base",
-    "ROS 2 与 Gazebo 仿真开发实战手册.md"
+    "Untitled 1.base"
   ]
 }
