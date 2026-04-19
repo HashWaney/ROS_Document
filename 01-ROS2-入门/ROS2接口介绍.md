@@ -105,5 +105,8 @@ sensor_msgs/Image
 服务接口: MoveRobot.srv
 ```
 # 前进后退的距离
-r
+float32 distance
+# 当前位置
+float32 pose
 ```
+话题接口, ca
