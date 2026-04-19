@@ -57,3 +57,15 @@ ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 4, b: 10}
 ```
 ros2 service type /add_two_ints
 ```
+
+![[Pasted image 20260419135431.png]]
+
+## 查找使用某一接口的服务
+
+这个命令看起来和查看服务接口类型相反
+```
+ros2 service find example_interfaces/srv/AddTwoInts
+```
+
+![[Pasted image 20260419135603.png]]
+
