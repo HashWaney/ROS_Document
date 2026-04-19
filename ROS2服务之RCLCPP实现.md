@@ -178,12 +178,32 @@ public:
 	ServiceClient01(std::string name):Node(name){
 		RCLCPP_INFO(this->get_logger(),"节点启动: %s.",name.c_str());
 		// 创建客户端
+		client_ = this->create_client<example_interfaces::srv::AddTwoInts>(
+		"add_two_ints_srv");
 		
+	}
+	void send_request(int a,int b){
+		RCLCPP_INFO(this->get_logger(),"calc %d+%d",a,b);
+		while(!client_->wait_for_service(std::chrono::seconds(1))){
+			if(!rclcpp::ok()){
+				RCLCPP_ERROR(this->get_logger(),"interrupt service");
+				return;
+			}
+			RCLCPP_INFO(this->get_logger(),"waitint for service");
+		}
 	}
 
 private:
 	// 声明客户端
-	rclcpp::Client<example_
+	rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedPtr client_;
+	void result_callback_(
+		rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedFuture
+		result_future
+	){
+	
+		auto response = result_future.get();
+		RCLCPP_INFO(this->get_logger(),"calc result %ld",response->sum);
+	}
 
 };
 
