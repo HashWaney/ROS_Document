@@ -121,4 +121,10 @@ unint32 status
 float32 pose
 ```
 
-话题
+话题接口, 混合包装类型 RobotPose.msg
+```
+uint32 STATUS_MOVING = 1
+uint32 STATUS_STOP = 2
+uint32 status
+ge
+```
