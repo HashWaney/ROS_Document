@@ -33,3 +33,27 @@ ros2 service list
 ```
 ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a:5,b:10}"
 ```
+
+![[Pasted image 20260419135116.png]]
+
+
+# ROS2服务常用命令
+## 查看服务列表
+```
+ros2 service list
+```
+
+![[Pasted image 20260419135213.png]]
+
+## 手动调用服务
+
+```
+ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 4, b: 10}"
+```
+
+
+## 查看服务接口类型
+
+```
+ros2 service type /add_two_ints
+```
