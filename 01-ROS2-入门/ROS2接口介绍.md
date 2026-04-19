@@ -126,5 +126,6 @@ float32 pose
 uint32 STATUS_MOVING = 1
 uint32 STATUS_STOP = 2
 uint32 status
-ge
+geometry_msgs/Pose pose
 ```
+## 创建接口功能包
