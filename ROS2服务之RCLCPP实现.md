@@ -167,3 +167,25 @@ int main(int argc, char** argv){
 
 ### wait_for_service
 参数: 等待时间, 返回值是bool类型, true 则为上线, false为不上线.
+
+## 编写代码
+```
+#include "example_interfaces/srv/add_two_ints.hpp"
+
+class ServiceClient01 : public rclcpp::Node{
+
+public:
+	ServiceClient01(std::string name):Node(name){
+		RCLCPP_INFO(this->get_logger(),"节点启动: %s.",name.c_str());
+		// 创建客户端
+		
+	}
+
+private:
+	// 声明客户端
+	rclcpp::Client<example_
+
+};
+
+
+```
