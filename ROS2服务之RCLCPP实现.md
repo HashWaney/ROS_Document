@@ -128,7 +128,7 @@ public:
 		RCLCPP_INFO(this->get_logger(),"节点已经启动 %s.“,name.c_str());
 		
 		//创建服务
-		
+		add_ints_server_ = this->create_service<example_interfaces::srv::AddTwoInts>("add_two_ints_srv", std::bind(&ServiceServer01::handle_add_two_ints,this,std::placeholders::_1,std::placeholders::_2));
 	
 	}
 
@@ -136,7 +136,7 @@ public:
 private:
 	// 声明一个服务
 	rclcpp::Service<example_interfaces::srv::AddTwoInts>::SharedPtr add_ints_server_;
-	
+	// 收到请求的处理函数
 	void handle_add_two_ints(
 		const std::shared_ptr<example_interfaces::srv::AddTwoInts::Request> request,std::shared_ptr<example_interfaces::srv::AddTwoInts::Response> response
 	){
@@ -145,7 +145,18 @@ private:
 	};
 
 };
-
-
-
+int main(int argc, char** argv){
+	rclcpp::int(argc,argv);
+	auto node = std::make_shared<ServiceServer01>("service_server_0");
+	rclcpp::spin(node);
+	rclcpp::shutdown();
+	return 0;
+}
 ```
+
+
+# 客户端实现
+
+## API 接口
+
+### create_client
