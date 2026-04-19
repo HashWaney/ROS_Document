@@ -102,11 +102,18 @@ sensor_msgs/Image
 假设机器人在坐标轴上,只能前后移动.
 
 ### 定义接口
+
 服务接口: MoveRobot.srv
+
 ```
 # 前进后退的距离
 float32 distance
 # 当前位置
 float32 pose
 ```
-话题接口, ca
+
+话题接口, 采用基础类型 RobotStatus.msg
+
+```
+
+```
