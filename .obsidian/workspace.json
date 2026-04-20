@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "430be56dc329add1",
+        "id": "53d575814c1da6bb",
         "type": "tabs",
         "children": [
           {
-            "id": "14ac16b5b2d1a22c",
+            "id": "4e4f193e04ec76e8",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "02-ROS2-机器人学/ROS2 机器人学.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ROS2 机器人学"
             }
           }
         ]
@@ -57,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
@@ -90,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "欢迎.md",
+                "file": "02-ROS2-机器人学/ROS2 机器人学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "欢迎 的反向链接列表"
+              "title": "ROS2 机器人学 的反向链接列表"
             }
           },
           {
@@ -109,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "欢迎.md",
+                "file": "02-ROS2-机器人学/ROS2 机器人学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "欢迎 的出链列表"
+              "title": "ROS2 机器人学 的出链列表"
             }
           },
           {
@@ -124,8 +128,8 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
+                "useHierarchy": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
@@ -152,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.base",
+                "file": "02-ROS2-机器人学/ROS2 机器人学.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "ROS2 机器人学 的大纲"
             }
           },
           {
@@ -191,8 +195,14 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "14ac16b5b2d1a22c",
+  "active": "4e4f193e04ec76e8",
   "lastOpenFiles": [
+    "02-ROS2-机器人学/ROS2 机器人学.md",
+    "未命名.base",
+    "未命名 1.base",
+    "未命名",
+    "02-ROS2-机器人学/未命名.base",
+    "01-ROS2-入门/ROS 2 与 Gazebo 仿真开发实战手册.md",
     "01-ROS2-入门/ROS2接口介绍.md",
     "01-ROS2-入门/Pasted image 20260419174522.png",
     "01-ROS2-入门/ROS2话题之RCLPY实现.md",
@@ -202,7 +212,6 @@
     "03-ROS2-建模仿真",
     "02-ROS2-机器人学",
     "01-ROS2-入门/ROS2机器人.base",
-    "01-ROS2-入门",
     "2026-02-14.md",
     "2026-04-18.md",
     "01-ROS2-入门/Service-SingleServiceClient.gif",
@@ -211,17 +220,13 @@
     "01-ROS2-入门/ROS2服务入门.md",
     "01-ROS2-入门/ROS2服务之RCLCPP实现.md",
     "01-ROS2-入门/Pasted image 20260419170940.png",
-    "01-ROS2-入门/ROS 2 与 Gazebo 仿真开发实战手册.md",
     "01-ROS2-入门/Pasted image 20260419155721.png",
-    "ROS2",
     "01-ROS2-入门/Pasted image 20260419135603.png",
     "01-ROS2-入门/Pasted image 20260419135431.png",
     "01-ROS2-入门/Pasted image 20260419135428.png",
     "01-ROS2-入门/Pasted image 20260419135213.png",
     "01-ROS2-入门/Pasted image 20260419135116.png",
     "未命名.canvas",
-    "未命名.base",
-    "未命名 1.base",
     "Untitled.canvas",
     "创建链接.md",
     "Untitled 1.canvas"
