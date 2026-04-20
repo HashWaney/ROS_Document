@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3cbf7b2c49698939",
+        "id": "430be56dc329add1",
         "type": "tabs",
         "children": [
           {
-            "id": "f0ac6565f7ddec38",
+            "id": "14ac16b5b2d1a22c",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: workspace.json  (Working Tree)"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
         ]
@@ -195,7 +191,7 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "f0ac6565f7ddec38",
+  "active": "14ac16b5b2d1a22c",
   "lastOpenFiles": [
     "01-ROS2-入门/ROS2接口介绍.md",
     "01-ROS2-入门/Pasted image 20260419174522.png",
