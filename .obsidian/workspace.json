@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "行为树/章节一 异步节点 StatefulActionNode.md",
+                "file": "行为树/开篇  行为树最核心的概念.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "章节一 异步节点 StatefulActionNode"
+              "title": "开篇  行为树最核心的概念"
             }
           }
         ]
@@ -197,8 +197,8 @@
   },
   "active": "4e4f193e04ec76e8",
   "lastOpenFiles": [
-    "行为树/开篇  行为树最核心的概念.md",
     "行为树/章节一 异步节点 StatefulActionNode.md",
+    "行为树/开篇  行为树最核心的概念.md",
     "06-ROS2-移动机器人控制系统/ROS2-移动机器人控制系统.md",
     "行为树",
     "05-ROS2-硬件控制/ROS2-硬件控制.md",
