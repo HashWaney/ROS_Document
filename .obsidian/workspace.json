@@ -11,14 +11,14 @@
             "id": "4e4f193e04ec76e8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "行为树/行为树学习阶段.md",
-                "mode": "source",
-                "source": false
+                "aFile": "行为树/行为树学习阶段.md",
+                "bFile": "行为树/行为树学习阶段.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "行为树学习阶段"
+              "icon": "diff",
+              "title": "Diff: 行为树学习阶段  (Working Tree)"
             }
           }
         ]
@@ -198,8 +198,8 @@
   },
   "active": "4e4f193e04ec76e8",
   "lastOpenFiles": [
-    "行为树/开篇  行为树最核心的概念.md",
     "行为树/行为树学习阶段.md",
+    "行为树/开篇  行为树最核心的概念.md",
     "06-ROS2-移动机器人控制系统/ROS2-移动机器人控制系统.md",
     "行为树",
     "05-ROS2-硬件控制/ROS2-硬件控制.md",
