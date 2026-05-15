@@ -11,14 +11,14 @@
             "id": "4e4f193e04ec76e8",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "行为树/行为树学习阶段.md",
-                "bFile": "行为树/行为树学习阶段.md",
-                "aRef": ""
+                "file": "行为树/行为树学习阶段.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: 行为树学习阶段  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "行为树学习阶段"
             }
           }
         ]
