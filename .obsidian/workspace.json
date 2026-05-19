@@ -11,12 +11,14 @@
             "id": "68d2353a1f4da0e2",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20260519164309.png"
+                "file": "行为树/工程排查总结.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260519164309"
+              "icon": "lucide-file",
+              "title": "工程排查总结"
             }
           }
         ]
@@ -195,9 +197,9 @@
   },
   "active": "68d2353a1f4da0e2",
   "lastOpenFiles": [
-    "行为树/工程排查总结.md",
-    "Pasted image 20260519164309.png",
     "行为树/行为树学习阶段2.md",
+    "Pasted image 20260519164309.png",
+    "行为树/工程排查总结.md",
     "行为树/行为树学习阶段.md",
     "行为树/开篇  行为树最核心的概念.md",
     "06-ROS2-移动机器人控制系统/ROS2-移动机器人控制系统.md",
