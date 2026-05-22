@@ -154,3 +154,7 @@ docker run ...
 ```
 输出: app-release.apk
 
+### 第七步: Jenkins收集结果
+Jenkins通过获取APK、保存构建记录、提供下载路径以及通知构建结果给到钉钉
+
+
