@@ -103,10 +103,34 @@ git branch -r
 ```
 应该能够看到:
 ```
-origin/style/refactory2_A10_P_hdmi_ces
+origin/style/refactor2_A10_P_hdmi_ces
 origin/style/refactory_A10
 ```
 切到HDMI CES分支
 ```
-git 
+git checkout -B style/refactor2_A10_P_hdmi_ces origin/style/refactor2_A10_P_hdmi_ces
 ```
+切换到A10分支
+```
+git checkout -B style/refactor_A10 origin/style/refactor_A10
+```
+后续Jenkins构建的时候, 传一个分支变量:
+```
+BRANCH="style/refactor2_A10_P_hdmi_ces"
+```
+或者是
+```
+BRANCH="style/refactor_A10"
+```
+更新代码脚本统一写成:
+```
+cd ~/jenkins_workspace/android_app
+git fetch origin 
+git checkout -B "$BRANCH" "origin/$BRANCH"
+git reset --hard "origin/$BRANCH"
+git clean -fd
+```
+
+## 六、配置Git账号权限
+
+如果Gi t
