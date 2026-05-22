@@ -135,19 +135,22 @@ git clean -fd
 
 如果GitLab需要账号密码, 第一次clone会提示输入
 更推荐使用Access Token或SSH Key.
+![[Pasted image 20260522162432.png]]
 
 #### #方式一: HTTP+Token
+这里的地址取上述截图的地址,不要使用IP地址.
+
 地址类似:
 ```
 git clone -b style/refactor_A10_p_hdmi_ces \
-	http://用户名:Token@172.16.50.250:3000/xxx/xxx.git \
+	http://git.dev.utonbot.top:3000 \
 	android_app
 ```
 
 #### #方式二 : SSH Key, 推荐
 在Mac编译服务器生成key:
 ```
-ssh-keygen -t ed25519 -C "jenkins-mac-builder"
+ssh-keygen -t rsa -b 4096 -C "jenkins-mac-builder-ci" -f ~/.ssh/id_rsa_jenkins
 ```
 一路回车.
 查看公钥:
@@ -160,12 +163,13 @@ GitLab - User setting - SSH Keys
 ```
 然后测试:
 ```
-ssh -T git@172.16.50.250
+➜  .ssh ssh -T git@git.dev.utonbot.top
+Welcome to GitLab, @qing.wang1!
 ```
 之后clone项目就可以直接使用:
 ```
 git clone -b style/refactor2_A10_P_hdmi_ces \
-	git@172.16.50.250:xxx/xxx.git \
+	git@git.dev.utonbot.top:222/xxx.git \
 	android_app
 ```
 
