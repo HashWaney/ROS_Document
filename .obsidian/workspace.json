@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jenkins自动化构建.md",
+                "file": "Jenkins/Jenkins自动化构建流程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Jenkins自动化构建"
+              "title": "Jenkins自动化构建流程"
+            }
+          },
+          {
+            "id": "99a327b5d0ffad34",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Jenkins/Jenkins自动化构建——编译服务器上的具体配置信息.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Jenkins自动化构建——编译服务器上的具体配置信息"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -195,10 +210,12 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "68d2353a1f4da0e2",
+  "active": "99a327b5d0ffad34",
   "lastOpenFiles": [
+    "Jenkins/Jenkins自动化构建流程.md",
+    "Jenkins/Jenkins自动化构建——编译服务器上的具体配置信息.md",
+    "Jenkins",
     "行为树/行为树学习阶段2.md",
-    "Jenkins自动化构建.md",
     "行为树/工程排查总结.md",
     "Pasted image 20260519164309.png",
     "行为树/行为树学习阶段.md",
@@ -221,7 +238,6 @@
     "04-ROS2-Nav2导航",
     "03-ROS2-建模仿真",
     "02-ROS2-机器人学",
-    "01-ROS2-入门/ROS2机器人.base",
     "2026-02-14.md",
     "2026-04-18.md",
     "01-ROS2-入门/Service-SingleServiceClient.gif",
