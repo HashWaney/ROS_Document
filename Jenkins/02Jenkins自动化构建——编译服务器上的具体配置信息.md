@@ -20,4 +20,43 @@ whoami
 pwd
 ```
 应该能看到
-`````
+```
+robot
+/Users/robot
+```
+## 二、安装基础工具
+
+### 1、检查Homebrew
+
+```
+brew --version
+```
+如果没有安装Homebrew, 需要先安装:
+```
+➜  ~ brew --version
+Homebrew 5.0.5
+➜  ~
+```
+
+### 2、安装Git
+```
+brew install git 
+```
+验证:
+```
+git --version
+```
+```
+➜  ~ git --version
+git version 2.39.5 (Apple Git-154)
+```
+## 三、安装Docker环境
+
+Mac编译服务器推荐使用Colima+Docker CLI
+### 1、安装Docker和Colima
+
+```
+brew install docker docker-compose colima 
+```
+### 2、启动Colima
+
