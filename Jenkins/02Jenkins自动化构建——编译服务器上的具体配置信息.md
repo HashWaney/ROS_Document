@@ -184,21 +184,21 @@ docker run --rm ghcr.io/cirruslabs/android-sdk:35 sdkmanager --version
 ```
 然后测试Gradle:
 ```
-docker run --rm \
-	-v "$PWD":/workspace \
-	-v "$HOME/.gradle":/root/.gradle \
-	-w /workspace \
-	ghcr.io/cirruslabs/android-sdk:35 \
-	bash -c "chmod +x ./gradle && ./gradlew -v"
+docker run --rm \  
+	-v "$PWD":/workspace \  
+	-v "$HOME/.gradle":/root/.gradle \  
+	-w /workspace \  
+	ghcr.io/cirruslabs/android-sdk:35 \  
+	bash -c "chmod +x ./gradlew && ./gradlew -v"
 ```
 如果正常, 再正式编译:
 ```
-docker run --rm \
-	-v "$PWD":/workspace \
-	-v "$HOME/.gradle":/root/.gradle \
-	-w /workspace \
-	ghcr.io/cirruslabs/android-sdk:35 \
-	bash -c "chmod +x ./gradlew && ./gradlew clean assemableRelease"
+docker run --rm \  
+	-v "$PWD":/workspace \  
+	-v "$HOME/.gradle":/root/.gradle \  
+	-w /workspace \  
+	ghcr.io/cirruslabs/android-sdk:35 \  
+	bash -c "chmod +x ./gradlew && ./gradlew clean assembleRelease"
 ```
 APK 一般生成在: app/build/outputs/apk/release/
 ### 八、编写Jenkins调用脚本
@@ -211,7 +211,7 @@ vim ~/jenkins_scripts/build_android.sh
 ```
 #!/bin/bash
 set -e 
-PROJECT_DIR = "/Users/robot/jenkins_workspace/hmi_android"
+PROJECT_DIR = "/Users/robot/jenkins_workspace/hmi"
 
 # 从第一个参数读取分支名
 BRANCH="$1"
