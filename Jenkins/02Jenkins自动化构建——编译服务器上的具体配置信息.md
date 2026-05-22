@@ -254,4 +254,21 @@ Jenkins Controller部署在172.16.50.250服务器里面, 那么Jenkins任务通�
 ```
 ssh robot@172.16.50.156 "/Users/robot/jenkins_scripts/build_android.sh"
 ```
-也就是说Jenkins 不需要懂Android SDK, 不需要安装Gradle, 不需要安装Docker
+也就是说Jenkins 不需要懂Android SDK, 不需要安装Gradle, 不需要安装Docker; 
+只需要负责:
+```
+SSH 到 Mac -> 执行 build_android.sh
+```
+
+### 十、最终关系总结
+```
+Jenkins Controller : 172.16.50.250
+	 | SSH
+Mac 编译服务器: 172.16.50.156
+	 | git fetch / checkout
+GitLab: 172.16.50.250:3000
+	 | docker run
+Android SDK 容器
+	 | ./gradlew assemableRelease
+生成APK
+```
