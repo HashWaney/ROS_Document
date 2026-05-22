@@ -1,5 +1,5 @@
 
-### 整体架构
+## 一、整体架构
 
 ```
                  ┌────────────────────┐
@@ -28,7 +28,7 @@
                            ▼
                         APK/AAB
 ```
-### 角色解释
+## 二、角色解释
 ### 1、GitLab(代码仓库)
 地址:
 ```
@@ -71,5 +71,44 @@
 ### 3、Mac Build Agent(编译服务器)
 地址: 
 ```
-172.16.150
+172.16.50.156
 ```
+作用:
+```
+真正执行Android编译
+```
+它负责:
+- git clone/pull
+- docker run 
+- gradle build 
+- APK/AAB 生成
+为什么需要Mac?
+
+因为未来可能还会打iOS包、签名、Xcode等
+
+### 4、Docker Android Builder(容器编译环境)
+运行位置:
+```
+172.16.50.156 Mac 上
+```
+作用:
+```
+隔离Android 编译环境
+```
+里面包含:
+```
+JDK
+Android SDK
+Gradle
+build-tools
+platform-tools
+```
+它负责:
+```
+真正执行./gradlew
+```
+## 三、真正的执行流程
+
+假设push代码
+
+### 第一步: 代码ti j
