@@ -209,5 +209,18 @@ vim ~/jenkins_scripts/build_android.sh
 set -e 
 PROJECT_DIR = "/Users/robot/jenkins_workspace/android_app"
 
+# 从第一个参数读取分支名
+BRANCH="$1"
+if [ -z "$BRANCH" ]; then
+	echo "错误: 请传入需要构建的分支名"
+	echo "示例"
+	echo "./build_android.sh style/refactor_A10"
+	echo "./build_android.sh style/refactor2_A10_P_hdmi_ces"
+	exit 1
+fi
+
+cd "$PROJECT_DIR"
+
+echo "=========="
 
 ```
