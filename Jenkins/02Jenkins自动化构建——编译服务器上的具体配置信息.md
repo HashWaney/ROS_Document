@@ -133,4 +133,25 @@ git clean -fd
 
 ## 六、配置Git账号权限
 
-如果Gi t
+如果GitLab需要账号密码, 第一次clone会提示输入
+更推荐使用Access Token或SSH Key.
+
+#### #方式一: HTTP+Token
+地址类似:
+```
+git clone -b style/refactor_A10_p_hdmi_ces \
+	http://用户名:Token@172.16.50.250:3000/xxx/xxx.git \
+	android_app
+```
+
+#### #方式二 : SSH Key, 推荐
+在Mac编译服务器生成key:
+```
+ssh-keygen -t ed25519 -C "jenkins-mac-builder"
+```
+一路回车.
+查看公钥:
+```
+cat ~/.ssh/id_ed25519.pub
+```
+把内
