@@ -111,4 +111,11 @@ platform-tools
 
 假设push代码
 
-### 第一步: 代码ti j
+### 第一步: 代码提交
+
+提交代码到gitlab
+```
+git push 到 172.16.50.250:3000
+```
+
+### 第二步: GitLab通知Jenkins(Webhook)
