@@ -143,7 +143,7 @@ git clean -fd
 地址类似:
 ```
 git clone -b style/refactor_A10_p_hdmi_ces \
-	http://git.dev.utonbot.top:3000 \
+	http://git.dev.utonbot.top:3000/xxx/xxx.git \
 	android_app
 ```
 
@@ -169,7 +169,7 @@ Welcome to GitLab, @qing.wang1!
 之后clone项目就可以直接使用:
 ```
 git clone -b style/refactor2_A10_P_hdmi_ces \
-	git@git.dev.utonbot.top:222/xxx.git \
+	git@git.dev.utonbot.top:222/xxx/xxx.git \
 	android_app
 ```
 
@@ -211,7 +211,7 @@ vim ~/jenkins_scripts/build_android.sh
 ```
 #!/bin/bash
 set -e 
-PROJECT_DIR = "/Users/robot/jenkins_workspace/android_app"
+PROJECT_DIR = "/Users/robot/jenkins_workspace/hmi_android"
 
 # 从第一个参数读取分支名
 BRANCH="$1"
