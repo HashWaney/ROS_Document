@@ -119,3 +119,7 @@ git push 到 172.16.50.250:3000
 ```
 
 ### 第二步: GitLab通知Jenkins(Webhook)
+
+Gitlab有了新的代码变更就会通知172.16.50.250:6080(Jenkins)
+
+### 第三步: 
