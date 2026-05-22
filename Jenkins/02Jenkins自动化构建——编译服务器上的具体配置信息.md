@@ -154,4 +154,35 @@ ssh-keygen -t ed25519 -C "jenkins-mac-builder"
 ```
 cat ~/.ssh/id_ed25519.pub
 ```
-把内
+把输出内容添加到GitLab:
+```
+GitLab - User setting - SSH Keys 
+```
+然后测试:
+```
+ssh -T git@172.16.50.250
+```
+之后clone项目就可以直接使用:
+```
+git clone -b style/refactor2_A10_P_hdmi_ces \
+	git@172.16.50.250:xxx/xxx.git \
+	android_app
+```
+
+### 七、测试Android Docker编译环境
+进入到项目目录:
+```
+cd ~/jenkins_workspace
+```
+先测试Android SDK镜像能不能拉下来:
+```
+docker run --rm ghcr.io/cirruslabs/android-sdk:35 sdkmanager --version
+```
+然后测试Gradle:
+```
+docker run --rm \
+	-v "$PWD":/workspace \
+	-v "$HOME/.gradle":/root/.gradle \
+	-w /workspace \
+	ghcr.io/cirruslabs/android-sdk:35
+```
