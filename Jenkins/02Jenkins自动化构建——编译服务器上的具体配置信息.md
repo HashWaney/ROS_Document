@@ -250,6 +250,8 @@ chmod +x ~/jenkins_scripts/build_android.sh
 ### 九、Jenkins里远程调用这个脚本
 
 Jenkins Controller部署在172.16.50.250服务器里面, 那么Jenkins任务通过SSH执行Mac编译服务器上的脚本:
+
 ```
 ssh robot@172.16.50.156 "/Users/robot/jenkins_scripts/build_android.sh"
 ```
+也就是说Jenkins 不需要懂Android SDK, 不需要安装Gradle, 不需要安装Docker
