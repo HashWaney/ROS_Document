@@ -122,4 +122,35 @@ git push 到 172.16.50.250:3000
 
 Gitlab有了新的代码变更就会通知172.16.50.250:6080(Jenkins)
 
-### 第三步: 
+### 第三步:  Jenkins 开始任务
+
+Jenkins 收到了构建任务, 然后SSH到Mac编译服务器
+```
+ssh robot@172.16.50.156
+```
+
+### 第四步: Mac编译服务器更新代码
+
+执行pull指令, 或者reset指令
+```
+git pull
+```
+
+
+```
+git reset --hard origin/main
+```
+### 第五步: Docker开始编译
+
+```
+docker run ...
+```
+启动Android SDK编译容器
+
+### 第六步: Gradle编译
+容器内部执行assembleRelease, 进行打包Apk动作
+```
+./gradlew assembleRelease 
+```
+输出: app-release.apk
+
