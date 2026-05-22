@@ -90,4 +90,23 @@ cd ~/jenkins_workspace
 ```
 ## 五、拉取Android工程代码
 
-现有维护的分支是: 
+现有维护的分支是: style/refactor2_A10_P_hdmi_ces 和 style/refactor_A10
+第一次拉去代码
+```
+cd ~/jenkins_workspace
+git clone http://172.16.50.250:3000/software/hmi_android.git android_app
+cd android_app
+```
+查看远程分支:
+```
+git branch -r 
+```
+应该能够看到:
+```
+origin/style/refactory2_A10_P_hdmi_ces
+origin/style/refactory_A10
+```
+切到HDMI CES分支
+```
+git 
+```
