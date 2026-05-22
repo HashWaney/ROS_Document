@@ -184,5 +184,30 @@ docker run --rm \
 	-v "$PWD":/workspace \
 	-v "$HOME/.gradle":/root/.gradle \
 	-w /workspace \
-	ghcr.io/cirruslabs/android-sdk:35
+	ghcr.io/cirruslabs/android-sdk:35 \
+	bash -c "chmod +x ./gradle && ./gradlew -v"
+```
+如果正常, 再正式编译:
+```
+docker run --rm \
+	-v "$PWD":/workspace \
+	-v "$HOME/.gradle":/root/.gradle \
+	-w /workspace \
+	ghcr.io/cirruslabs/android-sdk:35 \
+	bash -c "chmod +x ./gradlew && ./gradlew clean assemableRelease"
+```
+APK 一般生成在: app/build/outputs/apk/release/
+### 八、编写Jenkins调用脚本
+在Mac编译服务器上创建脚本
+```
+mkdir -p ~/jenkins_scripts
+vim ~/jenkins_scripts/build_android.sh
+```
+写入:
+```
+#!/bin/bash
+set -e 
+PROJECT_DIR = "/Users/robot/jenkins_workspace/android_app"
+
+
 ```
