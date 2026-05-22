@@ -221,6 +221,30 @@ fi
 
 cd "$PROJECT_DIR"
 
-echo "=========="
+echo "==========当前构建分支: $BRANCH ==============="
+
+git fetch origin 
+git checkout -B "$BRANCH" "origin/$BRANCH"
+git reset --hard "origin/$BRANCH"
+git clean -fd 
+
+docker run --rm \
+	-v "$PROJECT_DIR":/workspace \
+	-v "$HOME/.gradle":/root/.gradle \
+	-w /workspace \
+	ghcr.io/cirruslabs/android-sdk:35 \
+	bash -c "chmod +x ./gradlew && ./gradlew clean assemableRelease"
+
+ls -lh "$PROJECT_DIR/app/build/outputs/apk/release/"
 
 ```
+保存后赋予执行权限
+```
+chmod +x ~/jenkins_scripts/build_android.sh
+```
+
+示例: 执行切换分支的时候
+```
+/Users/robot/jenkins_scripts/build_android.sh style/refactor_A10
+```
+
