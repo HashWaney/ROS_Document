@@ -210,36 +210,61 @@ vim ~/jenkins_scripts/build_android.sh
 写入:
 ```
 #!/bin/bash
-set -e 
-PROJECT_DIR = "/Users/robot/jenkins_workspace/hmi"
+set -e
 
-# 从第一个参数读取分支名
+PROJECT_DIR="/Users/robot/jenkins_workspace/hmi_android"
 BRANCH="$1"
+
+IMAGE="ghcr.io/cirruslabs/android-sdk:35"
+
 if [ -z "$BRANCH" ]; then
-	echo "错误: 请传入需要构建的分支名"
-	echo "示例"
-	echo "./build_android.sh style/refactor_A10"
-	echo "./build_android.sh style/refactor2_A10_P_hdmi_ces"
+	echo "错误: 请传入分支名"
+	echo "示例: $0 style/refactor_A10"
+	echo "示例: $0 style/refactor2_A10_P_hdmi_ces"
 	exit 1
 fi
 
+echo "======== 构建分支: $BRANCH ========="
+
 cd "$PROJECT_DIR"
 
-echo "==========当前构建分支: $BRANCH ==============="
+echo "======== 丢弃本地改动 ============="
 
-git fetch origin 
+git reset --hard
+git clean -fd
+
+echo "======= 拉取远程最新代码=========="
+git fetch origin
+
+echo "======= 强制切换到远程分支: $BRANCH ====="
 git checkout -B "$BRANCH" "origin/$BRANCH"
-git reset --hard "origin/$BRANCH"
-git clean -fd 
 
-docker run --rm \
+echo "====== 强制同步远程分支 ========"
+git reset --hard "origin/$BRANCH"
+git clean -fd
+
+echo "========同步子模块======="
+git submodule sync --recursive
+git submodule update --init --recursive
+git submodule foreach --recursive 'git reset --hard && git clean -fd'
+
+
+echo "======== 修复protoc 执行权限========"
+chmod +x "$HOME"/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protoc/3.25.1/*/protoc-3.25.1-linux-x86_64.exe 2>/dev/null || true
+
+
+echo "======== Docker Android 编译========"
+
+docker run --rm --platform linux/amd64 \
 	-v "$PROJECT_DIR":/workspace \
 	-v "$HOME/.gradle":/root/.gradle \
 	-w /workspace \
-	ghcr.io/cirruslabs/android-sdk:35 \
-	bash -c "chmod +x ./gradlew && ./gradlew clean assemableRelease"
+	"$IMAGE"  \
+	bash -c "chmod +x /root/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protoc/3.25.1/*/protoc-3.25.1-linux-x86_64.exe 2>/dev/null || true; bash ./gradlew clean assembleRelease"
 
-ls -lh "$PROJECT_DIR/app/build/outputs/apk/release/"
+echo "======= APK 输出 ================"
+
+find "$PROJECT_DIR" -path "*/build/outputs/apk/release/*.apk" -type f -print
 
 ```
 保存后赋予执行权限
@@ -258,8 +283,10 @@ Jenkins Controller部署在172.16.50.250服务器里面, 那么Jenkins任务通�
 ```
 ssh robot@172.16.50.156 "/Users/robot/jenkins_scripts/build_android.sh"
 ```
+
 也就是说Jenkins 不需要懂Android SDK, 不需要安装Gradle, 不需要安装Docker; 
 只需要负责:
+
 ```
 SSH 到 Mac -> 执行 build_android.sh
 ```
