@@ -11,14 +11,40 @@
             "id": "68d2353a1f4da0e2",
             "type": "leaf",
             "state": {
+              "type": "image",
+              "state": {
+                "file": "01-ROS2-入门/Pasted image 20260419135055.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260419135055"
+            }
+          },
+          {
+            "id": "35215ed455b8154c",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "行为树/行为树学习阶段2.md",
+                "file": "C++17强化/01、智能指针.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "行为树学习阶段2"
+              "title": "01、智能指针"
+            }
+          },
+          {
+            "id": "34ea5e657f4d3845",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C++17强化/07、CMAKE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "07、CMAKE"
             }
           },
           {
@@ -35,7 +61,8 @@
               "title": "ROS2话题之RCLPY实现"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -209,8 +236,22 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "68d2353a1f4da0e2",
+  "active": "34ea5e657f4d3845",
   "lastOpenFiles": [
+    "C++17强化/06、RAII.md",
+    "C++17强化/07、CMAKE.md",
+    "C++17强化/05、STL容器.md",
+    "C++17强化/04、多线程.md",
+    "C++17强化/03、模版.md",
+    "C++17强化/02、右值引用+移动语义.md",
+    "C++17强化/01、智能指针.md",
+    "01-ROS2-入门/Pasted image 20260419135055.png",
+    "未命名",
+    "C++17强化",
+    "01-ROS2-入门/Pasted image 20260419134538.png",
+    "01-ROS2-入门/Pasted image 20260418170439.png",
+    "01-ROS2-入门/Pasted image 20260418170251.png",
+    "行为树/行为树学习阶段2.md",
     "行为树/行为树学习阶段.md",
     "01-ROS2-入门/ROS2接口介绍.md",
     "01-ROS2-入门/ROS2机器人.base",
@@ -230,14 +271,9 @@
     "01-ROS2-入门/Pasted image 20260419135603.png",
     "01-ROS2-入门/Pasted image 20260419135431.png",
     "01-ROS2-入门/Pasted image 20260419135428.png",
-    "01-ROS2-入门/Pasted image 20260419135213.png",
-    "01-ROS2-入门/Pasted image 20260419135116.png",
-    "01-ROS2-入门/Pasted image 20260419134608.png",
-    "01-ROS2-入门/Pasted image 20260419134538.png",
     "Jenkins/02Jenkins自动化构建——编译服务器上的具体配置信息.md",
     "03-ROS2-建模仿真/ROS2建模仿真.md",
     "Jenkins",
-    "行为树/行为树学习阶段2.md",
     "行为树/开篇  行为树最核心的概念.md",
     "行为树",
     "未命名.base",
@@ -245,14 +281,11 @@
     "02-ROS2-机器人学/未命名.base",
     "06-ROS2-移动机器人控制系统",
     "05-ROS2-硬件控制",
-    "04-ROS2-Nav2导航",
-    "03-ROS2-建模仿真",
     "2026-02-14.md",
     "2026-04-18.md",
     "欢迎.md",
     "未命名.canvas",
     "Untitled.canvas",
-    "创建链接.md",
     "Untitled 1.canvas"
   ]
 }
