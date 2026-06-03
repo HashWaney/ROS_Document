@@ -100,5 +100,24 @@ private:
 使用时:
 
 ```
-void runRob
+void runRobot(){
+	MotorConnection motor;
+	
+	motor.sendCommand(1.0);
+}
+// runRobot 结束后,motor自动析构, disconnect 自动执行
 ```
+
+##  Why: 为什么C++需要RAII?
+
+这是重点, 从第一性原理理解.
+### C++和Java/Kotlin最大区别之一: 没有自动GC管理所有资源
+Java、Kotlin、Dart里有垃圾回收机制, 内存对象不用手动delete, 但是C++不一样.
+C++追求的是:
+```
+性能可控
+内存可控
+生命周期可控
+接近硬件
+```
+所以C++不会默认帮你做sui o
