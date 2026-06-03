@@ -39,12 +39,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++17强化/07、CMAKE.md",
+                "file": "C++17强化/08、gtest.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07、CMAKE"
+              "title": "08、gtest"
+            }
+          },
+          {
+            "id": "ecf328211d4a2536",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "机器人控制基础/10、深度相机.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10、深度相机"
+            }
+          },
+          {
+            "id": "39cf5ff4d103269f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "实时系统与高性能计算/04、lock-free queue.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04、lock-free queue"
             }
           },
           {
@@ -62,7 +90,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -236,54 +264,54 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "34ea5e657f4d3845",
+  "active": "39cf5ff4d103269f",
   "lastOpenFiles": [
-    "C++17强化/06、RAII.md",
+    "实时系统与高性能计算/03、线程优先级.md",
+    "实时系统与高性能计算/02、pthread.md",
+    "实时系统与高性能计算/01、Linux实时线程.md",
+    "实时系统与高性能计算/未命名 7.md",
+    "实时系统与高性能计算/未命名 6.md",
+    "实时系统与高性能计算/未命名 5.md",
+    "实时系统与高性能计算/未命名 4.md",
+    "实时系统与高性能计算/04、lock-free queue.md",
+    "机器人控制基础/10、深度相机.md",
+    "实时系统与高性能计算",
+    "仿真平台",
+    "机器人控制基础/09、激光雷达.md",
+    "机器人控制基础/08、编码器.md",
+    "机器人控制基础/07、IMU.md",
+    "机器人控制基础/06、传感器融合.md",
+    "机器人控制基础/05、坐标变换.md",
+    "机器人控制基础/04、动力学.md",
+    "机器人控制基础/03、运动学.md",
+    "机器人控制基础/02、轨迹规划.md",
+    "机器人控制基础/01、PID控制.md",
+    "C++17强化/08、gtest.md",
+    "机器人控制基础",
     "C++17强化/07、CMAKE.md",
+    "C++17强化/06、RAII.md",
     "C++17强化/05、STL容器.md",
     "C++17强化/04、多线程.md",
     "C++17强化/03、模版.md",
     "C++17强化/02、右值引用+移动语义.md",
     "C++17强化/01、智能指针.md",
     "01-ROS2-入门/Pasted image 20260419135055.png",
-    "未命名",
     "C++17强化",
     "01-ROS2-入门/Pasted image 20260419134538.png",
     "01-ROS2-入门/Pasted image 20260418170439.png",
     "01-ROS2-入门/Pasted image 20260418170251.png",
-    "行为树/行为树学习阶段2.md",
-    "行为树/行为树学习阶段.md",
-    "01-ROS2-入门/ROS2接口介绍.md",
     "01-ROS2-入门/ROS2机器人.base",
-    "01-ROS2-入门/ROS2话题之RCLPY实现.md",
-    "01-ROS2-入门/ROS2服务之RCLCPP实现.md",
-    "01-ROS2-入门/ROS 2 与 Gazebo 仿真开发实战手册.md",
-    "02-ROS2-机器人学/ROS2 机器人学.md",
-    "04-ROS2-Nav2导航/ROS2-Nav2导航.md",
-    "05-ROS2-硬件控制/ROS2-硬件控制.md",
-    "06-ROS2-移动机器人控制系统/ROS2-移动机器人控制系统.md",
-    "行为树/工程排查总结.md",
-    "Jenkins/01Jenkins自动化构建流程.md",
-    "01-ROS2-入门/ROS2服务入门.md",
     "01-ROS2-入门/Pasted image 20260419174522.png",
     "01-ROS2-入门/Pasted image 20260419170940.png",
     "01-ROS2-入门/Pasted image 20260419155721.png",
     "01-ROS2-入门/Pasted image 20260419135603.png",
     "01-ROS2-入门/Pasted image 20260419135431.png",
     "01-ROS2-入门/Pasted image 20260419135428.png",
-    "Jenkins/02Jenkins自动化构建——编译服务器上的具体配置信息.md",
-    "03-ROS2-建模仿真/ROS2建模仿真.md",
     "Jenkins",
-    "行为树/开篇  行为树最核心的概念.md",
     "行为树",
     "未命名.base",
     "未命名 1.base",
     "02-ROS2-机器人学/未命名.base",
-    "06-ROS2-移动机器人控制系统",
-    "05-ROS2-硬件控制",
-    "2026-02-14.md",
-    "2026-04-18.md",
-    "欢迎.md",
     "未命名.canvas",
     "Untitled.canvas",
     "Untitled 1.canvas"
