@@ -27,4 +27,33 @@ RAII 全称: Resource Acquisition Is Initialization (资源获取即初始化), 
 ```
 这里的资源不只是内存.
 
-在C++gong
+在C++工程中, 资源可以是:
+```
+内存
+文件句柄
+网络连接
+串口连接
+蓝牙连接
+互斥锁
+线程
+数据库连接
+GPU显存
+电机控制句柄
+传感器连接
+日志文件
+```
+
+比如一个机器人程序要连接电机:
+```
+连接电机 = 获取资源
+断开电机 = 释放资源
+```
+普通写法可能是
+
+```
+Motor motor;
+motor.connect();
+motor.sendCommand(1.0);
+motor.disconnect();
+```
+
