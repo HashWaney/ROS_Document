@@ -143,3 +143,37 @@ FILE* file = fopen("robot.log","w");
 fprint(file,"robot started\n);
 fclose(file);
 ```
+看起来没问题. 
+但是真实代码会有各种分支, 如下:
+```
+FILE* file = fopen("robot.log","w");
+
+if(!file){
+	return;
+}
+
+fprint(file,"robot started\n");
+
+if(someError){
+	return; // fclose 没有执行.
+}
+fclose(file);
+
+```
+这里就出现了资源泄露. 
+在机器人软件里, 如果类似问题发生在:
+```
+电机连接
+串口连接
+相机句柄
+雷达驱动
+GPU buffer
+控制线程
+```
+后果会更严重.
+比如说: 
+```
+串口没关闭, 下次连接失败
+线程没停止, 程序退出卡死
+
+```
