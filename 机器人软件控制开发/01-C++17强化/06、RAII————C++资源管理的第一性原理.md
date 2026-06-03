@@ -57,3 +57,48 @@ motor.sendCommand(1.0);
 motor.disconnect();
 ```
 
+问题是: 如果中间出错了?
+```
+Motor motor;
+motor.connect();
+
+throw std::runtime_error("controll err");
+
+motor.disconnect(); // 这一行不会执行
+
+
+```
+这样电机连接可能没有释放.
+
+RAII的写法就是:
+```
+class MotorConnection {
+
+public: 
+	MotorConnection(){
+		connect();
+	}
+
+	~MotorConnection(){
+		disconnect();
+	}
+	void sendCommand(double velocity)
+	{
+	}
+
+private:
+	void connect(){
+		// 打开电机连接
+	}
+	void disconnect(){
+		// 关闭电机连接
+	}
+};
+
+```
+
+使用时:
+
+```
+void runRob
+```
