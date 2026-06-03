@@ -81,12 +81,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "机器人软件控制开发/01-C++17强化/01、智能指针.md",
+                "file": "机器人软件控制开发/01-C++17强化/06、RAII————C++资源管理的第一性原理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01、智能指针"
+              "title": "06、RAII————C++资源管理的第一性原理"
             }
           },
           {
@@ -280,6 +280,7 @@
   },
   "active": "09bade7df07bbebf",
   "lastOpenFiles": [
+    "机器人软件控制开发/01-C++17强化/01、智能指针.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/01、rclcpp.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/09、launch+parameter+composition.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/08、BehaviorTree.CPP.md",
@@ -289,7 +290,6 @@
     "机器人软件控制开发/02-ROS2+C++机器人工程/02、publish+subscriber.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/04、lifecycle node.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/03、service+action.md",
-    "机器人软件控制开发/01-C++17强化/01、智能指针.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程",
     "机器人软件控制开发",
     "机器人软件控制开发/04-仿真平台/05、RViz.md",
