@@ -353,11 +353,21 @@ public:
 		other.file_ = nullptr;
 	
 	}
-	FileGuard
+	FileGuard& operate=(FileGuard&& other) noexcept{
+		if(this!=&other){
+			if(file_){
+				std::fclose(file_);
+			}
+			file_ = other.file_;
+			other.file_ = nullptr;
+		}
+		return *this;
+	}
 
 private:
-
-}
-
-
+	FILE* file_ = nullptr;
+};
 ```
+这就是移动构造的写法, 记住: RAII对象通常不能复制,但可以移动, 这也是后面“右值引用+移动语义”的基础.
+
+## Robot场景: RAIIzai
