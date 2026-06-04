@@ -301,10 +301,26 @@ FileGuard f2 = f1;
 class FileGuard {
 public:
 	explicit FileGuard(const char* path){
-		
+		file_ = std::fopen(path,"w");
+		if(!file_){
+			throw std::runtime_error("failed to open file");
+		}
 	}
+	~FileGuard(){
+		if(file_){
+			std::fclose(file_);
+		}
+	}
+	FileGuard(const FileGuard&) = delete;
+	FileGuard& operator=(const FileGuard&) = delete;
 
 private:
-	
-}
+	FILE* file_;
+};
+```
+
+这两行很重要, 意思是这个对象不能被复制, 因为它代表一个t
+```
+FileGuard(const FileGuard&) = delete;
+FileGuard& operator=(const FileGuard&) = delete;
 ```
