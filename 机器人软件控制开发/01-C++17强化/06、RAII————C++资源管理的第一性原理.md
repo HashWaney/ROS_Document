@@ -410,6 +410,38 @@ public:
 		driver_.connect();
 		driver_.enable();
 	}	
+	
+	~MotorGuard(){
+		driver_.disable();
+		driver_disconnect();
+	}
+private:
+	MotorDriver& driver_;
+};
 
+void runControl(MotorDriver& driver){
+	MotorGuard guard(driver);
+	doControlLoop();
+	
+} // 即使中途异常,guard析构时也会disable + disconnect
+```
+
+### 锁管理
+
+多线程里最典型的RAII是std::lock_guard.
+
+错误写法:
+```
+mutex.lock();
+sharedState.update();
+mutex.unlock();
+```
+如果中间return或抛出异常,锁不会释放
+```
+mutex.lock()
+
+if(error){
+	return;
 }
 ```
+
