@@ -441,7 +441,34 @@ mutex.unlock();
 mutex.lock()
 
 if(error){
-	return;
+	return; // 死锁风险, unlock 没执行
 }
+
+mutex.unlock(); 
 ```
 
+正确写法:
+```
+{
+	std::lock_guard<std::mutex> lock(mutex);
+	sharedState.update();
+}// 自动unlock
+```
+
+std::lock_guard 就是一个RAII类; 构造时加锁, 析构时解锁.
+
+机器人场景:
+```
+传感器线程更新状态
+控制线程读取状态
+日志线程读取状态
+```
+这些线程共享数据时, 必须保证锁正确释放.
+
+### 线程生命周期管理
+
+假设启动一个传感器线程:
+```
+std::thread sensorThread(readSensorLoop);
+```
+如果函数退出前没有`join()`或`detach()`\
