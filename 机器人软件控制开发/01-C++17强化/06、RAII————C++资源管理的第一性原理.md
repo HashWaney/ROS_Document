@@ -569,4 +569,25 @@ GPU
 FileGuard f1("robot.log");
 FileGuard f2 = f1;
 ```
-如果没有禁用拷贝, 可能造成重复释放. 所以管理独占资源的R
+如果没有禁用拷贝, 可能造成重复释放. 所以管理独占资源的RAII类, 一般要:
+```
+FileGuard(const FileGuard&) = delete;
+FileGuard& operate=(const FileGuard&) = delete;
+```
+
+### 错误4: 资源释放顺序搞错
+
+C++对象析构顺序是: 后创建的对象先析构.
+例如:
+```
+void test(){
+	MotorConnection motor;
+	Logger logger;
+}
+```
+析构顺序是:
+```
+logger 先析构
+motor 后析构
+```
+如果logger析构后, motor析构还想写日志, 就可能有问题. 这是大型机器人系统中很重要的,因为模块之间有依赖关系.
