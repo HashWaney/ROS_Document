@@ -370,4 +370,46 @@ private:
 ```
 这就是移动构造的写法, 记住: RAII对象通常不能复制,但可以移动, 这也是后面“右值引用+移动语义”的基础.
 
-## Robot场景: RAIIzai
+## Robot场景: RAII在机器人控制软件里怎么使用?
+
+机器人控制软件不是普通业务代码, 它会控制真实资源.
+
+### 电机使能管理
+
+机器人电机通常需要:
+```
+连接
+上电
+使能
+发送控制指令
+失能
+断开连接
+```
+
+普通写法:
+```
+motor.connect();
+motor.enable();
+
+doControlLoop();
+
+motor.disable();
+motor.disconnect();
+
+```
+问题是: 如果doControl() 崩了, disable() 可能不会执行.
+
+
+RAII写法:
+
+```
+class MotorGuard{
+public: 
+	explicit MotorGuard(MotorDriver& driver): driver_(driver)
+	{
+		driver_.connect();
+		driver_.enable();
+	}	
+
+}
+```
