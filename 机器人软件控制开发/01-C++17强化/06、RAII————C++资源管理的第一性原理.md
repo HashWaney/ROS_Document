@@ -471,4 +471,35 @@ std::lock_guard 就是一个RAII类; 构造时加锁, 析构时解锁.
 ```
 std::thread sensorThread(readSensorLoop);
 ```
-如果函数退出前没有`join()`或`detach()`\
+如果函数退出前没有`join()`或`detach()`、程序可能直接terminate.
+所以可以做一个RAII线程管理器:
+```
+#include <thread>
+class ThreadGuard{
+
+public:
+	explicit ThreadGuard(std::thread t): thread_(std::move(t)){
+	}
+	~ThreadGuard(){
+		if(thread_.joinable())
+		{
+			thread_.join();
+		}
+	}
+	ThreadGuard(const ThreadGuard&) = delete;
+	ThreadGuard& operate=(const ThreadGuard&) = delete;
+private:
+	std::thread thread_;
+};
+
+
+void startSensor(){
+	ThreadGuard guard(std::thread([]{
+		}
+	));
+} // 自动join
+```
+真实工程里, 线程退出还需要配合停止标志:
+```
+std::atomic<bool> running = true;
+```
