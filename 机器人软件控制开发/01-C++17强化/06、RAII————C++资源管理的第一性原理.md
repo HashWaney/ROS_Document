@@ -333,10 +333,11 @@ FileGuard& operator=(const FileGuard&) = delete;
 ```
 class FileGuard{
 
+public:
+	explicit FileGuard(const char* path){
+	}
 
-
-
-
+private:
 
 }
 
