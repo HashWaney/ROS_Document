@@ -299,8 +299,12 @@ FileGuard f2 = f1;
 所以RAII类通常要禁止拷贝:
 ```
 class FileGuard {
+public:
+	explicit FileGuard(const char* path){
+		
+	}
 
-
-
+private:
+	
 }
 ```
