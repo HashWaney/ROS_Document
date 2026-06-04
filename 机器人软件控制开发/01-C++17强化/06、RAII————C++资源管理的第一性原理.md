@@ -348,7 +348,12 @@ public:
 	}
 	FileGuard(const FileGuard&) = delete;
 	FileGuard& operator=(const FileGuard&) = delete;
-	FileGuard(FileGuard&& other) no
+	FileGuard(FileGuard&& other) noexcept{
+		file_ = other.file_;
+		other.file_ = nullptr;
+	
+	}
+	FileGuard
 
 private:
 
