@@ -335,7 +335,20 @@ class FileGuard{
 
 public:
 	explicit FileGuard(const char* path){
+		file_ = std::fopen(path,"w");
+		if(!file_){
+			throw std::runtime_error("failed to open file");
+		}
+	
 	}
+	~FileGuard(){
+		if(file_){
+			std::fclose(file_);
+		}
+	}
+	FileGuard(const FileGuard&) = delete;
+	FileGuard& operator=(const FileGuard&) = delete;
+	FileGuard(FileGuard&& other) no
 
 private:
 
