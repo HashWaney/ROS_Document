@@ -319,8 +319,26 @@ private:
 };
 ```
 
-这两行很重要, 意思是这个对象不能被复制, 因为它代表一个t
+这两行很重要, 意思是这个对象不能被复制, 因为它代表一个独占资源.
 ```
 FileGuard(const FileGuard&) = delete;
 FileGuard& operator=(const FileGuard&) = delete;
+```
+
+### RAII可以支持移动
+
+虽然不能复制, 但有时候可以转移所有权.
+比如说: 这个文件句柄原来属于f1, 现在转交给f2; 这就是移动语义;
+简单示例:
+```
+class FileGuard{
+
+
+
+
+
+
+}
+
+
 ```
