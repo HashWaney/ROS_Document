@@ -205,4 +205,50 @@ C++对象生命周期是确定的;
 ```
 
 ## How: RAII怎么写?
-RAII了
+
+RAII类通常有一个固定模式.
+
+### 基本结构
+
+```
+class ResourceWrapper{
+public:
+	ResourceWrapper(){
+		//获取资源
+	}
+	~ResourceWrapper(){
+		//释放资源
+	}
+private:
+	// 保存资源句柄
+}
+```
+例如文件资源:
+```
+#include<cstdio>
+#include<stdexecpt>
+
+class FileGuard{
+public:
+	explicit FileGuard(const char* path){
+		file_ = std::fopen(path,"w");
+		if(file_){
+			throw std::runtime_error("failed to open file");
+		}
+	}
+	
+	~FileGuard(){
+		if(file_){
+			std::fclose(file_);
+		}
+	}
+
+	void write(const char* msg){
+		std::fprint(file_, "%s\n", msg);
+	}
+
+
+private:
+	FILE* file_ = nullptr;
+};
+```
