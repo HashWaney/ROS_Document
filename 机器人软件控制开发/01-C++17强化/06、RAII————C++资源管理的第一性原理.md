@@ -503,3 +503,31 @@ void startSensor(){
 ```
 std::atomic<bool> running = true;
 ```
+
+### GPU 资源管理
+
+岗位里提到GPU加速、CPU/GPU异构调度, GPU buffer也需要RAII.
+
+伪代码:
+```
+class GpuBuffer{
+
+public:
+	explicit GpuBuffer(size_t size){
+		//cudaMalloc(&ptr_, size);
+	}
+	
+	~GpuBuffer(){
+		// cudaFree(ptr_);
+	}
+
+private:
+	void* ptr_ = nullptr;
+};
+
+```
+这样可以避免:
+```
+cudaMalloc 成功, 但某个分支忘记cudaFree.
+```
+长期运行的机器人系统如果GPU显存泄漏, 会越来越不稳定.
