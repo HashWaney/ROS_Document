@@ -252,3 +252,39 @@ private:
 	FILE* file_ = nullptr;
 };
 ```
+
+使用:
+
+```
+void writeRobotLog(){
+
+	FileGuard file("robot.log");
+	
+	file.write("robot started");
+	file.write("motor enabled");
+} // 不需要手动调用fclose
+``` 
+
+### RAII的关键点: 析构函数一定要安全
+
+析构函数里不要轻易抛出异常.
+错误示范:
+```
+~FileGuard() {
+	throw std::runtime_error("close failed");
+}
+```
+为什么不建议?
+因为析构函数经常在异常传播过程中被调用. 如果析构函数又抛出异常,可能导致程序直接终止.
+
+正确思路:
+```
+~FileGuard(){
+	if(file_){
+		std::fclose(file_);
+	}
+}
+```
+如果释放失败, 一般记录日志, 不要抛出异常.
+
+### RAIItong c
