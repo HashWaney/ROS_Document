@@ -287,4 +287,20 @@ void writeRobotLog(){
 ```
 如果释放失败, 一般记录日志, 不要抛出异常.
 
-### RAIItong c
+### RAII通常禁止拷贝
+
+很多资源不能随便复制, 比如文件句柄、串口连接、电机连接.
+错误情况:
+```
+FileGuard f1("robot.log");
+FileGuard f2 = f1;
+```
+如果两个对象都认为自己拥有同一个文件句柄, 那么析构时可能会关闭两次.
+所以RAII类通常要禁止拷贝:
+```
+class FileGuard {
+
+
+
+}
+```
