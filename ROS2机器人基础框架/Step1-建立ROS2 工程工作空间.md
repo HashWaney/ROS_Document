@@ -76,6 +76,25 @@ colcon build \
 --symlink-install
 ```
 参数说明:
--    --package-select: 只构建指定的Package
--  --symlink-
+-  --package-select: 只构建指定的Package
+-  --symlink-install: 开发期间使用符号链接安装适用的资源文件,减少反复复制的操作
+正常情况下,终端最后会出现类似结果:
+```
+Starting >>> robot_description
+Finished <<< robot_description [1.03s]                  
+
+Summary: 1 package finished [1.13s]
+
+```
+构建成功后工作空间将生成:
+```
+robot_foundation_ws/
+├── build/
+├── install/
+├── log/
+└── src/
+    └── robot_description/
+```
+这些都是正常的ROS 2gou jian
+
 2. 验证ROS 2能否识别Package
