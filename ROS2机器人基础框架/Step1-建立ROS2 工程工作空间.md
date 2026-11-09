@@ -77,4 +77,5 @@ colcon build \
 ```
 参数说明:
 -    --package-select: 只构建指定的Package
+-  --symlink-
 2. 验证ROS 2能否识别Package
