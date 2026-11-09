@@ -55,4 +55,17 @@ ls -la ~/robot_foundation_ws/src/robot_description
 ### 1.3 首次构建ROS 2 Package
 本次目标是确认robot_description 能够被ROS 2的构建系统正确识别、编译并安装
 1. 检查Package配置和构建工具
+	```
+	cd ~/robot_foundation_ws
+	source /opt/ros/jazzy/setup.bash
+	
+	# 检查构建工具
+	command -v colcon
+	# 检查Package
+	ls src/robot_description
+	
+	# 检查ROS 2 是否能被发现源码包
+	colcon list --base-paths src
+	```
 2. 第一次构建
+3. 验证ROS 2能否识别Package
