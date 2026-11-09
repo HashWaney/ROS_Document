@@ -67,5 +67,14 @@ ls -la ~/robot_foundation_ws/src/robot_description
 	# 检查ROS 2 是否能被发现源码包
 	colcon list --base-paths src
 	```
-2. 第一次构建
-3. 验证ROS 2能否识别Package
+1. 第一次构建
+确认上述检查通过之后, 执行:
+```
+cd ~/robot_foundation_ws
+colcon build \
+--package-select robot_description \
+--symlink-install
+```
+参数说明:
+-    --package-select: 只构建指定的Package
+2. 验证ROS 2能否识别Package
