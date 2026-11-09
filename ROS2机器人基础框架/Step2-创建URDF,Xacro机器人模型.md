@@ -78,6 +78,25 @@ vi urdf/robot.urdf.xacro
 cd ~/robot_foundation_ws
 source /opt/ros/jazzy/setup.bash
 xacro src/robot_description/urdf/robot.urdf.xarco \
-
+-o /tmp/robot.foundation.urdf
+grep -A 3 '<box' /tmp/robot_foundation.urff
 ```
+预期输出包含:
+```
+<box size="0.4 0.3 0.15"/>
+```
+说明Xacro参数已经成功解析为标准URDF
 
+
+### Step2.3: 第一次在RViz2 显示机器人
+
+1、启动robot_state_publisher
+打开Ubuntu终端A, 执行:
+```
+source /opt/ros/jazzy/setup.bash
+cd ~/robot_foundation_ws
+
+ros2 run robot_state_publisher robot_state_publisher \
+--ros-args \
+-p robot_description:="$(xacro src/)"
+```
