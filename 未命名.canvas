@@ -1,6 +1,19 @@
 {
 	"nodes":[
-		{"id":"4c1f5283ef2914f4","x":-180,"y":-420,"width":250,"height":60,"type":"text","text":""}
+		{"id":"34d1b272d3dd3b92","x":-140,"y":-400,"width":180,"height":100,"color":"3","type":"text","text":"\t\tmap\n\t 全局地图坐标系"},
+		{"id":"89a5d49c1d8a77e9","x":-170,"y":-196,"width":230,"height":96,"color":"3","type":"text","text":"\t     odom\n\t    里程计坐标系"},
+		{"id":"327af95cceba4c8f","x":-181,"y":-26,"width":250,"height":60,"type":"text","text":"base_footprint\n机器人底盘地面投影"},
+		{"id":"4bd5d72470314441","x":-203,"y":146,"width":250,"height":50,"type":"text","text":"bash_link\n机器人本体坐标系"},
+		{"id":"e0a5be2d234282a6","x":-376,"y":358,"width":250,"height":60,"type":"text","text":"laser_link\n2D激光雷达"},
+		{"id":"23bce5c8926a2ae9","x":-85,"y":358,"width":250,"height":59,"type":"text","text":"left_wheel_link\n左轮"},
+		{"id":"3439045ce35fc9e2","x":200,"y":357,"width":250,"height":60,"type":"text","text":"右轮\nright_wheel_link"}
 	],
-	"edges":[]
+	"edges":[
+		{"id":"494ec0b30e9b3c8f","fromNode":"34d1b272d3dd3b92","fromSide":"bottom","toNode":"89a5d49c1d8a77e9","toSide":"top"},
+		{"id":"cf33723509c4a83b","fromNode":"89a5d49c1d8a77e9","fromSide":"bottom","toNode":"327af95cceba4c8f","toSide":"top"},
+		{"id":"fa44bfe9ad85936d","fromNode":"327af95cceba4c8f","fromSide":"bottom","toNode":"4bd5d72470314441","toSide":"top"},
+		{"id":"90d870872c5fc134","fromNode":"4bd5d72470314441","fromSide":"bottom","toNode":"e0a5be2d234282a6","toSide":"top"},
+		{"id":"ba7f49f261e96ff1","fromNode":"4bd5d72470314441","fromSide":"bottom","toNode":"23bce5c8926a2ae9","toSide":"top"},
+		{"id":"17976872b6e1a1c3","fromNode":"4bd5d72470314441","fromSide":"bottom","toNode":"3439045ce35fc9e2","toSide":"top"}
+	]
 }
