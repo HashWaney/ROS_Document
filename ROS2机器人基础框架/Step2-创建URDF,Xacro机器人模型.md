@@ -9,3 +9,16 @@
  - Y轴: 机器人左方
  - Z轴: 机器人上方
 map -> odom 以后由定位或SLAM算法发布; odom->base_footprint由里程计系统发布. 这两段动态关系不写成URDF的固定关节.
+对于第一版URDF, 只负责从base_footprint开始描述机器人本体、轮子和雷达的结构
+
+2、本次执行: 创建URDF目录
+在Ubuntu中执行:
+```
+cd ~/robot_foundation_ws/src/robot_description
+
+mkdir -p urdf
+
+ls -al urdf
+```
+暂时不创建XML文件, 因为还需要确定底盘模型
+
