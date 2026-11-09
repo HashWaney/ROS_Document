@@ -15,4 +15,15 @@ ros2 pkg list | grep -E \
 1、CPU架构是否为aarch64
 2、Ubuntu是否为24.04
 3、ROS 2 Jazzy能否正常加载
-4、URDF开发所需的基础zu
+4、URDF开发所需的基础组件是否已经安装
+**输出内容:**
+```
+aarch64
+No LSB modules are available.
+Ubuntu 24.04.4 LTS
+jazzy
+joint_state_publisher
+robot_state_publisher
+rviz2
+xacro
+```
