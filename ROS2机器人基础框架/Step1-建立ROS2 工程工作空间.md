@@ -67,7 +67,7 @@ ls -la ~/robot_foundation_ws/src/robot_description
 	# 检查ROS 2 是否能被发现源码包
 	colcon list --base-paths src
 	```
-1. 第一次构建
+2. 第一次构建
 确认上述检查通过之后, 执行:
 ```
 cd ~/robot_foundation_ws
@@ -95,6 +95,16 @@ robot_foundation_ws/
 └── src/
     └── robot_description/
 ```
-这些都是正常的ROS 2gou jian
+这些都是正常的ROS 2构建目录
 
-2. 验证ROS 2能否识别Package
+3. 验证ROS 2能否识别Package
+ 构建成功后执行:
+ ```
+ cd ~/robot_foundation_ws
+ source install/setup.bash
+ ros2 pkg prefix robot_description
+ ```
+ 预期输出类似:
+ `/home/hash/robot_foundation_ws/install/robot_description`
+说明ROS 2已经能够从当前工作空间发现这个Package.
+
