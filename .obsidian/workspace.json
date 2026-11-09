@@ -212,11 +212,11 @@
   },
   "active": "d18e6d99dfef4bf3",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step1-建立ROS2 工程工作空间.md",
+    "ROS2机器人基础框架/Step2-创建URDF,Xacro机器人模型.md",
     "Pasted image 20261109174654.png",
     "Pasted image 20261109171352.png",
     "未命名.canvas",
-    "ROS2机器人基础框架/Step2-创建URDF,Xacro机器人模型.md",
-    "ROS2机器人基础框架/Step1-建立ROS2 工程工作空间.md",
     "ROS2机器人基础框架/Step0-检查ROS2基础环境.md",
     "ROS2机器人基础框架/Step7-进行完整节点联调.md",
     "ROS2机器人基础框架/Step6-引入Behavior Tree与Lifecycle.md",
@@ -257,7 +257,6 @@
     "01-ROS2-入门/Pasted image 20260419170940.png",
     "01-ROS2-入门/Pasted image 20260419155721.png",
     "01-ROS2-入门/Pasted image 20260419135603.png",
-    "01-ROS2-入门/Pasted image 20260419135431.png",
     "Jenkins",
     "Untitled.canvas",
     "Untitled 1.canvas"
