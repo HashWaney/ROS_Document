@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step0-检查ROS2基础环境.md",
+                "file": "ROS2机器人基础框架/Step1-建立ROS2 工程工作空间.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step0-检查ROS2基础环境"
+              "title": "Step1-建立ROS2 工程工作空间"
             }
           }
         ],
@@ -212,6 +212,7 @@
   },
   "active": "d18e6d99dfef4bf3",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step0-检查ROS2基础环境.md",
     "ROS2机器人基础框架/Step7-进行完整节点联调.md",
     "ROS2机器人基础框架/Step6-引入Behavior Tree与Lifecycle.md",
     "ROS2机器人基础框架/Step5-建立网络管理和故障管理节点.md",
@@ -219,7 +220,6 @@
     "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
     "ROS2机器人基础框架/Step2-创建URDF,Xacro机器人模型.md",
     "ROS2机器人基础框架/Step1-建立ROS2 工程工作空间.md",
-    "ROS2机器人基础框架/Step0-检查ROS2基础环境.md",
     "机器人软件控制开发/01-C++17强化/01、智能指针————对象所有权的工程化表达.md",
     "ROS2机器人基础框架",
     "未命名",
