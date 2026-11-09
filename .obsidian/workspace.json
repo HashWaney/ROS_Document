@@ -25,17 +25,14 @@
             "id": "d18e6d99dfef4bf3",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "未命名.canvas",
-                "viewState": {
-                  "x": 93.9300000000001,
-                  "y": 4.649999999999998,
-                  "zoom": 0
-                }
+                "file": "ROS2机器人基础框架/Step2-创建URDF,Xacro机器人模型.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "未命名"
+              "icon": "lucide-file",
+              "title": "Step2-创建URDF,Xacro机器人模型"
             }
           }
         ],
@@ -215,8 +212,9 @@
   },
   "active": "d18e6d99dfef4bf3",
   "lastOpenFiles": [
-    "ROS2机器人基础框架/Step2-创建URDF,Xacro机器人模型.md",
+    "Pasted image 20261109171352.png",
     "未命名.canvas",
+    "ROS2机器人基础框架/Step2-创建URDF,Xacro机器人模型.md",
     "ROS2机器人基础框架/Step1-建立ROS2 工程工作空间.md",
     "ROS2机器人基础框架/Step0-检查ROS2基础环境.md",
     "ROS2机器人基础框架/Step7-进行完整节点联调.md",
