@@ -50,4 +50,9 @@ ls -la ~/robot_foundation_ws/src/robot_description
 其中: 
 - package.xml: 描述ROS 2 Package的名称、版本和依赖.
 - CMakeLists.txt: 负责构建与安装配置
-- 
+- include/ 、src/ : 由模版创建、目前不需要编写C++代码
+
+### 1.3 首次构建ROS 2 Package
+本次目标是确认robot_description 能够被ROS 2的构建系统正确识别、编译并安装
+1. 检查Package配置和构建工具
+2. 第一次构建
