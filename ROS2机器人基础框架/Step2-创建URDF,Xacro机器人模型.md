@@ -98,5 +98,5 @@ cd ~/robot_foundation_ws
 
 ros2 run robot_state_publisher robot_state_publisher \
 --ros-args \
--p robot_description:="$(xacro src/)"
+-p robot_description:="$(xacro src/robot_description/urdf/robot.urdf.xacro)"
 ```
