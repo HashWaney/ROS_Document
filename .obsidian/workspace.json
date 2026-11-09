@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "01、智能指针————对象所有权的工程化表达"
             }
+          },
+          {
+            "id": "d18e6d99dfef4bf3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ROS2机器人基础框架/Step0-检查ROS2基础环境.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Step0-检查ROS2基础环境"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -195,10 +210,20 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "1ea5b02cd539b6a6",
+  "active": "d18e6d99dfef4bf3",
   "lastOpenFiles": [
-    "机器人软件控制开发/01-C++17强化/06、RAII————C++资源管理的第一性原理.md",
+    "ROS2机器人基础框架/Step7-进行完整节点联调.md",
+    "ROS2机器人基础框架/Step6-引入Behavior Tree与Lifecycle.md",
+    "ROS2机器人基础框架/Step5-建立网络管理和故障管理节点.md",
+    "ROS2机器人基础框架/Step4-建立运动控制节点.md",
+    "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
+    "ROS2机器人基础框架/Step2-创建URDF,Xacro机器人模型.md",
+    "ROS2机器人基础框架/Step1-建立ROS2 工程工作空间.md",
+    "ROS2机器人基础框架/Step0-检查ROS2基础环境.md",
     "机器人软件控制开发/01-C++17强化/01、智能指针————对象所有权的工程化表达.md",
+    "ROS2机器人基础框架",
+    "未命名",
+    "机器人软件控制开发/01-C++17强化/06、RAII————C++资源管理的第一性原理.md",
     "机器人软件控制开发/01-C++17强化/02、右值引用+移动语义.md",
     "机器人软件控制开发/01-C++17强化/08、gtest.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/01、rclcpp.md",
@@ -217,14 +242,6 @@
     "机器人软件控制开发/04-仿真平台/03、Isaac Sim.md",
     "机器人软件控制开发/04-仿真平台/02、MuJoCo.md",
     "机器人软件控制开发/04-仿真平台/01、Gazebo+Ignition Gazebo.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/07、CUDA 基础.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/06、CPU亲和性.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/06、内存池.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/05、ring buffer.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/04、lock-free queue.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/03、线程优先级.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/02、pthread.md",
-    "机器人软件控制开发/05-实时系统与高性能计算/01、Linux实时线程.md",
     "机器人软件控制开发/05-实时系统与高性能计算",
     "机器人软件控制开发/04-仿真平台",
     "机器人软件控制开发/03-机器人控制基础",
@@ -241,8 +258,6 @@
     "01-ROS2-入门/Pasted image 20260419135431.png",
     "01-ROS2-入门/Pasted image 20260419135428.png",
     "Jenkins",
-    "行为树",
-    "未命名.base",
     "未命名.canvas",
     "Untitled.canvas",
     "Untitled 1.canvas"
