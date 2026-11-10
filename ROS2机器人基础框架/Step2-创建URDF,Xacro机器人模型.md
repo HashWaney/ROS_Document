@@ -27,6 +27,7 @@ ls -al urdf
 
 
 ### 2.2 创建机器人的第一个Link -base_link
+
 本次只完成一件事: 使用Xacro定义机器人底盘主体base_link, 并验证能否正确生成URDF
 
 1、理解base_link
@@ -132,5 +133,15 @@ rviz2
   1. 将左侧Global Options -> Fixed Frame 设置为base_link
   2. 点击Add, 选择RobotModel
   3. 在RobotModel设置中, 将Description Source 设置为Topic, 并将Description Topic设置为/robot_description
-  4. 观察z
+  4. 观察中央三维视图
+![[Pasted image 20261110093211.png]]
+
+
+### Step 2.4 :将URDF正式纳入ROS 2 Package, 并实现一键启动
+
+#### 一、配置URDF资源安装
+
+
+
+#### 二、创建第一个ROS 2 Launch文件
 
