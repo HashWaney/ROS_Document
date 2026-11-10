@@ -114,5 +114,23 @@ robot_state_publisher 会把机器人模型发布到/robot_description. 当前�
 
 打开终端B:
 ```
-source /opt/ros
+source /opt/ros/jazzy/setup.bash
+ros2 topic list | grep robot_description
 ```
+预期输出:
+```
+/robot_description
+```
+
+3、启动RViz2
+继续在终端B执行:
+```
+rviz2
+```
+
+在RViz2中,
+  1. 将左侧Global Options -> Fixed Frame 设置为base_link
+  2. 点击Add, 选择RobotModel
+  3. 在RobotModel设置中, 将Description Source 设置为Topic, 并将Description Topic设置为/robot_description
+  4. 观察z
+
