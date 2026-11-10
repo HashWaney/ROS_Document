@@ -314,3 +314,16 @@ ros2 launch robot_description display.launch.py
 [rviz2-2] [INFO] [1794300317.043099448] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)
 [rviz2-2] [INFO] [1794300317.203246040] [rviz2]: Stereo is NOT SUPPORTED
 ```
+
+### 三、保存RViz2 配置
+
+本次只做一件事: 将RViz2当前的显示配置保存为.rviz文件, 方便以后自动恢复
+
+1、在RViz中确认显示设置
+
+2、创建RViz配置目录
+
+3、从RViz2 保存配置
+
+4、验证文件是否保存成功
+
