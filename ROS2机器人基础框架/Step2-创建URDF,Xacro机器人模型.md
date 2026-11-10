@@ -154,8 +154,27 @@ robot_foundation_ws/
             └── robot.urdf.xacro
 ```
 
-虽然robot_description 已经能够成功构建, 但ROS 2 Package不一定会自动安装新建的urdf目录
+虽然robot_description 已经能够成功构建, 但ROS 2 Package不一定会自动安装新建的urdf目录, 将来能够通过 get_package_share_directory("robot_description") 找到模型资源,而不是在代码中硬编码/home/user/...路径.
 
+2、修改CMakeLists.txt
+编写该文件, 找到文件末尾的
+ament_package()
+在其上方添加:
+```
+# 安装URDF / Xarco 模型资源
+install(
+	DIRECTORY urdf
+	DESTINATION share/$(PROJECT_NAME)
+)
+```
+保留原有内容, 不需要重写整个CMakeLists.txt
+
+3、重新构建Package
+执行
+```
+cd ~/robot_foundation_ws
+source /opt/ro
+```
 
 #### 二、创建第一个ROS 2 Launch文件
 
