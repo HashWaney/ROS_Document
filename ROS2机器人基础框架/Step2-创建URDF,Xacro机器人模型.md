@@ -173,8 +173,30 @@ install(
 执行
 ```
 cd ~/robot_foundation_ws
-source /opt/ro
+source /opt/ros/jazzy/setup.bash
+colcon build \
+	--packages-select robot_description \
+	--symlink-install
 ```
+构建完成之后:
+```
+source install/setup.bash
+```
+
+4、验证安装结果
+执行:
+```
+ros2 pkg prefix robot_description
+```
+然后:
+```
+ls  "$(ros2 pkg prefix robot_description)/share/robot_description/urdf/"
+```
+预期结果:
+```
+robot.urdf.xacro
+```
+这就说明URDF已经成功作为ROS 2 Package资源安装
 
 #### 二、创建第一个ROS 2 Launch文件
 
