@@ -265,4 +265,23 @@ def generate_launch_description():
     ])
 
 ```
-`get_package`
+`get_package_share_directory`:  获取已安装Package的路径
+`Command` : 执行Xacro转换
+`ParameterValue`: 将生成的URDF作为字符串参数传入
+`robot_state_publisher`: 加载并发布机器人模型
+`rviz2`: 启动模型可视化工具
+`LaunchDescription`: 统一管理启动过程
+
+以后添加新的机器人节点,也可以采用类似的Launch管理机制;
+
+2、修改CMakeLists.txt
+```
+install(
+	DIRECTORY urdf launch
+	DESTINATION share/${PROJECT_NAME}
+)
+```
+这样构建后, Launch文件也会被安装到Package的共享资源目录
+
+3、重新构建并运行
+先关闭之前手动启动的robot_state_publisher 
