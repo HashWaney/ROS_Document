@@ -284,4 +284,33 @@ install(
 这样构建后, Launch文件也会被安装到Package的共享资源目录
 
 3、重新构建并运行
-先关闭之前手动启动的robot_state_publisher 
+先关闭之前手动启动的robot_state_publisher 和RViz2, 避免出现重复节点, 执行以下指令:
+
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+colcon build \
+--packages-select robot_description \
+--symlink-install
+
+source install/setup.bash
+```
+
+构建成功之后运行:
+```
+ros2 launch robot_description display.launch.py 
+```
+
+预期输出日志如下:
+```
+ros2 launch robot_description display.launch.py 
+[INFO] [launch]: All log files can be found below /home/hash/.ros/log/2026-11-10-16-45-15-727522-ros-236511
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [robot_state_publisher-1]: process started with pid [236522]
+[INFO] [rviz2-2]: process started with pid [236523]
+[robot_state_publisher-1] [INFO] [1794300316.173352504] [robot_state_publisher]: Robot initialized
+[rviz2-2] [INFO] [1794300317.042928364] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-2] [INFO] [1794300317.043099448] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)
+[rviz2-2] [INFO] [1794300317.203246040] [rviz2]: Stereo is NOT SUPPORTED
+```
