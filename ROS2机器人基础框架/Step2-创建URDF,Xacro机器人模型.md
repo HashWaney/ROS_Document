@@ -200,3 +200,18 @@ robot.urdf.xacro
 
 #### 二、创建第一个ROS 2 Launch文件
 
+通过一条命令同时启动robot_state_publisher和RViz2, 并自动加载URDF模型, 不添加新的机器人结构,也不涉及运动控制.
+
+1、创建Launch文件
+在Ubuntu终端执行:
+```
+cd ~/robot_foundation_ws/src/robot_description
+mkdir -p launch
+vi launch/display.launch.py
+```
+
+
+```
+
+
+
