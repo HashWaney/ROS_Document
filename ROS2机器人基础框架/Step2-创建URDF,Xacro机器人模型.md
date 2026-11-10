@@ -141,6 +141,20 @@ rviz2
 
 #### 一、配置URDF资源安装
 
+1、为什么需要这一步?
+
+目前工程结构是:
+```
+robot_foundation_ws/
+└── src/
+    └── robot_description/
+        ├── CMakeLists.txt
+        ├── package.xml
+        └── urdf/
+            └── robot.urdf.xacro
+```
+
+虽然robot_description 已经能够成功构建, 但ROS 2 Package不一定会自动安装新建的urdf目录
 
 
 #### 二、创建第一个ROS 2 Launch文件
