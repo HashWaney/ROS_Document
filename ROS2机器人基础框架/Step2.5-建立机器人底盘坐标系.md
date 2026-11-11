@@ -58,3 +58,10 @@ grep -A 5 'joint name="base_footprint_joint"' \
   </joint>
 </robot>
  ```
+
+### 二、验证base_footprint -> base_link坐标变换
+
+这一步只验证三件事:
+- robot_state_publisher 能够加载更新后的URDF
+- /tf_static 正确发布两个坐标系之间的固定变换
+- RViz2能够在base_footprint坐标系下显示机器人模型
