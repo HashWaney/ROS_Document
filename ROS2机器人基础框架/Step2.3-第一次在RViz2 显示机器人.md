@@ -1,5 +1,4 @@
 
-### Step2.3: 第一次在RViz2 显示机器人
 
 1、启动robot_state_publisher
 

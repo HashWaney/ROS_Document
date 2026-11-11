@@ -1,5 +1,4 @@
 
-### Step 2.4 :将URDF正式纳入ROS 2 Package, 并实现一键启动
 
 #### 一、配置URDF资源安装
 

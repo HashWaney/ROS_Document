@@ -1,9 +1,5 @@
 
 
-
-
-### Step 2.2 创建机器人的第一个Link -base_link
-
 本次只完成一件事: 使用Xacro定义机器人底盘主体base_link, 并验证能否正确生成URDF
 
 1、理解base_link
