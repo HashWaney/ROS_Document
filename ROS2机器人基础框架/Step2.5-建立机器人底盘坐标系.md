@@ -16,6 +16,23 @@
 ![[Pasted image 20261111153148.png]]
 
 在当前模型中, 底盘高度为0.15m, 暂时将`base_link`原点设置为高出`base_footprint` 0.075m.
-**注意: 0.075m是示例模型的临时参数,不是真实机器人的离地高度.**  后续添加左右驱动轮和万向轮时, 需要重新确定底盘离地间隙及轮轴wei
+**注意: 0.075m是示例模型的临时参数,不是真实机器人的离地高度.**  后续添加左右驱动轮和万向轮时, 需要重新确定底盘离地间隙及轮轴位置.
 
+2、修改Xacro文件
+```
+vi ~/robot_foundation_ws/src/robot_description/urdf/robot.urdf.xacro
+```
+
+在文件末尾`</robot>` 之前添加:
+```
+<!--地面投影坐标系-->
+<link name="base_footprint"/>
+
+<!--base_footprint 到 base_link的固定连接-->
+<joint name="base_footprint_joint" type="fixed">
+	<parent link="base_footprint"/>
+	<child link="base_link"/>
+	<origin xyz="0 0 0.075" rpy="0 0 0"/>
+</joint>
+```
 
