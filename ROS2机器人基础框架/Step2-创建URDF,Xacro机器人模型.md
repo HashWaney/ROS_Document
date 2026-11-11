@@ -379,7 +379,21 @@ rviz_config = os.path.join(
 
 # 启动RViz2 并加载配置
 rviz = Node(
-	package=“
+	package="rviz2",
+	executable="rviz2",
+	name="rviz2",
+	output="screen",
+	arguments=["-d",rviz_config]
 )
 
+```
+这里 的`-d`参数用于指定RViz2 启动时候加载的配置文件.
+原有的robot_state_publisher 和 return LaunchDescription(...) 保持不变
+
+2、修改CMakeLists.txt
+之前的安装配置是:
+```
+install(
+	DIRECTORY
+)
 ```
