@@ -36,3 +36,4 @@ vi ~/robot_foundation_ws/src/robot_description/urdf/robot.urdf.xacro
 </joint>
 ```
 
+这里使用`fixed` Joint, 代表两个坐标系之间的关系固定. `robot_state_publisher` 会自动将固定关节的TF发布到`/tf_static`
