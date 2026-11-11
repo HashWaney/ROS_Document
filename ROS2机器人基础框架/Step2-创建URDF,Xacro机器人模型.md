@@ -321,17 +321,31 @@ ros2 launch robot_description display.launch.py
 
 1、在RViz中确认显示设置
 
-| 配置项                           | 设置值       |
-| ----------------------------- | --------- |
-| Global Options -> Fixed Frame | base_link |
-| Displays -> Grid              | Enabled   |
-| Displays -> RobotModel        | Enabled   |
-| RobotModel -> Description     |           |
-
+| 配置项                              | 设置值                |
+| -------------------------------- | ------------------ |
+| Global Options -> Fixed Frame    | base_link          |
+| Displays -> Grid                 | Enabled            |
+| Displays -> RobotModel           | Enabled            |
+| RobotModel -> Description Source | Topic              |
+| RobotModel -> Description Topic  | /robot_description |
+| RobotModel -> Visual Enabled     | true               |
+确保中央能够正常显示之前创建的灰蓝色长方体, 目前URDF只有base_link, 因此可能存在No tf data 提示, 暂时不需要处理. 后面添加其他Link后, 再检查完整TF树.
 
 2、创建RViz配置目录
+打开另一个终端, 执行
+```
+mkdir -p ~/robot_foundation_ws/src/robot_description/rviz
+```
 
 3、从RViz2 保存配置
+在RViz2窗口中:
+	1. 点击菜单File -> Save Config As ...
+	2. 进入目录:  /home/hash/robot_foundation_ws/src/robot_description/rviz/
+	3. 文件名填写: robot_display.rviz
+	4. 点击保存
+注意: 不要保存到install/目录. 后续只维护src/ zho
+
+
 
 4、验证文件是否保存成功
 
