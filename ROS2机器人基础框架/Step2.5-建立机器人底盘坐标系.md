@@ -82,17 +82,13 @@ ros2 launch robot_description display.launch.py
 ```
 
 2、验证TF静态坐标变换
-新开一个终端, 执行:
-```
-source /opt/ros/jazyy/setup.bash
 
-ros2 topic echo /tf_static \
-tf2_msgs/msg/TFMessage \
---qos-durability transient_local \
---once
+**2.1:** 检查静态TF发布者
 ```
-注意 `--qos-durability transient_local` 很重要, 因为`/tf_static` 使用持久化的静态变换发布方式.
-正常情况下, 输出应该包含:
+ros2 topic info /tf_static -v
 ```
 
-```
+验收要求:
+- Publisher 为 robot_state_publisher
+- Publisher count >= 1
+- Durability 为
