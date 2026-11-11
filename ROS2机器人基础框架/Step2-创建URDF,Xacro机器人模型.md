@@ -343,9 +343,14 @@ mkdir -p ~/robot_foundation_ws/src/robot_description/rviz
 	2. 进入目录:  /home/hash/robot_foundation_ws/src/robot_description/rviz/
 	3. 文件名填写: robot_display.rviz
 	4. 点击保存
-注意: 不要保存到install/目录. 后续只维护src/ zho
-
-
+注意: 不要保存到install/目录. 后续只维护src/ 中的原始配置文件
 
 4、验证文件是否保存成功
+在终端执行:
+```
+ls -lh ~/robot_foundation_ws/src/robot_description/rviz
+grep -E 'Fixed Frame:|RobotModel:|robot_description' \
+~/robot_foundation_ws/src/robot_description/rviz/robot_display.rviz
+```
+预期能看到robot_display.rviz文件, 以及类似配置:
 
