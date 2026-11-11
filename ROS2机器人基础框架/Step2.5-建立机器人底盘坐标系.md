@@ -65,3 +65,34 @@ grep -A 5 'joint name="base_footprint_joint"' \
 - robot_state_publisher 能够加载更新后的URDF
 - /tf_static 正确发布两个坐标系之间的固定变换
 - RViz2能够在base_footprint坐标系下显示机器人模型
+
+1、重新构建并启动机器人模型
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build \
+--packages-select robot_description \
+--symlink-install
+
+source install/setup.bash
+
+ros2 launch robot_description display.launch.py
+```
+
+2、验证TF静态坐标变换
+新开一个终端, 执行:
+```
+source /opt/ros/jazyy/setup.bash
+
+ros2 topic echo /tf_static \
+tf2_msgs/msg/TFMessage \
+--qos-durability transient_local \
+--once
+```
+注意 `--qos-durability transient_local` 很重要, 因为`/tf_static` 使用持久化的静态变换发布方式.
+正常情况下, 输出应该包含:
+```
+
+```
