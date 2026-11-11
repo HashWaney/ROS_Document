@@ -54,7 +54,8 @@ cd ~/robot_foundation_ws
 source /opt/ros/jazzy/setup.bash
 xacro src/robot_description/urdf/robot.urdf.xarco \
 -o /tmp/robot.foundation.urdf
-grep -A 3 '<box' /tmp/robot_foundation.urff
+grep -A 3 '<box' /tmp/robot_foundation.urdf
+
 ```
 预期输出包含:
 ```
