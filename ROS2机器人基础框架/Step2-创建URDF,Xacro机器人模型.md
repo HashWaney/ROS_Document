@@ -425,4 +425,8 @@ ros2 launch robot_description display.launch.py
 
 4、验收标准
 观察RViz 2是否能够自动恢复之前保存的配置
-- RViz 2 
+- RViz 2可以正常启动
+- Fixed Frame 自动设置为base_link
+- RobotModel 自动加载/robot_description
+- 底盘长方体正常显示
+- 不再需要手动添加RobotModel 或修改Fixed Frame
