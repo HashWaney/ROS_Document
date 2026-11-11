@@ -394,6 +394,35 @@ rviz = Node(
 之前的安装配置是:
 ```
 install(
-	DIRECTORY
+	DIRECTORY urdf launch
+	DESTINATION share/${PROJECT_NAME}
 )
 ```
+现在将rviz目录也加入安装:
+```
+install(
+	DIRECTORY urdf launch rviz
+	DESTINATION share/${PROJECT_NAME}
+
+)
+```
+这一步保证ROS 2 可以从Package安装目录找到robot_display.rviz.
+
+3、重新构建并启动
+先关闭此前运行的Launch, 再执行:
+```
+cd ~/robot_foundation_ws
+source /opt/ros/jazzy/setup.bash
+
+colcon build \
+--packages-select robot_description \
+--symlink-install
+
+source install/setup.bash
+
+ros2 launch robot_description display.launch.py
+```
+
+4、验收标准
+观察RViz 2是否能够自动恢复之前保存的配置
+- RViz 2 
