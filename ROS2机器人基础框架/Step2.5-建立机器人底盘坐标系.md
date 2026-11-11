@@ -49,3 +49,12 @@ xacro src/robot_description/urdf/robot.urdf.xacro \
 grep -A 5 'joint name="base_footprint_joint"' \
 /tmp/robot_foundation.urdf
 ```
+ 预期结果是:
+ ```
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.075"/>
+  </joint>
+</robot>
+ ```
