@@ -354,3 +354,32 @@ grep -E 'Fixed Frame:|RobotModel:|robot_description' \
 ```
 预期能看到robot_display.rviz文件, 以及类似配置:
 
+
+### 四、实现RViz2 自动加载配置
+
+1、修改 display.launch.py
+
+找到之前创建的RViz2节点:
+```
+rviz = Node(
+	package="rviz2",
+	executable="rviz2",
+	name="rviz2",
+	output="screen"
+)
+```
+将其替换为:
+```
+# RViz2 配置文件路径
+rviz_config = os.path.join(
+	package_path,
+	"rviz",
+	"robot_display.rviz"
+)
+
+# 启动RViz2 并加载配置
+rviz = Node(
+	package=“
+)
+
+```
