@@ -321,6 +321,14 @@ ros2 launch robot_description display.launch.py
 
 1、在RViz中确认显示设置
 
+| 配置项                           | 设置值       |
+| ----------------------------- | --------- |
+| Global Options -> Fixed Frame | base_link |
+| Displays -> Grid              | Enabled   |
+| Displays -> RobotModel        | Enabled   |
+| RobotModel -> Description     |           |
+
+
 2、创建RViz配置目录
 
 3、从RViz2 保存配置
