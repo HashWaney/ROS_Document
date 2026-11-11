@@ -39,3 +39,13 @@ vi ~/robot_foundation_ws/src/robot_description/urdf/robot.urdf.xacro
 这里使用`fixed` Joint, 代表两个坐标系之间的关系固定. `robot_state_publisher` 会自动将固定关节的TF发布到`/tf_static`, 原来的`base_link` 定义完全保留, 不需要修改
 
 3、仅仅验证Xacro结构
+保存上述修改之后, 执行:
+```
+cd ~/robot_foundation_ws
+
+xacro src/robot_description/urdf/robot.urdf.xacro \
+-o /tmp/robot_foundation.urdf
+
+grep -A 5 'joint name="base_footprint_joint"' \
+/tmp/robot_foundation.urdf
+```
