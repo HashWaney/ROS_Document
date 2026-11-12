@@ -132,4 +132,19 @@ base_footprint
 
 
 ### 三、配置并保存TF可视化
-将base_footprint设置为RViz2的参考坐标系, bin q g bao cu
+将base_footprint设置为RViz2的参考坐标系, 并保存TF显示配置.
+
+1、修改RViz2显示配置
+保持`ros2 launch robot_description display.launch.py` 正常运行.
+在RViz2 左侧Displays面板中:
+ - 找到Global Options -> Fixed Frame, 修改为`base_footprint`
+ - 点击Add-> By display type -> TF -> OK, 添加TF显示组件(如果已经存在, 不需要重复添加)
+ - 展开TF组件, 确认Show Names已启用, 方便观察坐标系名称
+此时应当能看到两个坐标系
+```
+base_footprint
+	|
+	----- base_link
+			Z = +0.075m
+```
+可以调整RViz2视角, 观察两个zuo biao xi
