@@ -95,6 +95,35 @@ ros2 launch robot_description display.launch.py
 source /opt/ros/jazzy/setup.bash
 ros2 run joint_state_publisher joint_state_publisher
 ```
-Jazzy的`joint_state_publisher` 可以zi d
+Jazzy的`joint_state_publisher` 可以自动从`/robot_description`获取模型, 并未可活动关节持续发布状态, 默认频率为10Hz.
+
+3、终端C: 验证关节状态
+```
+source /opt/ros/jazzy/setup.bash
+
+ros2 topic echo /joint_states --once
+```
+预期包含:
+```
+header:
+  stamp:
+    sec: 1794455353
+    nanosec: 273232782
+  frame_id: ''
+name:
+- left_wheel_joint
+position:
+- 0.0
+velocity: []
+effort: []
+---
+```
+说明左轮的关节状态已经发布了. 再接着验证TF:
+```
+ros2 run tf2_ros tf2_echo base_link left_wheel_link
+```
+预期
+
+
 
 ![[Pasted image 20261112113909.png]]
