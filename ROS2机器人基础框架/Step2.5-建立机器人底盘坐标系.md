@@ -176,3 +176,4 @@ Class: rviz_default_plugins/RobotModel
 Class: rviz_default_plugins/TF
 ```
 
+![[Pasted image 20261112094050.png]]
