@@ -94,12 +94,22 @@ ros2 topic info /tf_static -v
 - Durability 为`TRANSIENT_LOCAL`
 
 **2.2** 验证实际坐标变换(核心)
+执行以下指令, 该指令会直接通过TF2查询两个坐标系之间的变换, 而不是依赖ros2 topic echo 显示原始消息.
 ```
 ros2 run tf2_ros tf2_echo base_footprint base_link
 ```
 预期输出:
 ```
-
+At time 0.0
+- Translation: [0.000, 0.000, 0.075]
+- Rotation: in Quaternion (xyzw) [0.000, 0.000, 0.000, 1.000]
+- Rotation: in RPY (radian) [0.000, -0.000, 0.000]
+- Rotation: in RPY (degree) [0.000, -0.000, 0.000]
+- Matrix:
+  1.000  0.000  0.000  0.000
+  0.000  1.000  0.000  0.000
+  0.000  0.000  1.000  0.075
+  0.000  0.000  0.000  1.000
 ```
 
 
