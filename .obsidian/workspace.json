@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
+                "file": "ROS2机器人基础框架/Step2.6-创建左侧驱动轮.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step2.5-建立机器人底盘坐标系"
+              "title": "Step2.6-创建左侧驱动轮"
             }
           }
         ],
@@ -226,9 +226,10 @@
   },
   "active": "014272adbdc2dd51",
   "lastOpenFiles": [
+    "Pasted image 20261112104004.png",
+    "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
     "ROS2机器人基础框架/Step2.6-创建左侧驱动轮.md",
     "ROS2机器人基础框架/未命名 1.md",
-    "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
     "Pasted image 20261112094050.png",
     "Pasted image 20261112090142.png",
     "ROS2机器人基础框架/Step2.4-将 URDF 正式纳入 ROS 2 Package，并实现一键启动.md",
@@ -261,7 +262,6 @@
     "机器人软件控制开发/02-ROS2+C++机器人工程/07、nav2.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/06、tf2.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/05、ros2_control.md",
-    "机器人软件控制开发/02-ROS2+C++机器人工程/02、publish+subscriber.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程",
     "机器人软件控制开发",
     "机器人软件控制开发/05-实时系统与高性能计算",
