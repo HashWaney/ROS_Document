@@ -116,6 +116,6 @@ base_footprint
 	| fixed joint 
 	| Z = +0.075m
 	|
-	▶️
-	base_link
+	▶️ base_link
 ```
+![[Pasted image 20261112090142.png]]
