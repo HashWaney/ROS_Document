@@ -72,7 +72,29 @@ xacro src/robot_descripion/urdf/robot.urdf.xacro \
 | base_footprint_joint | fixed      | /tf_static |
 | left_wheel_joint     | continuous | /tf        |
 
-`robot_state_publisher` 需要接收到`/joint_states`中的关节角度, 才能计算左轮的动态TF. 因此需要引入`joint_state_publisher`, 为尚未lian jei
+`robot_state_publisher` 需要接收到`/joint_states`中的关节角度, 才能计算左轮的动态TF. 因此需要引入`joint_state_publisher`, 为尚未连接真实硬件的关节提供模拟状态, 数据链路是:
 
+
+![[Pasted image 20261112114309.png]]
+
+
+二、 开始执行
+
+1、 终端A: 重新启动机器人模型
+先停止之前的Launch, 然后执行:
+```
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+
+ros2 launch robot_description display.launch.py
+```
+确保Launch已重新加载包含左轮的URDF, 如果RViz2暂时没有显示左轮, 那是因为动态关节的TF还没有发布.
+
+2、终端B: 启动joint_state_publisher
+```
+source /opt/ros/jazzy/setup.bash
+ros2 run joint_state_publisher joint_state_publisher
+```
+Jazzy的`joint_state_publisher` 可以zi d
 
 ![[Pasted image 20261112113909.png]]
