@@ -43,3 +43,15 @@
 	<axis xyz="0 1 0"/>
 <joint/>
 ```
+这里有两个关键设计:
+- continuous: 轮子可以连续转动, 不需要设置旋转角度上下限
+- axis xyz="0 1 0": 轮子绕Y轴旋转, 符合当前机器人X轴向前的坐标约定
+
+**三、本次只验证URDF结构**
+执行: xacro指令
+```
+xacro src/robot_descripion/urdf/robot.urdf.xacro \
+-o /tmp/robot_foundation.urdf
+```
+
+然后检查
