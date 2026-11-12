@@ -64,3 +64,15 @@ xacro src/robot_descripion/urdf/robot.urdf.xacro \
 
 ### Step2.6.2: 配置joint_state_publisher
 
+一、 为什么需要joint_state_publisher
+目前有两个关节
+
+| Joint                | 类型         | TF发布       |
+| -------------------- | ---------- | ---------- |
+| base_footprint_joint | fixed      | /tf_static |
+| left_wheel_joint     | continuous | /tf        |
+
+`robot_state_publisher` 需要接收到`/joint_states`中的关节角度, 才能计算左轮的动态TF. 因此需要引入`joint_state_publisher`, 为尚未lian jei
+
+
+![[Pasted image 20261112113909.png]]
