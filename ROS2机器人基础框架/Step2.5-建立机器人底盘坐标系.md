@@ -101,3 +101,21 @@ ros2 run tf2_ros tf2_echo base_footprint base_link
 ```
 
 ```
+
+
+3、在RViz2中验证
+找到已经启动的RViz2窗口:
+- 1. 将Global Options -> Fixed Frame 从base_link改为base_footprint
+- 2. 确认RobotModel 状态为OK
+- 3. 点击Add->TF, 添加TF显示插件
+
+此时应该能过看到如下坐标关系:
+```
+base_footprint
+	|
+	| fixed joint 
+	| Z = +0.075m
+	|
+	▶️
+	base_link
+```
