@@ -147,4 +147,32 @@ base_footprint
 	----- base_link
 			Z = +0.075m
 ```
-可以调整RViz2视角, 观察两个zuo biao xi
+可以调整RViz2视角, 观察两个坐标系的位置差异
+
+2 、保存RViz2配置
+在RViz2中选择:
+**File -> Save Config As ...**  将文件保存到`/home/hash/robot_foundation_ws/src/robot_description/rviz/robot_display.rviz`
+覆盖之前的配置文件.
+
+3、验证保存结果
+打开终端, 执行:
+```
+grep -A 2 'Global Options:' \
+~/robot_foundation_ws/src/robot_description/rviz/robot_display.rviz
+```
+预期输出:
+```
+Global Options:
+	Fixed Frame: base_footprint
+```
+再执行:
+```
+grep -E 'Class: rviz_default_plugins/(TF|RobotModel)' \
+~/robot_foundation_ws/src/robot_description/rviz/robot_display.rviz
+```
+预期包含:
+```
+Class: rviz_default_plugins/RobotModel
+Class: rviz_default_plugins/TF
+```
+
