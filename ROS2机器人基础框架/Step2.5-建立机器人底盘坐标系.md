@@ -129,3 +129,7 @@ base_footprint
 	▶️ base_link
 ```
 ![[Pasted image 20261112090142.png]]
+
+
+### 三、配置并保存TF可视化
+将base_footprint设置为RViz2的参考坐标系, bin q g bao cu
