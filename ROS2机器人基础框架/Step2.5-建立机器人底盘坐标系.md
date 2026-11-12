@@ -91,4 +91,13 @@ ros2 topic info /tf_static -v
 验收要求:
 - Publisher 为 robot_state_publisher
 - Publisher count >= 1
-- Durability 为
+- Durability 为`TRANSIENT_LOCAL`
+
+**2.2** 验证实际坐标变换(核心)
+```
+ros2 run tf2_ros tf2_echo base_footprint base_link
+```
+预期输出:
+```
+
+```
