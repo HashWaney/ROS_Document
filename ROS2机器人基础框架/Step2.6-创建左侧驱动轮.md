@@ -17,5 +17,29 @@
 在已有的base_height参数后面添加:
 ```
 <!--驱动轮临时参数-->
-<xacro:propert
+<xacro:property  name="wheel_radius" value="0.05"/>
+<xacro:property  name="wheel_width" value="0.04"/>
+```
+
+2、添加左轮Link和Joint
+在文件末尾</robot>之前添加:
+```
+<!--左侧驱动轮-->
+<link name="left_wheel_link">
+	<visual>
+		<origin xyz="0 0 0" rpy="1.57979632679 0 0 "/>
+		<geometry>
+			<cylinder radius="${wheel_radius}"
+					  length="${wheel_width}"/>
+		</geometry>
+	</visual>
+</link>
+
+<!--左侧驱动轮旋转关节-->
+<joint name="left_wheel_joint" type="continuous">
+	<parent link="base_link"/>
+	<child link="left_wheel_link"/>
+	<origin xyz="0 0.17 -0.025" rpy="0 0 0"/>
+	<axis xyz="0 1 0"/>
+<joint/>
 ```
