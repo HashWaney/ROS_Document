@@ -122,8 +122,16 @@ effort: []
 ```
 ros2 run tf2_ros tf2_echo base_link left_wheel_link
 ```
-预期
+预期会输出:
+```
+ Translation: [0.000, 0.170, -0.025]
+- Rotation: in Quaternion (xyzw) [0.000, 0.000, 0.000, 1.000]
+- Rotation: in RPY (radian) [0.000, -0.000, 0.000]
+- Rotation: in RPY (degree) [0.000, -0.000, 0.000]
+- Matrix:
+```
 
+其中`Y=0.17m` `Z=-0.025m` 是上一节定义的左轮相对base_link的位置.
 
 
 ![[Pasted image 20261112113909.png]]
