@@ -54,4 +54,13 @@ xacro src/robot_descripion/urdf/robot.urdf.xacro \
 -o /tmp/robot_foundation.urdf
 ```
 
-然后检查
+然后检查 `grep -E 'name="left_wheel_(link|joint)"' /tmp/robot_foundation.urdf`, 预期输出:
+```
+<link name="left_wheel_link">
+<joint name="left_wheel_joint" type="continuous">
+```
+
+
+
+### Step2.6.2: 配置joint_state_publisher
+
