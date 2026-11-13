@@ -192,5 +192,16 @@ base_link
 **三、验证Xacro**
 执行以下指令:
 ```
-xacro src/robot_description/
+xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
+
+grep -A 5 'name="caster_wheel_joint"' /tmp/robot_foundation.urdf
+```
+预期内容如下:
+```
+<joint name="caster_wheel_joint" type="continuous">
+    <parent link="caster_swivel_link"/>
+    <child link="caster_wheel_link"/>
+    <origin rpy="0 0 0" xyz="-0.10 0 -0.045"/>
+    <axis xyz="0 1 0"/>
+  </joint>
 ```
