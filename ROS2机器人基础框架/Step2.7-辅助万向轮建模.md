@@ -154,5 +154,11 @@ base_link
 1、 添加万向轮参数
 在现有轮子参数后添加:
 ```
-<!-- f-->
+<!-- 辅助万向轮尺寸 -->
+<xacro:property name="caster_radius" value="0.03"/>
+<xacro:property name="caster_width" value="0.025/>
 ```
+
+2、添加轮体Link和滚动Joint
+
+在`</
