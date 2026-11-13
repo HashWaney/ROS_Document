@@ -81,11 +81,24 @@ base_link
 在现有`caster_mount_joint` 后面、`</robot>` 之前添加:
 ```
 <!--万向轮转向结构-->
-<link name="caster_s
-
-
+<link name="caster_swivel_link/>
 
 <!--万向轮绕Z轴自由转向-->
+<joint name="caster_swivel_joint" type="continuous">
+	<parent link="caster_mount_link"/>
+	<child link="caster_swivel_link"/>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<axis xyz="0 0 1"/>
+</joint>
+```
+这里暂时使用 `origin="0 0 0"` 表示转向轴与安装座坐标系原点重合. 之前添加轮子支架、轮轴时, 再定义轮子的实际偏移距离.
 
+**三、验证Xacro**
+执行指令:
+```
+cd ~/robot_foundation_ws
 
+xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
+
+grep -A 5 'name="caster_swivel_joint' /tmp/robot_foundation.urdf
 ```
