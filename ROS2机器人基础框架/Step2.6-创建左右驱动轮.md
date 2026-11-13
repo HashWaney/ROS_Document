@@ -236,4 +236,26 @@ base_footprint
 | Joint类型 | continuous | continuous |
 这些仍然是开发验证使用的示例尺寸, 不是实际机器人的硬件规格
 
-### 二、
+### 二、修改Xacro文件
+找到文件末尾的</robot>, 在它之前添加以下代码:
+```
+<!-- 右侧驱动轮-->
+<link name="right_wheel_link">
+	<visual>
+		<origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+		<geometry>
+			<cylinder radius="${wheel_radius}"
+					  length="${wheel_width}"/>
+		</geometry>
+		<material name="body_gray"/>
+	</visual>
+</link>
+
+<!--右侧驱动轮旋转关节-->
+<joint name="right_wheel_joint" type="continuous">
+	<parent link="base_link"/>
+	<child  link="right_wheel_link"/>
+	<origin xyz="0 -0.17 -0.025" rpy="0 0 0"/>
+	<axis   xyz="0 0 0"/>
+</joint>
+```
