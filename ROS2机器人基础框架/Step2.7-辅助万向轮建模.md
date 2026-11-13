@@ -25,7 +25,7 @@
 <!--安装点固定在机器人主体上->
 <joint name="caster_mount_joint" type="fixed">
 	<parent link="base_link"/>
-	<child link="caster_mount_link"/>
+	<child  link="caster_mount_link"/>
 	<origin xyz="-0.14 0 0" rpy="0 0 0"/>
 </joint>
 ```
@@ -43,4 +43,11 @@ xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
 grep -E 5 'name="caster_mount_joint"' /tmp/robot_foundation.urdf
 ```
 预期输出:
-
+```
+ <joint name="caster_mount_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_mount_link"/>
+    <origin rpy="0 0 0" xyz="-0.14 0 0"/>
+  </joint>
+</robot>
+```
