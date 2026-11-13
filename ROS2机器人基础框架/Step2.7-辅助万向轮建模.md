@@ -102,3 +102,13 @@ xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
 
 grep -A 5 'name="caster_swivel_joint' /tmp/robot_foundation.urdf
 ```
+预期输出内容:
+```
+ <joint name="caster_swivel_joint" type="continuous">
+    <parent link="caster_mount_link"/>
+    <child link="caster_swivel_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+```
