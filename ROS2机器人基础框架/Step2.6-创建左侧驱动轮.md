@@ -180,3 +180,12 @@ robot_state_publisher
 joint_state_publisher
 rviz2
 ```
+再执行: 
+```
+ros2 topic echo /joint_states --once
+```
+
+预期包含:
+```
+
+```
