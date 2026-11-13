@@ -197,4 +197,22 @@ position:
 ```
 ros2 run tf2_ros tf2_echo base_link left_wheel_link
 ```
-应该nengg ch
+应该能查询到左轮的位置:
+```
+At time 1794540529.602756184
+- Translation: [0.000, 0.170, -0.025]
+```
+
+
+### Step 2.6.4 创建右侧驱动轮
+
+本次只修改URDF/Xacro, 添加右轮的Link和Joint, 不修改Launch、不重新配置RViz2、 也不涉及运动控制
+
+### 一、右驱动轮设计
+ 当前机器人已经具有以下结构:
+ ```
+base_footprint
+└── base_link
+    └── left_wheel_link
+```
+

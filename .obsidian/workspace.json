@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step2.6-创建左侧驱动轮.md",
+                "file": "ROS2机器人基础框架/Step2.6-创建左右驱动轮.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step2.6-创建左侧驱动轮"
+              "title": "Step2.6-创建左右驱动轮"
             }
           }
         ],
@@ -229,7 +229,7 @@
     "Pasted image 20261112114309.png",
     "Pasted image 20261112113909.png",
     "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
-    "ROS2机器人基础框架/Step2.6-创建左侧驱动轮.md",
+    "ROS2机器人基础框架/Step2.6-创建左右驱动轮.md",
     "Pasted image 20261112104004.png",
     "ROS2机器人基础框架/未命名 1.md",
     "Pasted image 20261112094050.png",
