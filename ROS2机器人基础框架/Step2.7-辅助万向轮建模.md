@@ -112,3 +112,32 @@ grep -A 5 'name="caster_swivel_joint' /tmp/robot_foundation.urdf
   </joint>
 
 ```
+
+### Step2.7.3: 创建辅助万向轮轮体与滚动关节
+
+建立辅助万向轮的轮体及滚动关节、让它既能绕Z轴转向, 也能绕自身轮轴滚动
+
+**一、本次实现目标**
+目前机器人辅助万向轮的结构是:
+```
+base_link
+└── caster_mount_link
+    └── caster_swivel_link
+```
+
+本次扩展为:
+```
+base_link
+└── caster_mount_link
+    └── caster_swivel_link
+        └── caster_wheel_link   ← 新增
+             (caster_wheel_joint)
+```
+这样辅助万向轮具有两个自由度:
+- `caster_swivel_joint`: 绕Z轴转向
+- `caster_wheel_joint`:   绕轮轴Y轴滚动
+
+本次临时参数:
+
+| | |
+|-|
