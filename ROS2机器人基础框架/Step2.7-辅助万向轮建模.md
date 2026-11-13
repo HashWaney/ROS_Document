@@ -190,3 +190,7 @@ base_link
 目前尚未建立万向轮支架, 所以轮体与安装座之间暂时没有可见的机械连接. 
 
 **三、验证Xacro**
+执行以下指令:
+```
+xacro src/robot_description/
+```
