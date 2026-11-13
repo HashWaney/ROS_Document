@@ -51,3 +51,23 @@ grep -E 5 'name="caster_mount_joint"' /tmp/robot_foundation.urdf
   </joint>
 </robot>
 ```
+
+
+### Step2.7.2: 创建辅助万向轮的转向关节
+
+**一、本次要实现什么?**
+之前已经创建了万向轮安装座
+```
+base_link
+└── caster_mount_link
+```
+本次增加一个能够绕Z轴旋转的转向结构:
+![[Pasted image 20261113162854.png]]
+
+设计如下:
+
+| 参数     | 设置                  |
+| ------ | ------------------- |
+| 新Link  | caster_swivel_link  |
+| 新Joint | caster_swivel_joint |
+| Pare   |                     |
