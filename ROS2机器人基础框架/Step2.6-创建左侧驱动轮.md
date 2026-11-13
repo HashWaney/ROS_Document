@@ -164,3 +164,19 @@ return LaunchDescription([
 
 二、重新构建并启动
 先关闭之前手动启动的`joint_state_publisher` 避免两个节点同时发布`/joint_states'. 然后停止旧的Launch, 在终端执行:
+```
+cd ~/robot_foundation_ws
+source /opt/ros/jazzy/setup.bash
+colcon build \
+	--packages-select robot_description \
+	--symlink-install
+source install/setup.bash
+
+ros2 launch robot_description display.launch.py
+```
+正常情况下, 应该同时启动三个进程
+```
+robot_state_publisher
+joint_state_publisher
+rviz2
+```
