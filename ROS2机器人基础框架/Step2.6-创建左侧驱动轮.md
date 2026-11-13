@@ -141,4 +141,26 @@ ros2 run tf2_ros tf2_echo base_link left_wheel_link
 
 一、修改display.launch.py
 
-找到现有的`
+找到现有的`robot_state_publisher` 节点定义, 在它下面新增:
+```
+# 发布可运动关节的模拟状态
+joint_state_publisher = Node(
+	package="joint_state_publisher"
+	executable="joint_state_publisher",
+	name="joint_state_publisher",
+	output="screen"
+	
+)
+```
+这里不需要再次传入URDF, 因为`joint_state_publisher` 可以订阅`/robot_description`, 自动获取模型中的可运动关节并发布`/joint_states`. 然后找到文件末尾:
+```
+return LaunchDescription([
+	robot_state_publisher,
+	# 新增joint节点
+	joint_state_publisher,
+	rviz
+])
+```
+
+二、重新构建并启动
+先关闭之前手动启动的`joint_state_publisher` 避免两个节点同时发布`/joint_states'. 然后停止旧的Launch, 在终端执行:
