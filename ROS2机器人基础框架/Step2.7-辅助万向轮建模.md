@@ -16,10 +16,21 @@
 这些是临时建模参数, 尚未确定实际万向轮的安装高度
 
 **二、修改robot.urdf.xacro**
+
 在</robot>之前添加:
 ```
 <!--辅助万向轮安装坐标系-->
-<link
+<link name="caster_mount_link"/>
 
 <!--安装点固定在机器人主体上->
+<joint name="caster_mount_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="caster_mount_link"/>
+	<origin xyz="-0.14 0 0" rpy="0 0 0"/>
+</joint>
 ```
+这里使用`fixed`关节, 是因为我们定义的是**万向轮安装座**, 并不是万向轮本身.
+后续会在安装座下面增加:
+- 万向轮转向关节(绕Z轴)
+- 万向轮滚动关节(绕轮轴)
+这样才能正确描述具有转向自由度的fu z
