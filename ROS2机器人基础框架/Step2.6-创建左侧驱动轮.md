@@ -133,5 +133,12 @@ ros2 run tf2_ros tf2_echo base_link left_wheel_link
 
 其中`Y=0.17m` `Z=-0.025m` 是上一节定义的左轮相对base_link的位置.
 
-
 ![[Pasted image 20261112113909.png]]
+
+### Step 2.6.3 将joint_state_publisher集成到Launch文件
+
+目的是为了让之前手动启动的`joint_state_publisher`随机器人模型一起启动
+
+一、修改display.launch.py
+
+找到现有的`
