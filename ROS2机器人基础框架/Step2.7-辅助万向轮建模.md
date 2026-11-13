@@ -161,4 +161,27 @@ base_link
 
 2、添加轮体Link和滚动Joint
 
-在`</
+在`</robot>` 之前添加:
+```
+<!--辅助万向轮轮体-->
+<link name="caster_wheel_link">
+	<visual>
+		<origin xyz="0 0 0" rpy="1.579079632679 0 0 "/>
+		<geometry>
+			<cylinder radius="${caster_radius}"
+					  length="${caster_width}"/>
+		</geometry>
+		<material name="body_gray"/>
+	</visual>
+</link>
+
+<!--辅助万向轮滚动关节-->
+<joint name="caster_wheel_joint" type="continuous">
+	<parent link="caster_swivel_link"/>
+	<child  link="caster_wheel_link/>
+	<origin xyz="-0.10 0 -0.045" rpy="0 0 0"/>
+	<axis   xyz="0 1 0"/>
+</joint>
+```
+这里要注意:
+- `<origin>` 定义lun xin
