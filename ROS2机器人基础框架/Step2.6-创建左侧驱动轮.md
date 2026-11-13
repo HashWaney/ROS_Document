@@ -187,5 +187,14 @@ ros2 topic echo /joint_states --once
 
 预期包含:
 ```
-
+name:
+- left_wheel_joint
+position:
+- 0.0
 ```
+
+最后检查动态TF:
+```
+ros2 run tf2_ros tf2_echo base_link left_wheel_link
+```
+应该nengg ch
