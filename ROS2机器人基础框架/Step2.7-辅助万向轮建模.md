@@ -66,8 +66,26 @@ base_link
 
 设计如下:
 
-| 参数     | 设置                  |
-| ------ | ------------------- |
-| 新Link  | caster_swivel_link  |
-| 新Joint | caster_swivel_joint |
-| Pare   |                     |
+| 参数      | 设置                  |
+| ------- | ------------------- |
+| 新Link   | caster_swivel_link  |
+| 新Joint  | caster_swivel_joint |
+| Parent  | caster_mount_link   |
+| Child   | caster_swivel_link  |
+| Joint类型 | continuous          |
+| 旋转轴     | 0 0 1               |
+这里选择`continuous`, 因为万向轮需要能够绕竖直轴自由转向, 注意: 它是被动转向关节, 不代表以后必须要为它配置一个驱动电机. URDF目前只描述运动学结构, 并不模拟轮子自动随运动方向转向的物理行为.
+
+**二、修改Xacro文件**
+
+在现有`caster_mount_joint` 后面、`</robot>` 之前添加:
+```
+<!--万向轮转向结构-->
+<link name="caster_s
+
+
+
+<!--万向轮绕Z轴自由转向-->
+
+
+```
