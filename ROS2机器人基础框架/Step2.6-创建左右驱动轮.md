@@ -340,5 +340,15 @@ ros2 run tf2_ros tf2_echo base_link left_wheel_link
 
 再检查右轮:
 ```
-ros2 run t
+ros2 run tf2_ros tf2_echo base_link right_wheel_link
 ```
+输出内容包含: `Translation: [0.000, -0.170, -0.025]
+
+这意味着两个轮子相对于`base_link` 对称安装
+
+| 坐标  | 左轮      | 右轮      |
+| --- | ------- | ------- |
+| X   | 0       | 0       |
+| Y   | +0.170m | -0.170m |
+| Z   | -0.025m | -0.025m |
+
