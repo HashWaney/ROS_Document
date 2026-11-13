@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/未命名.md",
+                "file": "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "Step2.7-辅助万向轮建模"
             }
           }
         ],
@@ -238,10 +238,10 @@
       "obshare:分享当前页面": false
     }
   },
-  "active": "5e5ca0f859dd30f8",
+  "active": "815a2ae1ea6784e7",
   "lastOpenFiles": [
     "ROS2机器人基础框架/Step2.6-创建左右驱动轮.md",
-    "ROS2机器人基础框架/未命名.md",
+    "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
     "Pasted image 20261112114309.png",
     "Pasted image 20261112113909.png",
     "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
