@@ -271,3 +271,39 @@ xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
 grep -E 'name="(left|right)_wheel_(link|joint)"' /tmp/robot_foundation.urdf
 ```
 预计输出内容:
+```
+  <link name="left_wheel_link">
+  <joint name="left_wheel_joint" type="continuous">
+  <link name="right_wheel_link">
+  <joint name="right_wheel_joint" type="continuous">
+
+```
+
+
+### Step 2.6.5 验证左右驱动轮的关节状态和TF坐标系
+目的只重新加载模型并验证双轮是否正确发布
+
+一、验证目标
+目前的机器人结构应该是:
+```
+base_footprint
+└── base_link
+    ├── left_wheel_link
+    └── right_wheel_link
+```
+需要确认的是:
+- `joint_state_publisher` 能同时发布左右轮的关节状态
+- `robot_state_publisher` 能正确发布左右轮的动态TF
+- RViz2能显示完整的双驱动轮底盘
+
+二、重写构建并启动
+关闭之前的终端, 停止当前正在运行的Launch, 然后执行
+```
+cd ~/robot_foundation_ws
+source /opt/ros/jazzy/setup.bash
+colcon build \
+--packages-select robot_description \
+--symlink-install
+
+source install/setu
+```
