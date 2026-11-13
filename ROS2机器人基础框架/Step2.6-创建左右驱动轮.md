@@ -305,5 +305,40 @@ colcon build \
 --packages-select robot_description \
 --symlink-install
 
-source install/setu
+source install/setup.bash
+ros2 launch robot_description display.launch.py
+```
+
+保持终端运行, 观察RViz2, 查看底盘主体和左右两个圆柱体形驱动轮
+
+三、验证关节状态
+打开新的终端, 执行
+```
+source install/setup.bash
+
+ros2 topic echo /joint_states --once
+```
+预期输出内容包含:
+```
+name:
+- left_wheel_joint
+- right_wheel_joint
+position:
+- 0.0
+- 0.0
+
+```
+
+四、验证左右轮的动态TF
+
+先查左轮, 执行下面指令:
+```
+ros2 run tf2_ros tf2_echo base_link left_wheel_link
+```
+
+输出内容包含: `- Translation: [0.000, 0.170, -0.025]`
+
+再检查右轮:
+```
+ros2 run t
 ```
