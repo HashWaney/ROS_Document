@@ -259,3 +259,15 @@ base_footprint
 	<axis   xyz="0 0 0"/>
 </joint>
 ```
+
+### 三、验证Xacro结构
+保存后, 在终端执行:
+```
+cd ~/robot_foundation_ws
+xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
+```
+然后检查左右轮是否同时存在: 
+```
+grep -E 'name="(left|right)_wheel_(link|joint)"' /tmp/robot_foundation.urdf
+```
+预计输出内容:
