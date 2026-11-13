@@ -33,4 +33,14 @@
 后续会在安装座下面增加:
 - 万向轮转向关节(绕Z轴)
 - 万向轮滚动关节(绕轮轴)
-这样才能正确描述具有转向自由度的fu z
+这样才能正确描述具有转向自由度的辅助万向轮, 而不只是一个球体代替.
+
+**三、验证URDF**
+执行指令:
+```
+cd ~/robot_foundation_ws
+xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
+grep -E 5 'name="caster_mount_joint"' /tmp/robot_foundation.urdf
+```
+预期输出:
+
