@@ -36,3 +36,22 @@
 
 2、给底盘base_link添加Inertial
 在`base_link`的`</collision>`后、`</link>` 前添加
+```
+<!--底盘质量及惯性参数-->
+<inertial>
+	<origin xyz="0 0 0.04" rpy="0 0 0"/>
+	<mass value="${base_mass}"/>
+	<inertia
+		ixx="${base_mess*(base_width**2+base_height**2)/12.0}"
+		ixy="0"
+		ixz="0"
+		iyy="${base_mass*(base_length**2+base_height**2)/12.0}"
+		iyz="0"
+		izz="${base_mass*(base_length**2+base_width**2)/12.0}"/>
+</inertial>
+```
+
+这里采用长方体惯性公司:
+
+		Ixx = m(w^2+h^2)/12
+			
