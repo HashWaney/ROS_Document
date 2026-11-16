@@ -253,3 +253,16 @@ source ~/robot_foundation_ws/install/setup.bash
 
 ros2 topic echo /joint_states --once
 ```
+预期输出:
+```
+name:
+- left_wheel_joint
+- right_wheel_joint
+- caster_swivel_joint
+- caster_wheel_joint
+position:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+```
