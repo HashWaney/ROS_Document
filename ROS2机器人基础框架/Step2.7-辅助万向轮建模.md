@@ -229,3 +229,27 @@ base_footprint
 | caster_swivel_joint | 万向轮绕Z轴转向 |
 | caster_wheel_joint  | 万向轮绕Y轴滚动 |
 
+一. 先按`Ctrl+C` 停止之前的Launcher, 确保没有单独运行的`joint_state_publisher`, 执行指令:
+
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-select robot_description --symlink-install
+
+source install/setup.bash
+
+ros2 launch robot_description display.launch.py
+```
+观察Launch是否正常启动以下三个节点:
+- `robot_state_publisher`
+- `joint_state_publisher`
+- `rviz2`
+二、检查关节状态
+新打开一个终端
+```
+source ~/robot_foundation_ws/install/setup.bash
+
+ros2 topic echo /joint_states --once
+```
