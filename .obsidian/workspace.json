@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step2.9-.md",
+                "file": "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step2.9-"
+              "title": "Step2.9-配置机器人质量与惯性参数(Inertial)"
             }
           }
         ],
@@ -214,7 +214,7 @@
   "active": "254ef725487b15db",
   "lastOpenFiles": [
     "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
-    "ROS2机器人基础框架/Step2.9-.md",
+    "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
     "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
     "Pasted image 20261116110141.png",
     "Pasted image 20261116110030.png",
