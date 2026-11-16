@@ -291,8 +291,25 @@ ros2 run tf2_ros tf2_echo base_link caster_wheel_link
 ```
 根据之前定义的URDF参数, 当转向角和滚动角均为0的时候, 
 
-| 变换    | X   | Y   | Z   |
-| ----- | --- | --- | --- |
-| base_ |     |     |     |
+| 变换                                    | X     | Y   | Z      |
+| ------------------------------------- | ----- | --- | ------ |
+| base_link->caster_mount_link          | -0.14 | 0   | 0      |
+| caster_mount_link->caster_swivel_link | 0     | 0   | -0.045 |
+| caster_swivel_link->caster_wheel_link | -0.24 | 0   | -0.045 |
 
+合并变换, 预期`tf2_echo` 输出:
+```
+At time 1794798381.601217421
+- Translation: [-0.240, 0.000, -0.045]
+- Rotation: in Quaternion (xyzw) [0.000, 0.000, 0.000, 1.000]
+```
+
+这里的-0.24m来自安装位置与万向轮拖距相加, 并不是配置错误;
+
+
+三、验证RViz2显示
+确认以下设置:
+- Fixed Frame: `base_footprint`
+- RobotModel:  Enabled, 状态为OK
+- TF: Enabled, gou xuan
 ![[Pasted image 20261116110030.png]]
