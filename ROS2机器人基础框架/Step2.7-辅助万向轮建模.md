@@ -311,5 +311,6 @@ At time 1794798381.601217421
 确认以下设置:
 - Fixed Frame: `base_footprint`
 - RobotModel:  Enabled, 状态为OK
-- TF: Enabled, gou xuan
+- TF: Enabled, 勾选Show Names
+可以观察到以下视图;
 ![[Pasted image 20261116110030.png]]
