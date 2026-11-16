@@ -26,5 +26,13 @@
 1、定义质量参数
 在已有的Xacro参数区添加:
 ```
-<!-- 临时zhi lian
+<!-- 临时质量参数, 单位kg-->
+<xacro:property name="base_mass" value="8.0"/>
+<xacro:property name="wheel_mass" value="0.5"/>
+<xacro:property name="caster_mass" value="0.2"/>
 ```
+
+这样以后只需要调整质量参数, 惯性矩阵就会自动重新计算
+
+2、给底盘base_link添加Inertial
+在`base_link`的`</collision>`后、`</link>` 前添加
