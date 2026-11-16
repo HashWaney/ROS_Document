@@ -67,3 +67,45 @@ robot_foundation
 cd ~/robot_foundation_ws
 xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urf
 ```
+
+然后运行以下检查脚本:
+```
+
+python3 - <<'PY'
+import xml.etree.ElementTree as ET
+
+root = ET.parse("/tmp/robot_foundation.urdf").getroot()
+
+expected = {
+    "base_link": "box",
+    "left_wheel_link": "cylinder",
+    "right_wheel_link": "cylinder",
+    "caster_wheel_link": "cylinder",
+}
+
+for name, shape in expected.items():
+    link = root.find(f"./link[@name='{name}']")
+    assert link is not None, f"{name}: Link 不存在"
+
+    collisions = link.findall("collision")
+    assert len(collisions) == 1, f"{name}: Collision 数量错误"
+
+    geometry = collisions[0].find("geometry")
+    assert geometry is not None
+    assert geometry.find(shape) is not None, f"{name}: 几何类型错误"
+
+    print(f"[PASS] {name}: {shape}")
+
+print("Collision 验证通过：4/4")
+PY
+
+```
+输出内容如下:
+```
+[PASS] base_link: box
+[PASS] left_wheel_link: cylinder
+[PASS] right_wheel_link: cylinder
+[PASS] caster_wheel_link: cylinder
+Collision 验证通过：4/4
+```
+
