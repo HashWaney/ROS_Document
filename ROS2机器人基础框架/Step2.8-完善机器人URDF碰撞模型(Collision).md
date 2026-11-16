@@ -16,8 +16,24 @@ robot_foundation
 
 本次需要配置Collision的是四个实体部件:
 
-| Link            | 碰撞几何     | 尺寸              |
-| --------------- | -------- | --------------- |
-| base_link       | Box      | 0.40x0.30x0.10m |
-| left_wheel_link | Cylinder | 半径0.05m、宽0.04m  |
-| right_wheel_lin |          |                 |
+| Link              | 碰撞几何     | 尺寸              |
+| ----------------- | -------- | --------------- |
+| base_link         | Box      | 0.40x0.30x0.10m |
+| left_wheel_link   | Cylinder | 半径0.05m、宽0.04m  |
+| right_wheel_link  | Cylinder | 半径0.05m、宽0.04m  |
+| caster_wheel_link | Cylinder | 半径0.03m、宽0.025m |
+`base_footprint` 、`caster_mount_link`、`caster_swivel_link` 目前只是坐标或运动学连接节点, 不需要额外添加碰撞几何.
+
+**二、修改Xacro文件**
+
+1、底盘主体Collision
+在`base_link`的`</visual>`后添加:
+```
+<collision>
+	<origin xyz="0 0 0.04" rpy="0 0 0"/>
+	<geometry>
+		<box size="${base_length} ${base_width} ${base_height}"/>
+	</geometry>
+</collision>
+```
+2、左右驱动轮Collision
