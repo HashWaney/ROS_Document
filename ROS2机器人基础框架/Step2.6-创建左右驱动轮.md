@@ -235,7 +235,6 @@ base_footprint
 | 旋转轴     | 0 1 0      | 0  1 0     |
 | Joint类型 | continuous | continuous |
 
->**这些仍然是开发验证使用的示例尺寸, 不是实际机器人的硬件规格**
 
 
 ### 二、修改Xacro文件
