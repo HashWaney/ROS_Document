@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step2.8-完善.md",
+                "file": "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step2.8-完善"
+              "title": "Step2.8-完善机器人URDF碰撞模型(Collision)"
             }
           }
         ]
@@ -208,7 +208,7 @@
     "Pasted image 20261112113909.png",
     "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
     "Pasted image 20261112104004.png",
-    "ROS2机器人基础框架/Step2.8-完善.md",
+    "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
     "Pasted image 20261112094050.png",
     "Pasted image 20261112090142.png",
     "ROS2机器人基础框架/Step2.4-将 URDF 正式纳入 ROS 2 Package，并实现一键启动.md",
