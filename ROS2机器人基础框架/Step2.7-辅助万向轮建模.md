@@ -268,3 +268,31 @@ position:
 ```
 
 ### Step2.7.5: 验证辅助万向轮的TF坐标变换和RViz2显示
+
+一、 确认当前机器人结构
+
+```
+base_footprint
+└── base_link
+    ├── left_wheel_link
+    ├── right_wheel_link
+    └── caster_mount_link
+        └── caster_swivel_link
+            └── caster_wheel_link
+```
+
+本次重点验证万向轮的三级连接:
+![[Pasted image 20261116110141.png]]
+二、执行TF验证
+保持之前的Launch正常运行,新打开Ubuntu终端, 执行:
+```
+source ~/robot_foundation_ws/install/setup.bash
+ros2 run tf2_ros tf2_echo base_link caster_wheel_link
+```
+根据之前定义的URDF参数, 当转向角和滚动角均为0的时候, 
+
+| 变换    | X   | Y   | Z   |
+| ----- | --- | --- | --- |
+| base_ |     |     |     |
+
+![[Pasted image 20261116110030.png]]
