@@ -205,3 +205,27 @@ grep -A 5 'name="caster_wheel_joint"' /tmp/robot_foundation.urdf
     <axis xyz="0 1 0"/>
   </joint>
 ```
+
+
+### Step2.7.4: 验证辅助万向轮的关节状态
+本次先确认四个运动关节能够正常发布, TF和RViz2的完整结构留到下一步验证.
+
+当前机器人结构应该是:
+```
+base_footprint
+└── base_link
+    ├── left_wheel_link
+    ├── right_wheel_link
+    └── caster_mount_link
+        └── caster_swivel_link
+            └── caster_wheel_link
+```
+其中有四个`continuous`关节:
+
+| Joint               | 功能       |
+| ------------------- | -------- |
+| left_wheel_joint    | 左驱动轮滚动   |
+| right_wheel_joint   | 右驱动轮滚动   |
+| caster_swivel_joint | 万向轮绕Z轴转向 |
+| caster_wheel_joint  | 万向轮绕Y轴滚动 |
+
