@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
+                "file": "ROS2机器人基础框架/Step2.6-创建左右驱动轮.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step2.7-辅助万向轮建模"
+              "title": "Step2.6-创建左右驱动轮"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 492.5,
-    "collapsed": true
+    "width": 492.5
   },
   "right": {
     "id": "d5d0f7900ac073b2",
@@ -181,8 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,10 +197,10 @@
   },
   "active": "815a2ae1ea6784e7",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
     "Pasted image 20261113162854.png",
     "Pasted image 20261113152634.png",
     "ROS2机器人基础框架/Step2.6-创建左右驱动轮.md",
-    "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
     "Pasted image 20261112114309.png",
     "Pasted image 20261112113909.png",
     "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
@@ -221,7 +219,6 @@
     "机器人软件控制开发/05-实时系统与高性能计算/07、CUDA 基础.md",
     "机器人软件控制开发/01-C++17强化/01、智能指针————对象所有权的工程化表达.md",
     "Pasted image 20261110093211.png",
-    "Pasted image 20261109174654.png",
     "未命名.canvas",
     "ROS2机器人基础框架/Step7-进行完整节点联调.md",
     "ROS2机器人基础框架/Step6-引入Behavior Tree与Lifecycle.md",
