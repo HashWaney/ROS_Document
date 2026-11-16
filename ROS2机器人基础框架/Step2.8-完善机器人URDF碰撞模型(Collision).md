@@ -37,3 +37,26 @@ robot_foundation
 </collision>
 ```
 2、左右驱动轮Collision
+分别找到`left_wheel_link` 和 `right_wheel_link` , 在各自的`</visual>`后添加相同的内容:
+```
+<collision>
+	<origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+	<geometry>
+		<cylinder radius="${wheel_radius}"
+				  length="${wheel_width}"/>
+	</geometry>
+</collision>
+```
+这里沿用Visual中的旋转设置, 让圆柱体轴线与轮轴Y轴一致
+
+3、辅助万向轮Collision
+找到`caster_wheel_link` ,在其`</visual>`后添加:
+```
+<collision>
+	<origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+	<geometry>
+		<cylinder radius="${caster_radius}"
+				  length="${caster_width}"/>
+	</geometry>
+</collision>
+```
