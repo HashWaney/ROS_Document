@@ -60,3 +60,10 @@ robot_foundation
 	</geometry>
 </collision>
 ```
+
+**三、统一验证Collision模型**
+执行下列指令:
+```
+cd ~/robot_foundation_ws
+xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urf
+```
