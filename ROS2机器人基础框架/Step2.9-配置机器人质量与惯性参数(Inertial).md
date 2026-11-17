@@ -145,4 +145,86 @@ PY
 Inertial 验证通过：4/4
 当前建模质量：9.2 kg
 ```
-![[Pasted image 20261117162601.png]]
+
+检查URDF结构和惯性参数指令:
+```
+
+python3 - <<'PY'
+import xml.etree.ElementTree as ET
+
+root = ET.parse("/tmp/robot_foundation.urdf").getroot()
+
+links = root.findall("link")
+joints = root.findall("joint")
+
+assert len(links) == 7, "Link 数量异常"
+assert len(joints) == 6, "Joint 数量异常"
+
+expected = [
+    "base_link",
+    "left_wheel_link",
+    "right_wheel_link",
+    "caster_wheel_link"
+]
+
+total_mass = 0.0
+
+for name in expected:
+    link = root.find(f"./link[@name='{name}']")
+    assert link is not None, f"{name} 不存在"
+
+    for tag in ["visual", "collision", "inertial"]:
+        assert link.find(tag) is not None, f"{name} 缺少 {tag}"
+
+    inertial = link.find("inertial")
+    mass = float(inertial.find("mass").get("value"))
+    assert mass > 0
+
+    inertia = inertial.find("inertia")
+
+    for attr in ["ixx", "ixy", "ixz", "iyy", "iyz", "izz"]:
+        value = float(inertia.get(attr))
+        if attr in ["ixx", "iyy", "izz"]:
+            assert value > 0
+
+    total_mass += mass
+    print(f"[PASS] {name}")
+
+assert abs(total_mass - 9.2) < 1e-6
+
+print(f"\nLinks: {len(links)}")
+print(f"Joints: {len(joints)}")
+print(f"Mass: {total_mass:.1f} kg")
+print("URDF 基础结构检查通过")
+PY
+
+```
+预期结果是:
+```
+[PASS] base_link
+[PASS] left_wheel_link
+[PASS] right_wheel_link
+[PASS] caster_wheel_link
+
+Links: 7
+Joints: 6
+Mass: 9.2 kg
+URDF 基础结构检查通过
+```
+
+四、运行时验收
+
+停止旧的Launch后, 重新构建和启动:
+```
+colcon build --packages-select robot_description --symlink-install
+source install/setup.bash
+ros2 launch robot_description display.launch.py
+```
+在另一个终端检查:
+```
+ros2 topic echo /joint_stats --once
+```
+
+
+
+![[Pasted image 20261117163156.png]]
