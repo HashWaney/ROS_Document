@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 492.5
+    "width": 492.5,
+    "collapsed": true
   },
   "right": {
     "id": "d5d0f7900ac073b2",
@@ -208,11 +209,14 @@
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
       "obsidian-git:Open Git source control": false,
-      "obshare:分享当前页面": false
+      "obshare:分享当前页面": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "obsidian-day-and-night:Toggle Theme": false
     }
   },
   "active": "254ef725487b15db",
   "lastOpenFiles": [
+    "Pasted image 20261117162601.png",
     "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
     "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
     "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
@@ -251,7 +255,6 @@
     "机器人软件控制开发/02-ROS2+C++机器人工程/09、launch+parameter+composition.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/08、BehaviorTree.CPP.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/07、nav2.md",
-    "机器人软件控制开发/02-ROS2+C++机器人工程/06、tf2.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程",
     "机器人软件控制开发",
     "机器人软件控制开发/05-实时系统与高性能计算",

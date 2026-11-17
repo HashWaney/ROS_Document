@@ -98,3 +98,51 @@
 ```
 xacro src/robot_description/urdf/robot.urdf.xacro -o /tmp/robot_foundation.urdf
 ```
+然后运行检查脚本
+```
+
+python3 - <<'PY'
+import xml.etree.ElementTree as ET
+
+root = ET.parse("/tmp/robot_foundation.urdf").getroot()
+
+expected = {
+    "base_link": 8.0,
+    "left_wheel_link": 0.5,
+    "right_wheel_link": 0.5,
+    "caster_wheel_link": 0.2,
+}
+
+for name, expected_mass in expected.items():
+    link = root.find(f"./link[@name='{name}']")
+    assert link is not None, f"{name}: Link 不存在"
+
+    inertial = link.find("inertial")
+    assert inertial is not None, f"{name}: Inertial 不存在"
+
+    mass = float(inertial.find("mass").get("value"))
+    inertia = inertial.find("inertia")
+
+    assert abs(mass - expected_mass) < 1e-6
+    assert inertial.find("origin") is not None
+
+    for axis in ("ixx", "iyy", "izz"):
+        assert float(inertia.get(axis)) > 0
+
+    print(f"[PASS] {name}: mass={mass} kg")
+
+print("Inertial 验证通过：4/4")
+print(f"当前建模质量：{sum(expected.values()):.1f} kg")
+PY
+
+```
+预期会输出:
+```
+[PASS] base_link: mass=8.0 kg
+[PASS] left_wheel_link: mass=0.5 kg
+[PASS] right_wheel_link: mass=0.5 kg
+[PASS] caster_wheel_link: mass=0.2 kg
+Inertial 验证通过：4/4
+当前建模质量：9.2 kg
+```
+![[Pasted image 20261117162601.png]]
