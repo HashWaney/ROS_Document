@@ -225,6 +225,13 @@ ros2 launch robot_description display.launch.py
 ros2 topic echo /joint_stats --once
 ```
 
-
+预计输出:
+```
+name:
+- left_wheel_joint
+- right_wheel_joint
+- caster_swivel_joint
+- caster_wheel_joint
+```
 
 ![[Pasted image 20261117163156.png]]

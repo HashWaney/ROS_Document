@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
+                "file": "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step2.9-配置机器人质量与惯性参数(Inertial)"
+              "title": "Step3-建立机器人整机状态机"
             }
           }
         ],
@@ -216,10 +216,10 @@
   },
   "active": "254ef725487b15db",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
     "Pasted image 20261117163156.png",
     "Pasted image 20261117162601.png",
     "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
-    "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
     "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
     "Pasted image 20261116110141.png",
     "Pasted image 20261116110030.png",
@@ -231,7 +231,6 @@
     "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
     "Pasted image 20261112104004.png",
     "Pasted image 20261112094050.png",
-    "Pasted image 20261112090142.png",
     "ROS2机器人基础框架/Step2.4-将 URDF 正式纳入 ROS 2 Package，并实现一键启动.md",
     "ROS2机器人基础框架/Step2.2-创建机器人的第一个Link -base_link.md",
     "ROS2机器人基础框架/Step2.3-第一次在RViz2 显示机器人.md",
