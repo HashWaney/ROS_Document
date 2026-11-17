@@ -60,17 +60,17 @@
 分别找到`left_wheel_link` 和 `right_wheel_link`, 在各自的`</collision>`后添加相同的代码:
 ```
 <!-- 驱动轮质量及惯性参数-->
-<inertial>
-	<origin xyz="0 0 0" rpy="0 0 0"/>
-	<mass value="${wheel_mass}"/>
-	<inertia 
-		ixx="${wheel_mass*(3*wheel_radius**2+wheel_width**2)/12.0}"
-		ixy="0"
-		ixz="0"
-		iyy="${wheel_mass*wheel_radius**2/2.0}"
-		iyz="0"
-		izz="${wheel_mass*(3*wheel_radius**2 + wheel_width**2)/12.0}"/>
-</inertial>
+    <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="${wheel_mass}"/>
+            <inertia 
+                ixx="${wheel_mass * (3 * wheel_radius**2 + wheel_width**2) / 12.0}"
+                ixy="0"
+                ixz="0"
+                iyy="${wheel_mass*wheel_radius**2/2.0}"
+                iyz="0"
+                izz="${wheel_mass*(3*wheel_radius**2+wheel_width**2)/12.0}"/>
+        </inertial>
 ```
 
 注意: 圆柱轮子的Visual已经旋转到Y轴方向, 因此惯性矩阵采用Y轴作为滚动轴, 与左右驱动轮的Joint axis-一致
@@ -78,18 +78,18 @@
 4、为辅助万向轮添加Inertial
 找到`caster_wheel_link`, 同样在`</collision>` 后添加:
 ```
-<!-- 万向轮轮体质量及惯性参数-->
-<inertial>
-	<origin xyz="0 0 0" rpy="0 0 0"/>
-	<mass value="${caster_mass}"/>
-	<inertia
-		ixx="${caster_mass*(3*caster_radius**2+ caster_width**2)/12.0}"
-		ixy="0"
-		ixz="0"
-		iyy="${caster_mass*caster_radius**2/2.0}"
-		iyz="0"
-		izz="${caster_mass*(3*caster_radius**2+ caster_width**2)/12.0}"/>
-</inertial>
+ <!-- 万向轮轮体质量及惯性参数 -->
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="${caster_mass}"/>
+            <inertia
+                ixx="${caster_mass*(3*caster_radius**2+caster_width**2)/12.0}"
+                ixy="0"
+                ixz="0"
+                iyy="${caster_mass*caster_radius**2/2.0}"
+                iyz="0"
+                izz="${caster_mass*(3*caster_radius**2+caster_width**2)/12.0}"/>
+        </inertial>
 ```
 这样四个实体部件都有了各自的质量和惯性定义
 
