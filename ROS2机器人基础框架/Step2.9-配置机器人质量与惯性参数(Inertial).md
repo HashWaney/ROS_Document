@@ -58,3 +58,6 @@
 		Izz = m(l^2+w^2)/12
 3、为左右驱动轮添加Inertial
 分别找到`left_wheel_link` 和 `right_wheel_link`, 在各自的`</collision>`后添加相同的代码:
+```
+<!-- 驱动lun-->
+```
