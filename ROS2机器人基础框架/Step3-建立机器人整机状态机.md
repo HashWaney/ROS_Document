@@ -36,3 +36,18 @@ ROS 2 Lifecycle 已经具有`Unconfigured` 、`Inactive`、`Active` 和 `Finaliz
 
 ### 三、状态转换设计
 ![[Pasted image 20261117172816.png]]
+
+
+**关键转换规则**
+
+| 当前状态   | 事件                 | 目标状态   | 前置条件            |
+| ------ | ------------------ | ------ | --------------- |
+| INIT   | INIT_SUCCESS       | IDLE   | 必要模块自检完成        |
+| INIT   | INIT_FAILED        | FAULT  | 初始化失败           |
+| IDLE   | START_MANUAL       | MANUAL | 运动控制模块就绪,无阻断故障  |
+| IDLE   | START_AUTO         | AUTO   | 自动任务依赖满足, 无阻断故障 |
+| MANUAL | STOP               | IDLE   | 撤销运动许可          |
+| AUTO   | STOP/TASK_FINISHED | IDLE   | 取消或结束自动任务       |
+| 任意运行状态 | FAULT_RAISED       | FAULT  | 出现阻断允许的故障       |
+| 任意状态   | RESET_TRIGGERED    | ESTOP  | 紧急停止触发          |
+| FAULT  | RESET_FAULT        | INIT   | 故障源已消除且明确q      |
