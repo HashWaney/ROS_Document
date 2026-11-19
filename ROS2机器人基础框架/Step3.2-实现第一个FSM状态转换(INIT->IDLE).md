@@ -73,3 +73,5 @@ def _handle_init_success(self,request,response):
 
 这样所有状态都必须经过`_try_transition()`检查, 不允许外部请求直接修改`_state`, 原来的`_handle_get_state()` 和`_publish_state()` 保持不变.
 
+
+### 三、构建并运行
