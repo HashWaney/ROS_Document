@@ -143,5 +143,40 @@ if __name__ == "__main__":
 
 打开`/robot_foundation_ws/src/robot_system_manager/setup.py` , 找到`entry_points`, 将`console_scripts` 设置为:
 ```
-entry_points = {}
+entry_points = {
+	'console_scripts': [
+		'system_manager_node = robot_system_manager.system_manager_node:main'
+	]
+}
 ```
+其他配置保持不变;
+
+### 五、构建并验证
+
+> 1 、构建:
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-select robot_system_manager --symlink-install
+
+source install/setup.bash
+```
+
+> 2 、启动FSM节点
+
+在终端A运行system_manager_node 节点
+```
+ros2 run robot_system_manager system_manager_node
+```
+
+预期输出日志:
+```
+[INFO] [1795074896.591389434] [robot_system_manager]: System state: INIT
+```
+
+> 3、查询整机状态
+
+在终端Byu
+ 
