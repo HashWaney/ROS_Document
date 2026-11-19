@@ -12,6 +12,30 @@
 
 接口约定:
 
-| 接口        | 类型  | 作用  |
-| --------- | --- | --- |
-| `/system` |     |     |
+| 接口                  | 类型                     | 作用     |
+| ------------------- | ---------------------- | ------ |
+| `/system/state`     | `std_msgs/msg/String`  | 发布整机状态 |
+| `/system/get_state` | `std_srvs/srv/Trigger` | 查询当前状态 |
+
+### 二、创建ROS 2 Package
+
+在Ubuntu终端执行:
+```
+cd ~/robot_foundation_ws
+source /opt/ros/jazzy/setup.bash
+
+# 核验所需依赖
+ros2 pkg prefix rclpy
+ros2 pkg prefix std_msgs
+ros2 pkg prefix std_srvs
+```
+三项都能找到后, 创建Package, 执行下列指令:
+```
+cd ~/robot_foundation_ws/src
+
+ros2 pkg create robot_system_manager \
+	--build-type ament_python \
+	--license Apache-2.0 \
+	--dependencies rclcpy std_msgs std_srvs
+```
+
