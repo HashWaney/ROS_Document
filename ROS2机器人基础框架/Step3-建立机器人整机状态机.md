@@ -75,6 +75,15 @@ ROS 2 Lifecycle 已经具有`Unconfigured` 、`Inactive`、`Active` 和 `Finaliz
 
 现在先定义接口职责, 不急着创建`.msg`或`.srv`文件
 
-| 接口  |     |     |
-| --- | --- | --- |
-|     |     |     |
+| 接口                     | 类型      | 用途            |
+| ---------------------- | ------- | ------------- |
+| `/system/state`        | Topic   | 发布当前整机状态      |
+| `/system/change_state` | Service | 请求进入指定运行模式或复位 |
+| `/system/state_event`  | Topic   | 记录状态变化及原因     |
+| `/system/fault_event`  | Topic   | 接收故障管理模块的故障事件 |
+
+设计上, 状态切换请求应该由`robot_system_manager`统一验证. 外部节点不能直接修改整机状态, 每一次转换还应记录原状态、目标状态、事件、结果、拒绝原因和时间戳,  方便以后排查机器人日志
+
+
+
+
