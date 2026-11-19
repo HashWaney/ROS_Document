@@ -44,3 +44,22 @@ self._mock_init_srv = self.create_service(
 	self._handle_init_success
 )
 ```
+mock 明确表示该接口仅用于研发测试, 不代表真实机器人已经完成自检.
+
+3、 添加状态转换函数
+
+在`SystemManager` 类中, 与`_handle_get_state` 同一级别, 添加:
+```
+def _try_transition(self,event):
+	key =(self._state,event)
+	target=TRANSITIONS.get(key)
+	if target is None:
+		reason = f"Rejected : {self._state.value} + {event}"
+		self.get_logger().warn(reason)
+		return False, reason
+	previous = self._state
+	self._state = 
+
+
+
+```
