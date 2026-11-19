@@ -58,8 +58,18 @@ def _try_transition(self,event):
 		self.get_logger().warn(reason)
 		return False, reason
 	previous = self._state
-	self._state = 
-
-
+	self._state = target
+	self.get_logger().info(f"FSM: {previous.value}-> {target.value}")
+	self._publish_state()
+	return True, self._state.value
+	
+def _handle_init_success(self,request,response):
+	success, message = self._try_transition("INIT_SUCCESS")
+	response.success = success
+	response.message = message
+	return response
 
 ```
+
+这样所有状态都必须经过`_try_transition()`检查, 不允许外部请求直接修改`_state`, 原来的`_handle_get_state()` 和`_publish_state()` 保持不变.
+
