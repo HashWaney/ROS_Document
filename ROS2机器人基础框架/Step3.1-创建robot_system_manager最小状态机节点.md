@@ -39,3 +39,109 @@ ros2 pkg create robot_system_manager \
 	--dependencies rclcpy std_msgs std_srvs
 ```
 
+预期目录:
+```
+robot_foundation_ws/src/
+├── robot_description/
+└── robot_system_manager/
+    ├── package.xml
+    ├── setup.py
+    ├── setup.cfg
+    └── robot_system_manager/
+        └── __init__.py
+```
+这里采用独立Package, 避免把系统状态管理逻辑放进`robot_description`
+
+### 三、实现最小状态管理节点
+
+创建文件:
+```
+vi ~/robot_foundation_ws/src/robot_system_manager/robot_system_manager/system_manager_node.py
+```
+
+写入:
+```
+
+from enum import Enum
+
+import rclpy
+from rclpy.node import Node
+from rclpy.qos import QoSProfile, DurabilityPolicy
+from std_msgs.msg import String
+from std_srvs.srv import Trigger
+
+
+class SystemState(str, Enum):
+    INIT = "INIT"
+    IDLE = "IDLE"
+    MANUAL = "MANUAL"
+    AUTO = "AUTO"
+    FAULT = "FAULT"
+    ESTOP = "ESTOP"
+
+
+class SystemManager(Node):
+
+    def __init__(self):
+        super().__init__("robot_system_manager")
+
+        # 当前整机状态唯一由本节点维护
+        self._state = SystemState.INIT
+
+        # 保留最新状态，供后加入的订阅者获取
+        qos = QoSProfile(
+            depth=1,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL
+        )
+
+        self._state_pub = self.create_publisher(
+            String, "/system/state", qos
+        )
+
+        self._get_state_srv = self.create_service(
+            Trigger,
+            "/system/get_state",
+            self._handle_get_state
+        )
+
+        self._publish_state()
+
+    def _publish_state(self):
+        msg = String()
+        msg.data = self._state.value
+        self._state_pub.publish(msg)
+        self.get_logger().info(f"System state: {msg.data}")
+
+    def _handle_get_state(self, request, response):
+        response.success = True
+        response.message = self._state.value
+        return response
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = SystemManager()
+
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+这段代码目前只有三个职责: 定义六个状态、启动时初始化为INIT、对外提供查询接口.
+
+### 四、注册可执行节点
+
+打开`/robot_foundation_ws/src/robot_system_manager/setup.py` , 找到`entry_points`, 将`console_scripts` 设置为:
+```
+entry_points = {}
+```
