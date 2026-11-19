@@ -178,5 +178,31 @@ ros2 run robot_system_manager system_manager_node
 
 > 3、查询整机状态
 
-在终端Byu
+在终端B执行以下指令:
+```
+source ~/robot_foundation_ws/install/setup.bash
+
+ros2 service call /system/get_state std_srvs/srv/Trigger '{}'
+```
+预期返回:
+```
+response:
+std_srvs.srv.Trigger_Response(success=True, message='INIT')
+```
+
+> 4、 再验证Topic
  
+ 终端A: 保持`robot_system_manager`运行, 在终端B中执行
+```
+source ~/robot_foundation_ws/install/setup.bash
+
+ros2 topic echo /system/state std_msgs/msg/String \
+  --qos-reliability reliable \
+  --qos-durability transient_local 
+```
+
+预期会输出:
+```
+data: INIT
+```
+> 5、检查订阅
