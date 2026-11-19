@@ -75,3 +75,26 @@ def _handle_init_success(self,request,response):
 
 
 ### 三、构建并运行
+
+先停止原来正在运行的状态管理节点, 在终端A中执行
+
+```
+cd ~/robot_foundation_ws
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-select robot_system_manager --symlink-install
+
+source install/setup.bash
+
+ros2 run robot_system_manager system_manager_node
+```
+预计输出:
+```
+[INFO] [1795080360.981813614] [robot_system_manager]: System state: INIT
+```
+
+然后在终端B: 持续订阅状态
+```
+source install/setup.bash
+ros2 topic echo /system/state --qos-reliability reliable --qos-dura
+```
