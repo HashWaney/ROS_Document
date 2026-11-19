@@ -40,14 +40,23 @@ ROS 2 Lifecycle 已经具有`Unconfigured` 、`Inactive`、`Active` 和 `Finaliz
 
 **关键转换规则**
 
-| 当前状态   | 事件                 | 目标状态   | 前置条件            |
-| ------ | ------------------ | ------ | --------------- |
-| INIT   | INIT_SUCCESS       | IDLE   | 必要模块自检完成        |
-| INIT   | INIT_FAILED        | FAULT  | 初始化失败           |
-| IDLE   | START_MANUAL       | MANUAL | 运动控制模块就绪,无阻断故障  |
-| IDLE   | START_AUTO         | AUTO   | 自动任务依赖满足, 无阻断故障 |
-| MANUAL | STOP               | IDLE   | 撤销运动许可          |
-| AUTO   | STOP/TASK_FINISHED | IDLE   | 取消或结束自动任务       |
-| 任意运行状态 | FAULT_RAISED       | FAULT  | 出现阻断允许的故障       |
-| 任意状态   | RESET_TRIGGERED    | ESTOP  | 紧急停止触发          |
-| FAULT  | RESET_FAULT        | INIT   | 故障源已消除且明确q      |
+| 当前状态   | 事件                 | 目标状态   | 前置条件               |
+| ------ | ------------------ | ------ | ------------------ |
+| INIT   | INIT_SUCCESS       | IDLE   | 必要模块自检完成           |
+| INIT   | INIT_FAILED        | FAULT  | 初始化失败              |
+| IDLE   | START_MANUAL       | MANUAL | 运动控制模块就绪,无阻断故障     |
+| IDLE   | START_AUTO         | AUTO   | 自动任务依赖满足, 无阻断故障    |
+| MANUAL | STOP               | IDLE   | 撤销运动许可             |
+| AUTO   | STOP/TASK_FINISHED | IDLE   | 取消或结束自动任务          |
+| 任意运行状态 | FAULT_RAISED       | FAULT  | 出现阻断允许的故障          |
+| 任意状态   | RESET_TRIGGERED    | ESTOP  | 紧急停止触发             |
+| FAULT  | RESET_FAULT        | INIT   | 故障源已消除且明确请求复位      |
+| ESTOP  | RESET_ESTOP        | INIT   | 急停源解除, 安全条件满足、人工复位 |
+其中有几条必须坚持的设计约束:
+**第一: 手动模式与自动模型不允许直接互相切换**
+
+> 必须先退出当前运动模式, 撤销原控制源许可并进入IDLE, 再进入另一种模式, 避免两个控制源争夺底盘.
+
+**第二: 急停优先级最高**
+
+> 当 ESTOP 与普通故障同时发生时, 优先保持急停状态. 急停解除后也不能直接恢复此前的AUTOhuo
