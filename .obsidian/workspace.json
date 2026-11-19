@@ -230,6 +230,7 @@
   },
   "active": "254ef725487b15db",
   "lastOpenFiles": [
+    "Pasted image 20261119164701.png",
     "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
     "ROS2机器人基础框架/Step3.2-实现第一个FSM状态转换(INIT->IDLE).md",
     "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
@@ -268,7 +269,6 @@
     "机器人软件控制开发/01-C++17强化/08、gtest.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/01、rclcpp.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程/09、launch+parameter+composition.md",
-    "机器人软件控制开发/02-ROS2+C++机器人工程/08、BehaviorTree.CPP.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程",
     "机器人软件控制开发",
     "机器人软件控制开发/05-实时系统与高性能计算",
