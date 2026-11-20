@@ -15,4 +15,10 @@
 | ESTOP_RELEASED  | 模拟急停输入已经解除          |
 | RESET_ESTOP     | 满足条件后, 从ESTOP返回INIT |
 这里采用三个基本原则:
-- 1 . ESTOP 优先级高于FAULT . 即使急停期间又发生了故障, 整机状态仍保持ESTOP, 但要记录
+- 1 . ESTOP 优先级高于FAULT . 即使急停期间又发生了故障, 整机状态仍保持ESTOP, 但要记录故障
+- 2. 解除异常不等于复位. 例如`ESTOP_RELEASED` 不会自动返回INIT, 必须再次执行`RESET_ESTOP`
+- 3. 复位只能返回INIT. 不允许故障或急停解除后直接恢复到之前的MANUAL、AUTO
+
+
+### 二、 修改system_manager_node.py
+
