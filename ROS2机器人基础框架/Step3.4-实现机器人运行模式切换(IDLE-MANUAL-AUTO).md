@@ -68,5 +68,24 @@ source install/setup.bash
 ```
 1、初始化完成测试
 ```
-ros2 service call /system/send_eve
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: INIT_SUCCESS, source: cli_test1}"
+```
+
+预期输出:
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='INIT_SUCCESS', source='cli_test1')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='INIT', current_state='IDLE', reason='Accepted: INIT -> IDLE')
+
+```
+
+2、进入到手动模式测试
+
+```
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: START_MANUAL, source: cli_test2}"
+```
+预期输出:
+```
+
 ```
