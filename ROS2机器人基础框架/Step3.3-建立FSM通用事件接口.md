@@ -134,4 +134,43 @@ INIT + INIT_SUCCESS -> IDLE
 其他尚未实现的事件统一拒绝.
 
 4、声明Package依赖
-打开
+打开src/robot_system_manager/package.xml, 在依赖区域添加:
+```
+<exec_depend>robot_interfaces</exec_depend>
+```
+
+### 四、构建并运行
+
+先停止旧的`robot_system_manager` 节点, 然后执行以下指令
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-up-to robot_system_manager --symlink-install
+
+source install/setup.bash
+```
+
+验证自定义接口是否生成:
+```
+ros2 interface show robot_interfaces/srv/SendEvent
+```
+应能看到刚才定义的请求和响应字段
+
+启动节点, 此时状态应该为INIT
+```
+ros2 run robot_system_manager system_manager_node
+```
+
+### 五、验证通用事件接口
+
+新开终端并加载工作空间
+```
+source ~/robot_foundation_ws/install/setup.bash
+```
+
+1 、测试合法转换:
+```
+ros2 service call 
+```
