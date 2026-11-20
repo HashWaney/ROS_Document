@@ -58,4 +58,24 @@ self._estop_input_active = False
 上述与FSM状态不是同一个概念, 例如机器人已经进入FAULT, 即使`_fault_input_active`变成False, 也必须经过明确复位才能离开FAULT
 
 3、替换`_try_transition()`
-将原来的
+将原来的`_try_transition()` 方法完整替换成:
+```
+def _try_transition(self,event):
+	previous = self._state
+	# 1. 急停触发, 最高优先级
+	if event == "ESTOP_TRIGGERED":
+		self._estop_input_active = True
+		target = SystemState.ESTOP
+	# 2. 故障触发
+	elif event == "FAULT_RAISED":
+		self._fault_input_active = True
+		
+		# 急停期间发生故障, 不覆盖ESTOP状态
+		target = (
+			SystemState.ESTOP,
+			if self._state == SystemState.ESTOP
+			else SystemState.FAULT
+		)
+	# 3. 模拟急停输入解除
+	elif event == "ESTOP_RELEASED":
+```
