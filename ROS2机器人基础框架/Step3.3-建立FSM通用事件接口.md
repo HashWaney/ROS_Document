@@ -87,3 +87,24 @@ ament_package()
 ### 三、修改robot_system_manager
 
 1、导入新接口
+在文件顶部添加:
+```
+from robot_interfaces.srv import SendEvent
+```
+
+2、注册通用事件Service
+在`SystemManager.__init__()` 中添加:
+```
+self._send_event_srv = self.create_service(SendEvent, "/system/send_event",self._handle_send_event)
+```
+之前的`/system/mock_init_success` 可以暂时保留, 方便回归测试. 两个接口都通过`_try_transition()`修改状态, 不建立第二套FSM逻辑
+
+3、添加事件处理函数
+在`SystemManager`类中添加:
+```
+def _handle_send_event(self,request,response):
+	event = request.event.strip().upper()
+	source = request.source.strip() or "unknown"
+	
+	previous = self._s
+```
