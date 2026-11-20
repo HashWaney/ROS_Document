@@ -96,5 +96,11 @@ ros2 run robot_system_manager system_manager_node
 然后在终端B: 持续订阅状态
 ```
 source install/setup.bash
-ros2 topic echo /system/state --qos-reliability reliable --qos-dura
+ros2 topic echo /system/state --qos-reliability reliable --qos-durability transient_local
 ```
+预计输出:
+```
+data: INIT
+```
+
+终端C: 触发模拟
