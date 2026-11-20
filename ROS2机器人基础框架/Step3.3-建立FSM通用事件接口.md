@@ -58,7 +58,8 @@ string reason
 | reason         | 接受或拒绝原因               |
 `source` 目前只用于日志追踪, 不具备身份认证能力.
 
-配置CmakeLists.txt,保留project(robot_interfaces), 确认以下配置存在, 并且ament_package() 位于最后:
+**配置`CmakeLists.txt`**
+保留project(robot_interfaces), 确认以下配置存在, 并且ament_package() 位于最后:
 
 ```
 find_package(ament_camke REQUIRED)
@@ -68,5 +69,18 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 	"srv/SendEvent.srv"
 )
 
-ament_export_dependencies(roidl_)
+ament_export_dependencies(roidl_default_runtime)
+
+ament_package()
 ```
+不要重复添加已有的`find_package(ament_cmake REQUIRED)` 或 `ament_package()`
+
+**配置package.xml**
+在`robot_interfaces/package.xml`的依赖区域添加:
+```
+<build_depend>rosidl_default_generators</build_depend>
+<exec_depend>rosild_default_runtime</exec_depend>
+<member_of_group>rosild_interface_packages</member_of_group>
+```
+原有的`ament_cmake` 构建依赖保持不变.
+
