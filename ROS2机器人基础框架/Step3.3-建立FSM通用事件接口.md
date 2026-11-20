@@ -172,5 +172,44 @@ source ~/robot_foundation_ws/install/setup.bash
 
 1 、测试合法转换:
 ```
-ros2 service call 
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: INIT_SUCCESS, source: cli_test}"
+```
+预期关键字段:
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='INIT_SUCCESS', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='INIT', current_state='IDLE', reason='Accepted: INIT -> IDLE')
+```
+
+
+2、 测试重复事件
+再次发送同一个事件:
+```
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: INIT_SUCCESS, source: cli_test}"
+```
+预期输出:
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='INIT_SUCCESS', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=False, previous_state='IDLE', current_state='IDLE', reason='Rejected: IDLE+ INIT_SUCCESS')
+```
+
+3、测试为定义事件:
+```
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: START_AUTO, source: cli_test}"
+```
+由于尚未实现IDLE  -> AUTO 规则, 应该返回:
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='START_AUTO', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=False, previous_state='IDLE', current_state='IDLE', reason='Rejected: IDLE+ START_AUTO')
+
+```
+
+4、查询当前状态
+```
+ros2 service call /system/get_state ""
 ```
