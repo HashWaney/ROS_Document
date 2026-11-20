@@ -56,4 +56,17 @@ ros2 run robot_system_manager system_manager_node
 ```
 System state: INIT
 ```
+保持节点运行
 
+### 四、运行状态转换测试
+
+打开第二个终端:
+```
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+
+```
+1、初始化完成测试
+```
+ros2 service call /system/send_eve
+```
