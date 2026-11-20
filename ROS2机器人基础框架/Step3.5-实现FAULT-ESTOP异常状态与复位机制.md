@@ -46,3 +46,16 @@ TRANSITIONS = {
 	
 }
 ```
+这里没有将`FAULT_RAISED` 和 `ESTOP_TRIGGERED` 写成普通状态转换表规则, 因为它们属于全局异常事件, 需要从多个状态触发.
+
+2、增加异常输入标志
+找到`SystemManager.__init__()` 中的 `self._state=SystemState.INIT`, 在其后面添加:
+```
+# 模拟的外部异常输入状态
+self._fault_input_active = False
+self._estop_input_active = False
+```
+上述与FSM状态不是同一个概念, 例如机器人已经进入FAULT, 即使`_fault_input_active`变成False, 也必须经过明确复位才能离开FAULT
+
+3、替换`_try_transition()`
+将原来的
