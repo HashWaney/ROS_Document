@@ -12,5 +12,7 @@
 | FAULT_CLEARED   | 模拟故障原因已经消除          |
 | RESET_FAULT     | 满足条件后, 从FAULT返回INIT |
 | ESTOP_TRIGGERED | 触发急停, 进入到ESTOP      |
-| ESTOP_RELEASED  |                     |
-|                 |                     |
+| ESTOP_RELEASED  | 模拟急停输入已经解除          |
+| RESET_ESTOP     | 满足条件后, 从ESTOP返回INIT |
+这里采用三个基本原则:
+- 1 . ESTOP 优先级高于FAULT . 即使急停期间又发生了故障, 整机状态仍保持ESTOP, 但要记录
