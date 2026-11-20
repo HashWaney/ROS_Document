@@ -211,5 +211,12 @@ robot_interfaces.srv.SendEvent_Response(accepted=False, previous_state='IDLE', c
 
 4、查询当前状态
 ```
-ros2 service call /system/get_state ""
+ros2 service call /system/get_state std_srvs/srv/Trigger '{}'
+```
+预期输出:
+```
+requester: making request: std_srvs.srv.Trigger_Request()
+
+response:
+std_srvs.srv.Trigger_Response(success=True, message='IDLE')
 ```
