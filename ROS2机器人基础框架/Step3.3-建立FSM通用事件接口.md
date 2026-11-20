@@ -42,5 +42,31 @@ string event
 string source 
 ---
 bool accepted
+string previous_state
+string current_state
+string reason
+```
+其中:
 
+| 字段             | 作用                    |
+| -------------- | --------------------- |
+| event          | 事件名称, 例如 INIT_SUCCESS |
+| source         | 事件来源标识, 例如cli_test    |
+| accepted       | 事件是否被接受               |
+| previous_state | 转换前状态                 |
+| current_state  | 转换后状态                 |
+| reason         | 接受或拒绝原因               |
+`source` 目前只用于日志追踪, 不具备身份认证能力.
+
+配置CmakeLists.txt,保留project(robot_interfaces), 确认以下配置存在, 并且ament_package() 位于最后:
+
+```
+find_package(ament_camke REQUIRED)
+find_package(rosild_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+	"srv/SendEvent.srv"
+)
+
+ament_export_dependencies(roidl_)
 ```
