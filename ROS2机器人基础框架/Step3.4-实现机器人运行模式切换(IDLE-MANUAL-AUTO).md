@@ -124,7 +124,7 @@ robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='MANUAL', 
 ```
 ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: START_AUTO, source: cli_test5}"
 ```
-预期: `AUTO->IDLE`, 完成一个完整的状态转换循环
+预期: `IDLE->AUTO`
 ```
 requester: making request: robot_interfaces.srv.SendEvent_Request(event='START_AUTO', source='cli_test5')
 
@@ -133,4 +133,28 @@ robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='IDLE', cu
 
 ```
 
-6、自动任务wan
+6、自动任务完成
+```
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: TASK_FINISHED, source: cli_test6}"
+```
+预期: `AUTO->IDLE`, 完成一个完整的状态转换循环
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='TASK_FINISHED', source='cli_test6')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='AUTO', current_state='IDLE', reason='Accepted: AUTO -> IDLE')
+```
+
+### 五、验证状态Topic
+
+打开第三个终端, 持续订阅
+
+```
+source ~/robot_foundation_ws/install/setup.bash
+
+ros2 topic echo /system/state --qos-reliability reliable --qos-durability transient_local
+```
+如果在测试前启动订阅, 应该可以依次观察到:
+```
+
+```
