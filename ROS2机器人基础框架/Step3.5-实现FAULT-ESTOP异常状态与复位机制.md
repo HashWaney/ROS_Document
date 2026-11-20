@@ -22,3 +22,27 @@
 
 ### 二、 修改system_manager_node.py
 
+这次只修改三个位置.
+
+1 、 扩展状态转换表
+找到现有`TRANSITIONS` , 完整替换为:
+```
+TRANSITIONS = {
+	# 初始化 
+	(SystemState.INIT, "INIT_SUCCESS"):SystemState.IDLE,
+	
+	# 手动模式
+	(SystemState.IDLE, "START_MANUAL"):SystemState.MANUAL,
+	(SystemState.MANUAL,"STOP"):SystemState.IDLE,
+	
+	# 自动模式
+	(SystemState.IDLE, "START_AUTO"):SystemState.AUTO
+	(SystemState.AUTO, "STOP"):SystemState.IDLE,
+	(SystemState.AUTO,"TASK_FINISHED"):SystemState.IDLE,
+	
+	# 异常复位
+	(SystemState.FAULT,"RESET_FAULT"):SystemState.INIT,
+	(SysteState.ESTOP,"RESET_ESTOP"):SystemState.INIT,
+	
+}
+```
