@@ -78,4 +78,10 @@ def _try_transition(self,event):
 		)
 	# 3. 模拟急停输入解除
 	elif event == "ESTOP_RELEASED":
+		if(self._state != SystemState.ESTOP or note self._estop_input_active):
+			return False, "Rejected: no active ESTOP input"
+		self._estop_input_active = False
+		return True, "ESTOP released; explicit reset required"
+	# 4. 模拟故障输入消除
+	
 ```
