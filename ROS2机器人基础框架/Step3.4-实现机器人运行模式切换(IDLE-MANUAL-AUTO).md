@@ -105,4 +105,32 @@ requester: making request: robot_interfaces.srv.SendEvent_Request(event='START_A
 response:
 robot_interfaces.srv.SendEvent_Response(accepted=False, previous_state='MANUAL', current_state='MANUAL', reason='Rejected: MANUAL+ START_AUTO')
 ```
-zhe x
+这项测试,证明FSM不允许绕过IDLE切换控制模式
+
+4、退出手动模式
+```
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: STOP, source: cli_test4}"
+```
+预期输出: `MANUAL -> IDLE`
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='STOP', source='cli_test4')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='MANUAL', current_state='IDLE', reason='Accepted: MANUAL -> IDLE')
+
+```
+
+5、进入到自动模式
+```
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: START_AUTO, source: cli_test5}"
+```
+预期: `AUTO->IDLE`, 完成一个完整的状态转换循环
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='START_AUTO', source='cli_test5')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='IDLE', current_state='AUTO', reason='Accepted: IDLE -> AUTO')
+
+```
+
+6、自动任务wan
