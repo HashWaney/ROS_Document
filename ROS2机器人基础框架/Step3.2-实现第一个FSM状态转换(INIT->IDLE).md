@@ -103,4 +103,20 @@ ros2 topic echo /system/state --qos-reliability reliable --qos-durability transi
 data: INIT
 ```
 
-终端C: 触发模拟
+终端C: 触发模拟自检成功
+```
+source ~/robot_foundation_ws/install/setup.bash
+
+ros2 service call /system/mock_init_success std_srvs/srv/Trigger '{}'
+```
+预期终端C: 会输出
+```
+response:
+std_srvs.srv.Trigger_Response(success=True, message='IDLE')
+```
+
+终端B会输出:
+```
+data: IDLE
+---
+```
