@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
+                "file": "ROS2机器人基础框架/Step3.4-实现机器人运行模式切换(IDLE-MANUAL-AUTO).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step3-建立机器人整机状态机"
+              "title": "Step3.4-实现机器人运行模式切换(IDLE-MANUAL-AUTO)"
             }
           },
           {
@@ -49,8 +49,7 @@
               "title": "Step3.4-实现机器人运行模式切换(IDLE-MANUAL-AUTO)"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,15 +226,16 @@
       "obsidian-day-and-night:Toggle Theme": false
     }
   },
-  "active": "254ef725487b15db",
+  "active": "815a2ae1ea6784e7",
   "lastOpenFiles": [
-    "ROS2机器人基础框架/Step3.3-建立FSM通用事件接口.md",
+    "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
+    "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
     "ROS2机器人基础框架/Step3.4-实现机器人运行模式切换(IDLE-MANUAL-AUTO).md",
+    "Pasted image 20261120152613.png",
+    "ROS2机器人基础框架/Step3.3-建立FSM通用事件接口.md",
     "Pasted image 20261120113811.png",
     "ROS2机器人基础框架/Step3.2-实现第一个FSM状态转换(INIT->IDLE).md",
     "Pasted image 20261119164701.png",
-    "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
-    "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
     "Pasted image 20261119143805.png",
     "未命名.canvas",
     "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
@@ -248,7 +248,6 @@
     "Pasted image 20261116110030.png",
     "ROS2机器人基础框架/Step2.6-创建左右驱动轮.md",
     "Pasted image 20261113162854.png",
-    "Pasted image 20261113152634.png",
     "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
     "ROS2机器人基础框架/Step2.4-将 URDF 正式纳入 ROS 2 Package，并实现一键启动.md",
     "ROS2机器人基础框架/Step2.2-创建机器人的第一个Link -base_link.md",
@@ -267,7 +266,6 @@
     "机器人软件控制开发/01-C++17强化/06、RAII————C++资源管理的第一性原理.md",
     "机器人软件控制开发/01-C++17强化/02、右值引用+移动语义.md",
     "机器人软件控制开发/01-C++17强化/08、gtest.md",
-    "机器人软件控制开发/02-ROS2+C++机器人工程/01、rclcpp.md",
     "机器人软件控制开发/02-ROS2+C++机器人工程",
     "机器人软件控制开发",
     "机器人软件控制开发/05-实时系统与高性能计算",
