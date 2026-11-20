@@ -16,4 +16,28 @@
 | MANUAL | START_AUTO    | 不变     | 否    |
 | AUTO   | START_MANUAL  | 不变     | 否    |
 
-这里有一条重要原则: 手动模式和自动模式不能直接相互
+这里有一条重要原则: 手动模式和自动模式不能直接相互切换, 必须先经过IDLE, 目前只是状态逻辑验证, 状态进入到MANUAL或AUTO 不会真正驱动机器人运动
+
+### 二、 修改FSM状态转换表
+
+修改`robot_system_manager/system_manager_node.py` 找到定义的`TRANSITIONS = { (SystemState.INIT, "INIT_SUCCESS"):SystemState.IDLE,}`, 将整个`TRANSITIONS` 替换为:
+```
+# 机器人整机状态转换规则V1
+TRANSITIONS = {
+
+	# 初始化
+	(SystemState.INIT, "INIT_SUCCESS"):SystemState.IDLE,
+	
+	# 手动模式
+	(SystemState.IDLE, "START_MANUAL"):SystemState.MANUAL,
+	(SystemState.MANUAL,"STOP"):SystemState.IDLE,
+	
+	# 自动模式
+	(SystemState.IDLE, "START_AUTO"):SystemState.AUTO,
+	(SystemState.AUTO, "STOP"):SystemState.IDLE,
+	(SystemState.AUTO)
+
+
+}
+```
+
