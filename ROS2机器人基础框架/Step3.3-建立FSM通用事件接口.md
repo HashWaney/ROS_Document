@@ -84,3 +84,5 @@ ament_package()
 ```
 原有的`ament_cmake` 构建依赖保持不变.
 
+### 三、修改robot_system_manager
+
