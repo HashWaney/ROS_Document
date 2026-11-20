@@ -120,3 +120,18 @@ std_srvs.srv.Trigger_Response(success=True, message='IDLE')
 data: IDLE
 ---
 ```
+
+
+### 四、验证非法状态转换
+
+为了证明FSM的规则确实生效, 再执行一次:
+```
+ros2 service call /system/mock_init_success std_srvs/srv/Trigger '{}'
+```
+此时状态已经是IDLE, 所以重复提交INIT_SUCCESS 应被拒绝
+预期:
+```
+response:
+std_srvs.srv.Trigger_Response(success=False, message='Rejected: IDLE+ INIT_SUCCESS')
+```
+状态仍应保持IDLE, 不会因为重复请求发生变化
