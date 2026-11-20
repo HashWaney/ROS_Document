@@ -87,5 +87,22 @@ ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: STA
 ```
 预期输出:
 ```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='START_MANUAL', source='cli_test2')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='IDLE', current_state='MANUAL', reason='Accepted: IDLE -> MANUAL')
 
 ```
+
+3、验证非法切换, 当前是`MANUAL`, 尝试直接进入`AUTO`
+```
+ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: START_AUTO, source: cli_test3}"
+```
+预期输出:
+```
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='START_AUTO', source='cli_test3')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=False, previous_state='MANUAL', current_state='MANUAL', reason='Rejected: MANUAL+ START_AUTO')
+```
+zhe x
