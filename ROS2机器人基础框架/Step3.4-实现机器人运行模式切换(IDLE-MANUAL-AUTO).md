@@ -35,9 +35,25 @@ TRANSITIONS = {
 	# 自动模式
 	(SystemState.IDLE, "START_AUTO"):SystemState.AUTO,
 	(SystemState.AUTO, "STOP"):SystemState.IDLE,
-	(SystemState.AUTO)
-
-
+	(SystemState.AUTO,"TASK_FINISHED"):SystemState.IDLE,
 }
+```
+
+### 三、重新构建与启动
+停止旧的`robot_system_manager`, 执行以下指令:
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-select robot_system_manager --symlink-install
+
+source install/setup.bash
+
+ros2 run robot_system_manager system_manager_node
+```
+预期启动日志:
+```
+System state: INIT
 ```
 
