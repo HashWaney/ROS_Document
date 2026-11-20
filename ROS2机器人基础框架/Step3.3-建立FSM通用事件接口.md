@@ -106,5 +106,32 @@ def _handle_send_event(self,request,response):
 	event = request.event.strip().upper()
 	source = request.source.strip() or "unknown"
 	
-	previous = self._s
+	previous = self._state.value
+	accepted, result = self._try_transition(event)
+	response.accepted = accepted 
+	response.previous_state = previous
+	response.current_state=self._state.value
+	if accepted:
+		response.reason = (
+			f"Accepted: {previous} -> {self._state.value}"
+		)
+	else:
+		response.reason = result
+	
+	self.get_logger().info(
+		f"Event ={event}, source={source}, "
+		f"accepted={accepted} , "
+		f"state={response.current_state}"
+		
+	)
+	return response
+	
 ```
+这里复用Step3.2 已经完成的`_try_transition()` , 暂时不添加新的状态转换规则.  因此目前通用接口只接受:
+```
+INIT + INIT_SUCCESS -> IDLE
+```
+其他尚未实现的事件统一拒绝.
+
+4、声明Package依赖
+打开
