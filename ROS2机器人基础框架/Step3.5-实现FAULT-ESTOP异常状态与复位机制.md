@@ -2,3 +2,15 @@
 
 ### 一、先确定异常状态的行为
 
+![[Pasted image 20261120165859.png]]
+
+
+
+| 事件              | 作用                  |
+| --------------- | ------------------- |
+| FAULT_RAISED    | 触发故障, 进入FAULT       |
+| FAULT_CLEARED   | 模拟故障原因已经消除          |
+| RESET_FAULT     | 满足条件后, 从FAULT返回INIT |
+| ESTOP_TRIGGERED | 触发急停, 进入到ESTOP      |
+| ESTOP_RELEASED  |                     |
+|                 |                     |
