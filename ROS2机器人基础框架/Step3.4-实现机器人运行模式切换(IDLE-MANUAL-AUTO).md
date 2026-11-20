@@ -156,5 +156,19 @@ ros2 topic echo /system/state --qos-reliability reliable --qos-durability transi
 ```
 如果在测试前启动订阅, 应该可以依次观察到:
 ```
-
+data: INIT
+---
+data: IDLE
+---
+data: MANUAL
+---
+data: IDLE
+---
+data: AUTO
+---
+data: IDLE
+---
 ```
+
+非法状态不会产生新的状态发布.
+
