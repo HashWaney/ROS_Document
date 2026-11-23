@@ -95,5 +95,10 @@ def _publish_state_event(
 	current_state,
 	accepted,
 	reason
-)
+):
+	msg = StateEvent()
+	msg.stamp = self.event
+	msg.source = source
+	msg.previous = 
+	
 ```
