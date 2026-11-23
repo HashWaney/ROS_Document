@@ -175,3 +175,48 @@ send_event(){
 }
 ```
 
+依次执行:
+```
+# 初始化完成
+send_event INIT_SUCCESS
+
+# 进入自动模式
+send_event START_AUTO
+
+# 模拟发生故障
+send_event FAULT_RAISED
+```
+
+此时应该进入:
+```
+AUTO -> FAULT
+```
+接着尝试在故障尚未清除时复位:
+```
+send_event RESET_FAULT
+```
+
+预期:
+```
+accepted=False
+current_state='FAULT'
+reason='Rejected: fault input still active'
+```
+然后模拟故障消除:
+```
+send_event FAULT_CLEARED
+```
+再次请求复位:
+```
+send_event RESET_FAULT
+```
+预期: 
+```
+accepted=True
+previous_state='FAULT'
+current_state='INIT'
+```
+这就验证了完整的故障触发 ->  故障消除 -> 人工请求复位流程
+
+
+### 
