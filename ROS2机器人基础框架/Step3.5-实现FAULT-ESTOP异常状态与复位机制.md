@@ -252,7 +252,7 @@ robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='MANUAL', 
 ```
 send_event FAULT_RAISED
 ```
-
+预期accepted =  True, 但状态继续保持:
 ```
 waiting for service to become available...
 requester: making request: robot_interfaces.srv.SendEvent_Request(event='FAULT_RAISED', source='cli_test')
@@ -260,3 +260,49 @@ requester: making request: robot_interfaces.srv.SendEvent_Request(event='FAULT_R
 response:
 robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='ESTOP', current_state='ESTOP', reason='Accepted: FAULT_RAISED state remains ESTOP')
 ```
+这说明ESTOP不会被普通故障覆盖, 而故障输入也被记录了, 接下来模拟急停解除:
+```
+send_event ESTOP_RELEASED
+```
+
+```
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='ESTOP_RELEASED', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='ESTOP', current_state='ESTOP', reason='ESTOP released; explicit reset required')
+```
+
+此时直接复位:
+```
+send_event RESET_ESTOP
+```
+
+应该被拒绝
+```
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='RESET_ESTOP', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=False, previous_state='ESTOP', current_state='ESTOP', reason='Rejected: ESTOP or fault input still active')
+```
+因为刚才触发的故障还没有清除, 最后执行
+```
+send_event FAULT_CLEARED
+send_event RESET_ESTOP
+```
+
+```
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='FAULT_CLEARED', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='ESTOP', current_state='ESTOP', reason='Fault cleared; explicit reset required')
+
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='RESET_ESTOP', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='ESTOP', current_state='INIT', reason='Accepted: ESTOP -> INIT')
+```
+至此完成急停与故障并发情况下的优先级、锁存和复位验证.
