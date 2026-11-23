@@ -220,3 +220,8 @@ current_state='INIT'
 
 
 ### 五、测试ESTOP急停优先级
+
+继续使用当前终端执行以下指令:
+```
+send_event INIT_SUCCESS
+```
