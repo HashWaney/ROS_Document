@@ -110,7 +110,11 @@ def _publish_state_event(
 		f"StateEvent: event={event}, "
 		f"source={source}, "
 		f"{previous_state} -> {current_state},"
-		f"accep	
+		f"accepted={accepted}, reason={reason}"	
 	)
 	
 ```
+该函数只负责记录, 不参与FSM状态判断
+
+4、接入现有SendEvent Service
+找到`_handle_send_event()` , 在
