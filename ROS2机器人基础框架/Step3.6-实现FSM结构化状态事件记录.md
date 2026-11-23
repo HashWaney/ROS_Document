@@ -18,4 +18,41 @@
 这里需要区分两个Topic
 - `/system/state`:  只关注当前整机状态
 - `/system/state_event`:  记录每一次事件处理结果, 包括拒绝事件, 解除故障但状态尚未改变的事件.
--
+### 二、扩展robot_interfaces
+
+1、创建消息文件
+
+```
+cd ~/robot_foundation_ws/src/robot_interfaces
+
+mkdir -p msg
+
+vi msg/StateEvent.msg
+```
+
+写入内容:
+```
+builtin_interfaces/Time stamp
+string event 
+string source
+string previous_state
+string current_state
+bool accepted
+string reason
+```
+
+2、修改CMakeLists.txt
+保留原有`SendEvent.srv`, 在现有配置中增加`StateEvent.msg` 和 时间接口依赖, 相关配置应为:
+```
+find_package(ament_cmake REQUIRED)
+find_package(rosild_default_generators REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+	"srv/SendEvent.srv"
+	"msg/StateEvent.msg"
+	DEPENDENCIES builtin_interfaces
+)
+
+ament_export_dependencie
+```
