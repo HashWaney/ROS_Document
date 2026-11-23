@@ -131,3 +131,17 @@ else:
 	response.reason = result
 ```
 替换为:
+```
+if accepted and previous != self._state.value
+	response.reason = (
+		f"Accepted: {previous} -> {self._state.value}"
+	)
+else:
+	response.reason = result
+```
+这是为了区分两类事件:
+- `FAULT_RAISED` :  可能真正发生状态转换
+- `FAULT_CLEARED`:  只是异常输入解除, 整机状态暂时不变
+原来的`/system/get_state`、`/system/state` 、`/system/mock_init_success` 全部保持不变
+
+### 三、重新构建
