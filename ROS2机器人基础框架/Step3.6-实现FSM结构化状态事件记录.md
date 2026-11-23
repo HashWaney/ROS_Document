@@ -67,3 +67,33 @@ ament_package()
 
 ### 三、修改system_manager_node.py
 
+1、导入StateEvent, 在现有import区域添加:
+```
+from robot_interfaces.msg import StateEvent
+```
+
+2、注册事件发布器
+在`SystemManager.__init__()`中, 现有`_state_pub` 创建代码之后添加:
+```
+# FSM 事件记录 Topic
+self._event_pub = self.create_publisher(
+	StateEvent,
+	"/system/state_event",
+	20
+)
+```
+这里使用深度为20的默认可靠、非持久化Topic配置, 事件记录只向当前在线的订阅者发送; 后续如果需要长期保存, 可以使用rosbag2 或独立日志服务, 不在本步骤实现.
+
+3、添加事件记录函数
+在`SystemManager` 类中新增:
+```
+def _publish_state_event(
+	self,
+	event,
+	source,
+	previous_state,
+	current_state,
+	accepted,
+	reason
+)
+```
