@@ -54,5 +54,16 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 	DEPENDENCIES builtin_interfaces
 )
 
-ament_export_dependencie
+ament_export_dependencies(rosidl_default_runtime)
+
+ament_package()
 ```
+
+注意不要重复添加`ament_package()`, 然后在`robot_interfaces/package.xml` 的依赖区添加:
+```
+<depend>builtin_interfaces</depend>
+```
+其他依赖保持不变, 这种消息定义和依赖组织方式与ROS 2 Jazzy接口包的配置一致.
+
+### 三、修改system_manager_node.py
+
