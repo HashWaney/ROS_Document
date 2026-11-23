@@ -262,3 +262,15 @@ reason: 'Rejected: MANUAL + START_AUTO'
 ```
 send_event STOP
 ```
+预期输出内容:
+```
+stamp:
+  sec: 1795425008
+  nanosec: 734712410
+event: STOP
+source: cli_test
+previous_state: MANUAL
+current_state: IDLE
+accepted: true
+reason: 'Accepted: MANUAL -> IDLE'
+```
