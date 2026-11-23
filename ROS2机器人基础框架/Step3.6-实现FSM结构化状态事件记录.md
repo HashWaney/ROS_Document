@@ -117,4 +117,14 @@ def _publish_state_event(
 该函数只负责记录, 不参与FSM状态判断
 
 4、接入现有SendEvent Service
-找到`_handle_send_event()` , 在
+找到`_handle_send_event()` , 在已经设置好`response.reason` 之后, `return response` 之前, 添加:
+```
+self._publish_state_event(
+	event=event,
+	source=source,
+	previous_state=response.previous_state,
+	current_state=response.current_state,
+	accepted=response.accepted,
+	reason=response.reason
+)
+```
