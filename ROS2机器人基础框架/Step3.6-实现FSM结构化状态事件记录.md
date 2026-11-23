@@ -148,4 +148,48 @@ def _handle_init_success(self,request,response):
 		f"Accepted: {previous} -> {self._state.value}"
 		if success else result
 	)
+	self._publish_state_event(
+		event = "INIT_SUCCESS",
+		source = "mock_init_success",
+		previous_state = previous,
+		current_state = self._state.value,
+		accepted=success,
+		reason =reason
+		
+	)
+	return response
 ```
+
+至此, 两种现有事件入口都可以记录事件, 以后新增入口时, 应复用统一的事件处理和记录机制.
+
+### 四、重新构建
+停止旧的节点, 然后执行:
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-up-to robot_system_manager --symlink-install
+
+source install/setup.bash
+```
+先验证消息是否生成:
+```
+ros2 interface show robot_interfaces/msg/StateEvent
+```
+应该可以看到刚定义的七个字段, 随后启动节点:
+```
+ros2 run robot_system_manager system_manager_node
+```
+预期状态: INIT
+
+### 五、验证事件记录
+
+终端A: 持续订阅事件
+在发送测试事件之前启动订阅:
+```
+source ~/robot_foundation_ws/install/setup.bash
+
+ros2 topic echo /system/state_event
+```
+
