@@ -97,6 +97,23 @@ def _try_transition(self,event):
 		if(event == "RESET_FAULT" and self._fault_input_active):
 			return False, "Rejected: fault input still active"
 
-		# 急停未jie ch
+		# 急停未解除或仍存在故障, 禁止复位
+		if event == "RESET_ESTOP":
+			if(self._estop_input_active or self._fault_input_active):
+				return False, (f"Rejected: ESTOP or fault input still active")
+	# 6. 转换未改变, 避免重复发布
+	if target == previous:
+		return True,(
+				f"Accepted: {event}; " 
+				f"state remains {previous.value}"
+			)
+	# 7. 提交状态变更
+	self._state = target
+	self.get_logger().info(
+		f"FSM: {previous.value} -> {target.value}, "
+		f"event={event}"
+	)
+	self._publish_state()
+	return True, self._state.value
 
 ```
