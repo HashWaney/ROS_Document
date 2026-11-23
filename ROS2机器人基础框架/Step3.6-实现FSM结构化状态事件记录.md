@@ -99,6 +99,7 @@ def _publish_state_event(
 	msg = StateEvent()
 	msg.stamp = self.event
 	msg.source = source
-	msg.previous = 
+	msg.previous = previous_state
+	msg.current_state = current_state
 	
 ```
