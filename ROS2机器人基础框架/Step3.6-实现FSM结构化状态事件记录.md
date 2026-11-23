@@ -193,3 +193,20 @@ source ~/robot_foundation_ws/install/setup.bash
 ros2 topic echo /system/state_event
 ```
 
+终端B: 发送测试事件, 先定义测试函数:
+```
+source install/setup.bash
+
+send_event() {
+	ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: $1, source: cli_test}"
+}
+
+```
+测试1: 合法状态转换
+```
+send_event INIT_SUCCESS
+```
+终端A应该收到类似内容:
+```
+
+```
