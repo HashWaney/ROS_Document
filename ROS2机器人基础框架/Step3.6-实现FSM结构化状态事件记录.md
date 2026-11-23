@@ -208,5 +208,57 @@ send_event INIT_SUCCESS
 ```
 终端A应该收到类似内容:
 ```
+stamp:
+  sec: 1795424346
+  nanosec: 570248999
+event: INIT_SUCCESS
+source: cli_test
+previous_state: INIT
+current_state: IDLE
+accepted: true
+reason: 'Accepted: INIT -> IDLE'
+```
 
+测试2: 进入MANUAL
+
+```
+send_event START_MANUAL
+```
+
+预期可以看见输出类似内容:
+```
+stamp:
+  sec: 1795424807
+  nanosec: 463404870
+event: START_MANUAL
+source: cli_test
+previous_state: IDLE
+current_state: MANUAL
+accepted: true
+reason: 'Accepted: IDLE -> MANUAL'
+```
+
+测试3:  非法模式切换
+
+```
+send_event START_AUTO
+```
+
+预期输出内容:
+```
+stamp:
+  sec: 1795424920
+  nanosec: 373933482
+event: START_AUTO
+source: cli_test
+previous_state: MANUAL
+current_state: MANUAL
+accepted: false
+reason: 'Rejected: MANUAL + START_AUTO'
+```
+当前状态为MANUAL, 所以在开启自动事件的时候, 会被拒绝, 但仍然生成记录
+
+测试4: 正常退出手动模式
+```
+send_event STOP
 ```
