@@ -117,3 +117,4 @@ def _try_transition(self,event):
 	return True, self._state.value
 
 ```
+这样处理之后, 异常事件与普通状态切换仍统一jin guo
