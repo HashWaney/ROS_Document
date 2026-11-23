@@ -83,5 +83,20 @@ def _try_transition(self,event):
 		self._estop_input_active = False
 		return True, "ESTOP released; explicit reset required"
 	# 4. 模拟故障输入消除
-	
+	elif event == "FAULT_CLEARED":
+		if not self._fault_input_active:
+			return False, "Rejected: no active fault input"
+		self._fault_input_active = False
+		return True, "Fault cleared: explicit reset required"
+	# 5. 普通状态转换及复位
+	else:
+		target = TRANSITIONS.get((self._state, event))
+		if target is None:
+			return False, (f"Rejected: {self._state.value}+{event}")
+		# 故障尚未清楚, 禁止复位
+		if(event == "RESET_FAULT" and self._fault_input_active):
+			return False, "Rejected: fault input still active"
+
+		# 急停未jie ch
+
 ```
