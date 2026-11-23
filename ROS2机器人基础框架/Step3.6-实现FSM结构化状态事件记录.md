@@ -128,3 +128,24 @@ self._publish_state_event(
 	reason=response.reason
 )
 ```
+这样每次通过`/system/send_event` 提交事件, 都会生成一条记录, 之前的`_try_transition()` 不需要修改
+
+5、兼容旧的模拟自检接口
+因为Step3.2 还保留了`/system/mock_init_success`, 因此也为它补上事件记录, 避免漏掉通过该接口提交的事件, 找到原来的
+```
+def _handle_init_success(self,request,response):
+
+```
+将该方法替换成:
+```
+def _handle_init_success(self,request,response):
+	previous = self._state.value
+	success, result = self._try_transition("INIT_SUCCESS")
+	response.success = success
+	response.message = result
+	
+	reason = (
+		f"Accepted: {previous} -> {self._state.value}"
+		if success else result
+	)
+```
