@@ -224,4 +224,39 @@ current_state='INIT'
 继续使用当前终端执行以下指令:
 ```
 send_event INIT_SUCCESS
+send_event START_MANUAL
+send_event ESTOP_TRIGGERED
+```
+
+此时应该进入到ESTOP状态.
+```
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='INIT_SUCCESS', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='INIT', current_state='IDLE', reason='Accepted: INIT -> IDLE')
+
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='START_MANUAL', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='IDLE', current_state='MANUAL', reason='Accepted: IDLE -> MANUAL')
+
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='ESTOP_TRIGGERED', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='MANUAL', current_state='ESTOP', reason='Accepted: MANUAL -> ESTOP')
+```
+现在故意再触发一个故障:
+```
+send_event FAULT_RAISED
+```
+
+```
+waiting for service to become available...
+requester: making request: robot_interfaces.srv.SendEvent_Request(event='FAULT_RAISED', source='cli_test')
+
+response:
+robot_interfaces.srv.SendEvent_Response(accepted=True, previous_state='ESTOP', current_state='ESTOP', reason='Accepted: FAULT_RAISED state remains ESTOP')
 ```
