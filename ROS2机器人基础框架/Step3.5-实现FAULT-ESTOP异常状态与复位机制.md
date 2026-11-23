@@ -117,4 +117,17 @@ def _try_transition(self,event):
 	return True, self._state.value
 
 ```
-这样处理之后, 异常事件与普通状态切换仍统一jin guo
+这样处理之后, 异常事件与普通状态切换仍统一经过`_try_transition()`
+
+4、小幅调整Service返回原因
+
+这部分属于第三处修改中的配套调整: 在现有`_handle_send_event()`中, 找到:
+```
+if accepted:
+	response.reason = (
+		f"Accepted: {previous} -> {self._state.value}"
+	)
+else:
+	response.reason = result
+```
+替换为:
