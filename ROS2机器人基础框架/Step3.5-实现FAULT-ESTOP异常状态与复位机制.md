@@ -145,3 +145,33 @@ else:
 原来的`/system/get_state`、`/system/state` 、`/system/mock_init_success` 全部保持不变
 
 ### 三、重新构建
+停止旧节点, 执行:
+```
+cd ~/robot_foundation_ws 
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-select robot_system_manager --symlink-install
+
+source install/setup.bash
+
+ros2 run robot_system_manager system_manager_node
+```
+预期输出:
+```
+System state: INIT
+```
+
+### 四、测试FAULT异常流程
+
+开启新的终端, 执行指令:
+```
+source ~/robot_foundation_ws/install/setup.bash
+```
+
+为了方便后续反复测试, 先在当前终端定义一个小函数:
+```
+send_event(){
+	ros2 service call /system/send_event robot_interfaces/srv/SendEvent "{event: $1, source: cli_test}"
+}
+```
+
