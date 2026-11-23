@@ -101,5 +101,16 @@ def _publish_state_event(
 	msg.source = source
 	msg.previous = previous_state
 	msg.current_state = current_state
+	msg.accepted = accepted 
+	msg.reason = reason
+	
+	self._event_pub.publish(msg)
+	
+	self.get_logger().info(
+		f"StateEvent: event={event}, "
+		f"source={source}, "
+		f"{previous_state} -> {current_state},"
+		f"accep	
+	)
 	
 ```
