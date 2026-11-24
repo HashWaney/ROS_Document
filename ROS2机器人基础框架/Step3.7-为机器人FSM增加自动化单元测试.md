@@ -229,5 +229,20 @@ extras_require={
 
 1、 构建
 ```
-cd ~/robot_foundation_
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-up-to robot_system_manager --symlink-install
+
+source install/setup.bash
 ```
+
+2、运行FSM测试
+```
+colcon test \
+--packages-select robot_system_manager \
+--event-handles console_direct+ \
+--pytest-args -k fsm
+```
+`-k fsm` 
