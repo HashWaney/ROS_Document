@@ -151,4 +151,7 @@ self._mock_init_srv = self.create_service(
 	self._handle_init_success
 )
 ```
-然后删除整个`_handle_init_success()`方法, 保留`/system/get_state`,不要删除它, 这样现有的Service事件入口就统一通过`_handle`
+然后删除整个`_handle_init_success()`方法, 保留`/system/get_state`,不要删除它, 这样现有的Service事件入口就统一通过`_handle_send_event()`, 避免两套不同的事件校验逻辑.
+
+### 三、同步调整Step3.7的自动化测试
+
