@@ -245,4 +245,10 @@ colcon test \
 --event-handles console_direct+ \
 --pytest-args -k fsm
 ```
-`-k fsm` 
+`-k fsm` 表示本次只运行 FSM相关测试, 避免已有的格式检查, 版本检查等测试干扰我们对业务规则的验收.
+预期输出内容:
+```
+- generated xml file: /home/hash/robot_foundation_ws/build/robot_system_manager/pytest.xml -
+======================= 7 passed, 3 deselected in 0.49s ========================
+Finished <<< robot_system_manager [1.05s]  
+```
