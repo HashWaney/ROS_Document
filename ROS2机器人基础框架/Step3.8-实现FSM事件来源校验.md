@@ -21,3 +21,36 @@
 | STOP                         | 不限制来源          |
 为什么有三个事件不限制来源?
 因为STOP、FAULT_RAISED、ESTOP_TRIGGERED 都是趋向停止运行的事件. V1不应因为来源标识填写错误, 就阻止软件层进入停止或异常状态, 反过来, 解除故障、解除急停、恢复运行必须经过来源规则检查.
+这只是当前的业务接口策略, 等我们真正接入硬件安全机制时, 急停及运动禁止不能依赖这些ROS 2 Service
+
+
+### 二、修改system_manager_node.py
+
+1、添加事件来源规则表
+在现有`TRANSITIONS` 定义后, 添加:
+```
+# V1 逻辑来源规则(不是身份认证)
+EVENT_SOURCE_RULES = {
+
+	"INIT_SUCCESS": {"self_check"},
+	"START_MANUAL": {"operator"},
+	"START_AUTO": {"operator"},
+	"TASK_FINISHED": {"task_executor"},
+	
+	"FAULT_CLEARED": {"fault_manager"},
+	"ESTOP_RELEASED": {"safety_monitor"},
+	
+	"RESET_FAULT": {"operator"},
+	"RESET_ESTOP": {"operator"},
+}
+
+
+# 停止、故障和急停触发事件不限制来源
+UNRESTRICTED_EVENTS = {
+	"STOP",
+	"FAULT_RAISED",
+	
+}
+
+
+```
