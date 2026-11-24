@@ -49,8 +49,37 @@ EVENT_SOURCE_RULES = {
 UNRESTRICTED_EVENTS = {
 	"STOP",
 	"FAULT_RAISED",
-	
+	"ESTOP_TRIGGERED",
 }
 
+```
+这里只添加业务来源, 不改变之前的`TRANSITIONS`
 
+2、 新增来源校验函数
+在`SystemManager` 类中添加:
+```
+def _check_event_source(self,event,source):
+	# 趋向停止的事件不受来源限制
+	if event is UNRESTRICTED_EVENTS:
+		return True, ""
+	allowed_sources = EVENT_SOURCE_RULES.get(event)
+	# 未定义的事件仍交给FSM 统一拒绝
+	if allowed_sources is None:
+		return True,""
+	if source in allowed_sources:
+		return True, ""
+		
+	reason = (
+		f"Rejected: source '{source}' "
+		f"not allowed for event '{event}'"
+	)
+	return False, reason
+```
+
+它只处理来源规则, 不负责真正修改状态
+例如:
+```
+INIT_SUCCESS + operator
+	-> 来源校验失败
+	-> 不执行
 ```
