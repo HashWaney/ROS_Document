@@ -18,4 +18,46 @@
 | 5   | FAULT必须先清除故障才能复位          |
 | 6   | ESTOP优先级及复位约束             |
 | 7   | 未定义事件被拒绝                  |
-ROS 2 Jazzy 支持在`ament_python` Package中使用``
+ROS 2 Jazzy 支持在`ament_python` Package中使用`pytest`, 并通过`colcon test` 执行
+
+### 二、Gate0 : 检查测试环境
+执行下列指令:
+```
+source install/setup.bash
+
+python3 -m pytest --version
+```
+如果出现pytest版本号, 就可以继续, 如果提示没有安装:
+```
+sudo apt update 
+sudo apt install python3-pytest
+```
+
+### 三、创建FSM测试文件
+保持现有工程目录不变, 只新增一个文件
+```
+robot_foundation_ws/
+└── src/
+    └── robot_system_manager/
+        ├── robot_system_manager/
+        │   └── system_manager_node.py
+        ├── test/
+        │   └── test_fsm.py       ← 本次新增
+        ├── setup.py
+        └── package.xml
+```
+
+创建测试目录:
+```
+cd ~/robot_foundation_ws/src/robot_system_manager
+
+mkdir -p test
+
+vi test/test_fsm.py
+```
+
+将下面的代码完整写入:
+```
+"""Regression tests for robot_system_manager FSM."""
+
+```
