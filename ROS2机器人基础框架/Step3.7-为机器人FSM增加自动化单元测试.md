@@ -7,4 +7,15 @@
 一、测试方案
 ![[Pasted image 20261123175639.png]]
 
-这次属于节点内部逻辑测试, 不是ROS 2 Service、Topic 或 DDS的端到端通信测试. 通信链路此前已经通过手动验证, 暂不需要重复实现.
+这次属于节点内部逻辑测试, 不是ROS 2 Service、Topic 或 DDS的端到端通信测试. 通信链路此前已经通过手动验证, 暂不需要重复实现. 计划覆盖以下7类测试
+
+| 测试  | 验证内容                      |
+| --- | ------------------------- |
+| 1   | 节点初始化状态为INIT              |
+| 2   | INIT_SUCCESS 成功, 重复事件被拒绝  |
+| 3   | MANUAL和AUTO不允许直接切换        |
+| 4   | AUTO收到TASK_FINISHED返回IDLE |
+| 5   | FAULT必须先清除故障才能复位          |
+| 6   | ESTOP优先级及复位约束             |
+| 7   | 未定义事件被拒绝                  |
+ROS 2 Jazzy 支持在`ament_python` Package中使用``
