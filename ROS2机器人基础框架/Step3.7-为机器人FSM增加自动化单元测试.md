@@ -60,4 +60,11 @@ vi test/test_fsm.py
 ```
 """Regression tests for robot_system_manager FSM."""
 
+import pytest
+import rclcpy
+
+
+
+
+
 ```
