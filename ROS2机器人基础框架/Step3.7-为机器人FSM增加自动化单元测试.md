@@ -205,4 +205,29 @@ def test_fsm_unknown_event(fsm):
 2、使用真实业务逻辑
 测试通过`_handle_send_event()`调用现有代码, 而不是重新写一套模拟FSM
 
-3、
+3、不启动独立ROS 2 进程
+测试在当前Python进程内执行, 无须额外启动`ros2 run` , 也不要求先启动终端中的状态管理节点. 这意味着测试可以快速运行, 但尚不覆盖真实DDS消息交付, 进程间通信和节点启动失败恢复.
+
+### 四、配置测试依赖
+
+打开 `~/robot_foundation_ws/src/robot_system_manager/setup.py`,检查是否具有
+``
+```
+extras_require={
+        'test': [
+            'pytest',
+        ],
+    },
+```
+如果存在, 保持不变, 如果没有,则添加; 随后检查`~/robot_foundation_ws/src/robot_system_manager/package.xml`
+确保测试依赖中包含:
+```
+<test_depend>python3-pytest</test_depend>
+```
+
+### 五、构建自动化测试
+
+1、 构建
+```
+cd ~/robot_foundation_
+```
