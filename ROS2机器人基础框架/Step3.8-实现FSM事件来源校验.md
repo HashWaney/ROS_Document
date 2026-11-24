@@ -92,3 +92,48 @@ INIT_SUCCESS + self_check
 因此, 即使来源符合要求, 也不能绕过现有FSM转换规则
 
 3、统一处理事件
+将原来的`_handle_send_event()`完整替换成:
+```
+def _handle_send_event(self,request,response):
+	event = request.event.strip().upper()
+	source = request.source.strip() or "unknown"
+	pervious = self._state.value
+	
+	# 第一层: 来源声明校验
+	allowed, reason = self._check_event_source(
+		event, source
+	)
+	if not allowed:
+		accepted = False
+		result = reason 
+	else:
+		# 第二层: 原有FSM 状态转换检查
+		accepted, result = self._try_transition(event)
+		
+	response.accepted = accepted
+	response.previous_state = previous
+	response.current_state = self._state.value
+	
+	if accepted and previous != self._state.value
+		response.reason = (
+			f"Accepted: {previous}->{self._state.value}"
+		)
+	else:
+		response.reason = result
+	# 来源校验失败的事件同样记录
+	self._publish_state_event(
+		event=event,
+		source=source,
+		previous_state=response.previous_state,
+		current_state=response.current_state,
+		accepted=response.accepted,
+		reason=response.reason
+	)
+	self.get_logger().info(
+		f"Event={event}, source={source}, "
+		f"accepted={accepted},"
+		f"state={response.current_state}"
+	
+	)
+	return response
+```
