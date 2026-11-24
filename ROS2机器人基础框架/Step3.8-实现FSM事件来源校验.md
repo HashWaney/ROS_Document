@@ -81,5 +81,14 @@ def _check_event_source(self,event,source):
 ```
 INIT_SUCCESS + operator
 	-> 来源校验失败
-	-> 不执行
+	-> 不执行INIT-> IDLE
 ```
+而:
+```
+INIT_SUCCESS + self_check
+	-> 来源规则通过
+	-> 继续交给FSM 检查状态转换是否合法
+```
+因此, 即使来源符合要求, 也不能绕过现有FSM转换规则
+
+3、统一处理事件
