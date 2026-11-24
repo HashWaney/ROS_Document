@@ -151,3 +151,4 @@ self._mock_init_srv = self.create_service(
 	self._handle_init_success
 )
 ```
+然后删除整个`_handle_init_success()`方法, 保留`/system/get_state`,不要删除它, 这样现有的Service事件入口就统一通过`_handle`
