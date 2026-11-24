@@ -9,5 +9,15 @@
 ### 一、定义事件来源规则
 先为当前系统定义几个逻辑来源
 
-| | 
-|-|
+| 事件                           | 允许的source      |
+| ---------------------------- | -------------- |
+| INIT_SUCCESS                 | self_check     |
+| START_MANUAL/START_AUTO      | operator       |
+| TASK_FINISHED                | task_executor  |
+| FAULT_CLEARED                | fault_manager  |
+| ESTOP_RELEASED               | safety_monitor |
+| RESET_FAULT/RESET_ESTOP      | operator       |
+| FAULT_RAISED/ESTOP_TRIGGERED | 不限制来源          |
+| STOP                         | 不限制来源          |
+为什么有三个事件不限制来源?
+因为STOP、FAULT_RAISED、ESTOP_TRIGGERED 都是趋向停止运行的事件. V1不应因为来源标识填写错误, 就阻止软件层进入停止或异常状态, 反过来, 解除故障、解除急停、恢复运行必须经过来源规则检查.
