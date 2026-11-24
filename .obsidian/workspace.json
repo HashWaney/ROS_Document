@@ -201,6 +201,7 @@
   },
   "active": "815a2ae1ea6784e7",
   "lastOpenFiles": [
+    "Pasted image 20261124171523.png",
     "ROS2机器人基础框架/Step3.7-为机器人FSM增加自动化单元测试.md",
     "ROS2机器人基础框架/Step3.8-实现FSM事件来源校验.md",
     "Pasted image 20261123175639.png",
@@ -237,7 +238,6 @@
     "ROS2机器人基础框架/Step7-进行完整节点联调.md",
     "ROS2机器人基础框架/Step6-引入Behavior Tree与Lifecycle.md",
     "ROS2机器人基础框架/Step5-建立网络管理和故障管理节点.md",
-    "ROS2机器人基础框架/Step4-建立运动控制节点.md",
     "ROS2机器人基础框架",
     "未命名",
     "机器人软件控制开发/02-ROS2+C++机器人工程",

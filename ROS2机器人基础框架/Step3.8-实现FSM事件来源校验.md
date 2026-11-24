@@ -136,4 +136,18 @@ def _handle_send_event(self,request,response):
 	
 	)
 	return response
+
+```
+
+新的执行流程为:
+![[Pasted image 20261124171523.png]]
+
+4、 移除旧的模拟自检Service
+之前的`/system/mock_init_success` 直接调用`_try_transition()`, 会绕过刚刚添加的来源校验. 现有通用`/system/send_event`, 因此需要移除旧入口, 在`__init__()` 中删除:
+```
+self._mock_init_srv = self.create_service(
+	Trigger,
+	"/system/mock_init_success",
+	self._handle_init_success
+)
 ```
