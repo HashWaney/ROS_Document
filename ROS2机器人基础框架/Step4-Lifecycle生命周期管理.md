@@ -22,4 +22,24 @@ ROS 2 已经提供了标准生命周期状态机, 不需要如Step3一样自己�
 | ----------------- | ----------------- |
 | `on_configure()`  | 加载配置、创建通信接口、初始化资源 |
 | `on_activate()`   | 启动业务处理、定时器、数据发布   |
-| `on_deactivate()` | 停止业务chu l         |
+| `on_deactivate()` | 停止业务处理、保留已配置资源    |
+| `on_cleanup()`    | 释放配置阶段创建的资源       |
+| `on_shutdown()`   | 完成最终资源清理          |
+**普通ROS 2 Timer、Subscription并不会因为继承了`LifecycleNode`就自动停止业务处理, 开发过程中仍然需要正确管理他们**
+
+### 三、创建工程
+
+先校验所需依赖
+```
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+
+ros2 pkg prefix rclpy
+ros2 pkg prefix lifecycle_msgs
+ros2 pkg prefix robot_interfaces
+```
+如果`lifecycle_msgs` 不存在, 可以通过以下指令安装:
+```
+sudo apt install ros-jazzy-lifecycle-msgs
+```
+
