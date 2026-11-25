@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
+                "file": "ROS2机器人基础框架/Step3.8-实现FSM事件来源校验.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step3.1-创建robot_system_manager最小状态机节点"
+              "title": "Step3.8-实现FSM事件来源校验"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 492.5
+    "width": 492.5,
+    "collapsed": true
   },
   "right": {
     "id": "d5d0f7900ac073b2",
@@ -200,6 +201,7 @@
   },
   "active": "815a2ae1ea6784e7",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
     "行为树/行为树学习阶段2.md",
     "行为树/行为树学习阶段.md",
     "行为树/开篇  行为树最核心的概念.md",
@@ -220,7 +222,6 @@
     "ROS2机器人基础框架/Step3.4-实现机器人运行模式切换(IDLE-MANUAL-AUTO).md",
     "ROS2机器人基础框架/Step3.3-建立FSM通用事件接口.md",
     "ROS2机器人基础框架/Step3.2-实现第一个FSM状态转换(INIT->IDLE).md",
-    "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
     "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
     "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
     "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",

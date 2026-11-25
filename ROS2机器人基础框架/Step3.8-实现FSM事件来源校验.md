@@ -155,3 +155,12 @@ self._mock_init_srv = self.create_service(
 
 ### 三、同步调整Step3.7的自动化测试
 
+现在规则来源发生变化, 这些测试可能失败, 这次不修改测试断言, 只修改`test_fsm.py`中的`send()` 测试辅助函数, 让测试使用各事件对应的正确来源.
+打开`test_fsm.py`, 找到原来的`send()`, 替换为:
+```
+TEST_SOURCES = {
+	"INIT_SUCCESS": "self_check",
+	"START_MANUAL": "operator",
+	"START_AUTO": "ope"
+}
+```
