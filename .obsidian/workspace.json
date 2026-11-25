@@ -11,12 +11,14 @@
             "id": "eb8950a7cc695578",
             "type": "leaf",
             "state": {
-              "type": "diagram",
+              "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step4-node.svg"
+                "file": "ROS2机器人基础框架/Step4-Lifecycle生命周期管理.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Step4-node"
+              "title": "Step4-Lifecycle生命周期管理"
             }
           }
         ]
@@ -198,8 +200,8 @@
   },
   "active": "eb8950a7cc695578",
   "lastOpenFiles": [
-    "ROS2机器人基础框架/Step4-Lifecycle生命周期管理.md",
     "ROS2机器人基础框架/Step4-node.svg",
+    "ROS2机器人基础框架/Step4-Lifecycle生命周期管理.md",
     "ROS2机器人基础框架/Step4-lifecycle.svg",
     "ROS2机器人基础框架/Step4-lifecycle-status.svg",
     "未命名 1.canvas",
