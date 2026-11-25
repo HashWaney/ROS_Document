@@ -11,17 +11,14 @@
             "id": "eb8950a7cc695578",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "未命名 1.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "ROS2机器人基础框架/Step4-Lifecycle生命周期管理.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "未命名 1"
+              "icon": "lucide-file",
+              "title": "Step4-Lifecycle生命周期管理"
             }
           }
         ]
@@ -203,8 +200,8 @@
   },
   "active": "eb8950a7cc695578",
   "lastOpenFiles": [
-    "未命名.canvas",
     "未命名 1.canvas",
+    "未命名.canvas",
     "2026-11-25.md",
     "ROS2机器人基础框架/Step12-整机系统集成.md",
     "ROS2机器人基础框架/Step11-机器人仿真.md",
