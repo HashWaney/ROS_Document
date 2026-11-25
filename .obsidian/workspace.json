@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step3.8-实现FSM事件来源校验.md",
+                "file": "ROS2机器人基础框架/Step7-进行完整节点联调.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step3.8-实现FSM事件来源校验"
+              "title": "Step7-进行完整节点联调"
             }
           }
         ]
@@ -200,23 +200,23 @@
   },
   "active": "815a2ae1ea6784e7",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step6-Motion Manager 运动控制.md",
+    "ROS2机器人基础框架/Step3.5-实现FAULT-ESTOP异常状态与复位机制.md",
+    "ROS2机器人基础框架/Step5-Fault Manager故障管理.md",
+    "ROS2机器人基础框架/Step4-Lifecycle生命周期管理.md",
+    "ROS2机器人基础框架/Step3.8-实现FSM事件来源校验.md",
     "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
     "行为树/行为树学习阶段2.md",
     "行为树/行为树学习阶段.md",
     "行为树/开篇  行为树最核心的概念.md",
     "行为树/工程排查总结.md",
     "ROS2机器人基础框架/Step7-进行完整节点联调.md",
-    "ROS2机器人基础框架/Step6-引入Behavior Tree与Lifecycle.md",
-    "ROS2机器人基础框架/Step5-建立网络管理和故障管理节点.md",
-    "ROS2机器人基础框架/Step4-建立运动控制节点.md",
     "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
-    "ROS2机器人基础框架/Step3.8-实现FSM事件来源校验.md",
     "Pasted image 20261124171523.png",
     "ROS2机器人基础框架/Step3.7-为机器人FSM增加自动化单元测试.md",
     "Pasted image 20261123175639.png",
     "ROS2机器人基础框架/Step3.6-实现FSM结构化状态事件记录.md",
     "Pasted image 20261123142825.png",
-    "ROS2机器人基础框架/Step3.5-实现FAULT-ESTOP异常状态与复位机制.md",
     "Pasted image 20261120165859.png",
     "ROS2机器人基础框架/Step3.4-实现机器人运行模式切换(IDLE-MANUAL-AUTO).md",
     "ROS2机器人基础框架/Step3.3-建立FSM通用事件接口.md",
