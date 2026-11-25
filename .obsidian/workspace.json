@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2机器人基础框架/Step7-进行完整节点联调.md",
+                "file": "ROS2机器人基础框架/Step12-整机系统集成.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Step7-进行完整节点联调"
+              "title": "Step12-整机系统集成"
             }
           }
         ]
@@ -200,6 +200,14 @@
   },
   "active": "815a2ae1ea6784e7",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step11-机器人仿真.md",
+    "ROS2机器人基础框架/Step12-整机系统集成.md",
+    "ROS2机器人基础框架/Step10-定位与导航.md",
+    "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
+    "ROS2机器人基础框架/Step9-感知模块接入.md",
+    "ROS2机器人基础框架/Step8-Behavior Tree 行为树.md",
+    "ROS2机器人基础框架/Step2.3-第一次在RViz2 显示机器人.md",
+    "ROS2机器人基础框架/Step7-Network Manager 网络管理.md",
     "ROS2机器人基础框架/Step6-Motion Manager 运动控制.md",
     "ROS2机器人基础框架/Step3.5-实现FAULT-ESTOP异常状态与复位机制.md",
     "ROS2机器人基础框架/Step5-Fault Manager故障管理.md",
@@ -210,7 +218,6 @@
     "行为树/行为树学习阶段.md",
     "行为树/开篇  行为树最核心的概念.md",
     "行为树/工程排查总结.md",
-    "ROS2机器人基础框架/Step7-进行完整节点联调.md",
     "ROS2机器人基础框架/Step3-建立机器人整机状态机.md",
     "Pasted image 20261124171523.png",
     "ROS2机器人基础框架/Step3.7-为机器人FSM增加自动化单元测试.md",
@@ -223,13 +230,6 @@
     "ROS2机器人基础框架/Step3.2-实现第一个FSM状态转换(INIT->IDLE).md",
     "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
     "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
-    "ROS2机器人基础框架/Step2.7-辅助万向轮建模.md",
-    "ROS2机器人基础框架/Step2.6-创建左右驱动轮.md",
-    "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
-    "ROS2机器人基础框架/Step2.4-将 URDF 正式纳入 ROS 2 Package，并实现一键启动.md",
-    "ROS2机器人基础框架/Step2.3-第一次在RViz2 显示机器人.md",
-    "ROS2机器人基础框架/Step2.2-创建机器人的第一个Link -base_link.md",
-    "ROS2机器人基础框架/Step2.1-确定机器人模型的坐标系.md",
     "Pasted image 20261120152613.png",
     "Pasted image 20261120113811.png",
     "Pasted image 20261119164701.png",
