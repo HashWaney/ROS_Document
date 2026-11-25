@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Step4-Lifecycle生命周期管理"
             }
+          },
+          {
+            "id": "739890a9882bc6b2",
+            "type": "leaf",
+            "state": {
+              "type": "diagram-edit",
+              "state": {
+                "file": "ROS2机器人基础框架/Untitled Diagram.svg"
+              },
+              "icon": "lucide-file",
+              "title": "Untitled Diagram.svg"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -198,8 +211,10 @@
       "obsidian-day-and-night:Toggle Theme": false
     }
   },
-  "active": "eb8950a7cc695578",
+  "active": "739890a9882bc6b2",
   "lastOpenFiles": [
+    "ROS2机器人基础框架/Step4-Lifecycle生命周期管理.md",
+    "ROS2机器人基础框架/Untitled Diagram.svg",
     "未命名 1.canvas",
     "未命名.canvas",
     "2026-11-25.md",
@@ -214,7 +229,6 @@
     "ROS2机器人基础框架/Step6-Motion Manager 运动控制.md",
     "ROS2机器人基础框架/Step3.5-实现FAULT-ESTOP异常状态与复位机制.md",
     "ROS2机器人基础框架/Step5-Fault Manager故障管理.md",
-    "ROS2机器人基础框架/Step4-Lifecycle生命周期管理.md",
     "ROS2机器人基础框架/Step3.8-实现FSM事件来源校验.md",
     "ROS2机器人基础框架/Step3.1-创建robot_system_manager最小状态机节点.md",
     "行为树/行为树学习阶段2.md",
@@ -236,7 +250,6 @@
     "Pasted image 20261119164701.png",
     "Pasted image 20261119143805.png",
     "Pasted image 20261117172816.png",
-    "Pasted image 20261117163156.png",
     "ROS2机器人基础框架",
     "未命名",
     "机器人软件控制开发/02-ROS2+C++机器人工程",
