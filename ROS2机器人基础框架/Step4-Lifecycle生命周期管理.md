@@ -349,4 +349,22 @@ if __name__ == "__main__":
 | ----------------------- | ------------ |
 | `get_sensor_state()`    | 查询节点真实生命周期状态 |
 | `change_sensor_state()` | 请求节点执行生命周期转换 |
-| `send_system_event()`   | 向整机FSM上报系统   |
+| `send_system_event()`   | 向整机FSM上报系统事件 |
+`_call_service()`中使用`call_async()` 和 有限时间等待, 避免Service 不存在时无限等待, 这里的等待发生在`main()`调用链中, 而不是ROS 2 回调内部;另外，因为当前 FSM 尚未定义维护模式，本次将必要模块停用处理为 `FAULT_RAISED`。这是本阶段的简化策略，不代表生产环境中所有主动停机都应该被视为故障。
+
+### 六、注册节点并构建
+修改`setup.py`
+```
+entry_points = {
+	'console_scripts': [
+		'sensor_node = robot_lifecycle_manager.sensor_node:main',
+		'lifecycle_manager_node = robot_lifecycle_manager.lifecycle_manager_node:main',
+	]
+}
+```
+构建
+```
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-up-to robot_lifecycle_manager --symlink-install
+source install/setup.bash
+```
