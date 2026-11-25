@@ -43,3 +43,11 @@ ros2 pkg prefix robot_interfaces
 sudo apt install ros-jazzy-lifecycle-msgs
 ```
 
+创建Package:
+```
+cd ~/robot_foundation_ws/src
+ros2 pkg create robot_lifecycle_manager \
+	--build-type ament_python \
+	--license Apache-2.0 \
+	--dependencies rclpy lifecycle_msgs std_srvs
+```
