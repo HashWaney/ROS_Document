@@ -210,6 +210,22 @@ def test_fsm_reset_source_rejected(fsm):
 	assert result.accepted is True
 	assert result.current_state == "INIT"
 	
-	
-	
+```
+这次测试总数从7个增加到9个
+
+### 五、重写构建和测试
+停止旧节点执行:
+```
+cd ~/robot_foundation_ws
+
+source /opt/ros/jazzy/setup.bash
+
+colcon build --packages-select robot_system_manager  --symlink-install
+
+source install/setup.bash
+```
+
+执行自动化测试:
+```
+colcon test --packages-select robot_system_manager --event-handlers console_direct+ --pytest-args -k fsm 
 ```
