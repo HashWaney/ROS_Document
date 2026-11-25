@@ -156,3 +156,197 @@ ROS 2 提供以下标准接口:
 | /sensor_node/change_state     | lifecycle_msgs/srv/ChangeState     |
 | /sensor_node/transition_event | lifecycle_msgs/srv/TransitionEvent |
 
+这次的管理节点通过这些接口控制Sensor Node, 不直接调用Sensor Node 的Python方法, 本次先采用 **一次性执行的管理节点**, 通过`operation` 参数选择启动或停用操作, 这样不需要额外引入多线程、异步状态编排和复杂的Executor管理.
+创建lifecycle_manager_node节点, 新建`~/src/robot_lifecycle_manager/robot_lifecycle_mangaer/lifecycle_manager_node.py`
+```
+import rclpy
+from rclpy.node import Node
+from lifecycle_msgs.msg import State, Transition
+from lifecycle_msgs.srv import (GetState, ChangeState)
+
+from std_srvs.srv import Trigger
+from robot_interfaces.srv import SendEvent
+
+class RobotLifecycleManager(Node):
+    def __init__(self):
+        super().__init__("robot_lifecycle_manager")
+
+        self.declare_parameter("operation","startup")
+
+        self._get_state_client = self.create_client(
+            GetState,
+            "/sensor_node/get_state"
+        )
+        self._change_state_client = self.create_client(
+            ChangeState,
+            "/sensor_node/change_state"
+        )
+        self._system_state_client = self.create_client(
+            Trigger,
+            "/system/get_state"
+        )
+
+        self._event_client = self.create_client(
+            SendEvent,
+            "/system/send_event" # 发送事件给system_manager_node节点， 在该节点的_handle_send_event方法处理
+        )
+    def _call_service(self,client,request):
+        if not client.wait_for_service(timeout_sec=5.0):
+            raise RuntimeError(
+                f"Service unavailable: {client.srv_name}"
+            )
+        future = client.call_async(request)
+        rclpy.spin_until_future_complete(
+            self,
+            future,
+            timeout_sec=5.0
+        )
+        if not future.done():
+            raise RuntimeError(
+                f"Service timeout: {client.srv_name}"
+            )
+        return future.result()
+    
+    def get_sensor_state(self):
+        response = self._call_service(
+            self._get_state_client,
+            GetState.Request()
+        )
+        return response.current_state
+    def change_sensor_state(self,transition_id):
+        request = ChangeState.Request()
+        request.transition.id = transition_id
+
+        response = self._call_service(
+            self._change_state_client,
+            request 
+        )
+        if not response.success:
+            raise RuntimeError(
+                f"Transition failed: {transition_id}"
+            )
+        state = self.get_sensor_state()
+        self.get_logger().info(
+            f"Sensor state: {state.label}"
+        )
+        return state.id
+    def send_system_event(self,event,source):
+        request = SendEvent.Request()
+        request.event = event
+        request.source = source
+
+        response = self._call_service(
+            self._event_client,
+            request
+        )
+
+        if not response.accepted:
+            raise RuntimeError(response.reason)
+
+        self.get_logger().info(
+            f"System state: {response.current_state}"
+        )
+
+    def startup(self):
+        # 确认整机处于初始化阶段
+        response = self._call_service(
+            self._system_state_client,
+            Trigger.Request()
+        )
+        if not response.success or response.message !="INIT":
+            raise RuntimeError(
+                "System must be in Init"
+            )
+        try:
+            state = self.get_sensor_state().id
+            # 未配置 ---》 已配置
+            if state == State.PRIMARY_STATE_UNCONFIGURED:
+                state = self.change_sensor_state(Transition.TRANSITION_CONFIGURE)
+
+            # 已配置 ---》 激活
+            if state == State.PRIMARY_STATE_INACTIVE:
+                state = self.change_sensor_state(Transition.TRANSITION_ACTIVATE)
+
+            # 确认真正进入Active
+            if state != State.PRIMARY_STATE_ACTIVE:
+                raise RuntimeError(
+                    "Sensor node is not active"
+                )
+
+            # 通知整机FSM 初始化完成
+            self.send_system_event("INIT_SUCCESS","self_check")
+            self.get_logger().info("Robot startup completed")
+
+        except Exception:
+              # 启动失败，尝试通知整机FSM
+            try:
+                self.send_system_event(
+                    "FAULT_RAISED",
+                    "lifecycle_manager"
+                )
+            except Exception as error:
+                self.get_logger().info(
+                    f"Fault reporting failed :{error}"
+                )
+            raise
+    def stop(self):
+        state = self.get_sensor_state().id
+
+        # 本阶段将必要模块停用视为不可运行故障
+        try:
+            self.send_system_event(
+                "FAULT_RAISED",
+                "lifecycle_manager"             
+            )
+
+        finally:
+            if state == State.PRIMARY_STATE_ACTIVE:
+                state = self.change_sensor_state(
+                    Transition.TRANSITION_DEACTIVATE
+                )
+            if state != State.PRIMARY_STATE_INACTIVE:
+                raise RuntimeError(
+                    "Sensor node is not inactive"
+                )
+        self.get_logger().info("Sensor node stopped")
+
+def main(args=None):
+    rclpy.init(args=args)
+
+    node = RobotLifecycleManager()
+
+    exit_code =0
+
+    try: 
+        operation = node.get_parameter(
+            "operation"
+        ).value
+        if operation == "startup": # 启动生命周期管理节点， 通过调用该节点的startup方法，开启sensor节点的配置相关信息 然后触发sensor节点相应的生命周期函数回调
+            node.startup()
+
+        elif operation =="stop":
+            node.stop()
+        else:
+            raise RuntimeError(
+                f"Unknown operation: {operation}"
+            )
+    except Exception as error:
+        node.get_logger().error(str(error))
+        exit_code = 1 
+    finally:
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+    return exit_code
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+```
+
+这里重点理解三个方法:
+
+| 方法                      | 职责           |
+| ----------------------- | ------------ |
+| `get_sensor_state()`    | 查询节点真实生命周期状态 |
+| `change_sensor_state()` | 请求节点执行生命周期转换 |
+| `send_system_event()`   | 向整机FSM上报系统   |
