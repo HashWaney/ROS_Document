@@ -161,6 +161,37 @@ self._mock_init_srv = self.create_service(
 TEST_SOURCES = {
 	"INIT_SUCCESS": "self_check",
 	"START_MANUAL": "operator",
-	"START_AUTO": "ope"
+	"START_AUTO": "operator",
+	"STOP": "operator",
+	"TASK_FINISHED": "task_executor",
+	"FAULT_RAISED": "fault_manager",
+	"FAULT_CLEARED": "fault_manager",
+	"RESET_FAULT": "operator",
+	"ESTOP_TRIGGERED": "safety_monitor",
+	"ESTOP_RELEASED": "safety_monitor",
+	"RESET_ESTOP": "operator",
 }
+
+def send(node,event,source=None):
+	request = SendEvent.Request()
+	request.event = event
+	request.source = (
+		TEST_SOURCES.get(event,"pytest")
+		if source is None
+		else source
+	)
+	response = SendEvent.Response()
+	return node._handle_send_event(request,response)
+```
+
+原来的七个测试不需要改变.
+
+
+### 四、新增来源校验测试
+仍然在`test_fsm.py` 文件末尾, 添加两个测试.
+```
+def test_fsm_reset_source_rejected(fsm):
+	send(fsm,"INIT_SUCCESS")
+	send(fsm,"FAULT_RAISED")
+	send(fsm,)
 ```
