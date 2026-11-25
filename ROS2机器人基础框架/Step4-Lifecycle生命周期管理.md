@@ -143,5 +143,16 @@ if __name__ == "__main__":
     main()
         
 ```
-与之前的`SystemManager(Node)` 不同, 这次继承的是`LifecycleNode`,因此ROS 2 会自动提供标准生命周期管理接口, 另外使用的是`create_lifecycle_publisher(...)` 而不是普通的`create_publisher()`, 在`on_activat`
+与之前的`SystemManager(Node)` 不同, 这次继承的是`LifecycleNode`,因此ROS 2 会自动提供标准生命周期管理接口, 另外使用的是`create_lifecycle_publisher(...)` 而不是普通的`create_publisher()`, 在`on_activate()` 和`on_deactivate()`中调用父类方法, 可以让Lifecycle Publisher正确切换启用状态.
+
+
+### 五、实现Lifecycle Manager
+现在Sensor Node 已经具备生命周期管理能力, 但它不会主动执行`configure` 或 `activate`, 因此需要一个管理节点来协调这些操作.
+ROS 2 提供以下标准接口:
+
+| 接口                            | 类型                                 |
+| ----------------------------- | ---------------------------------- |
+| /sensor_node/get_state        | lifecycle_msgs/srv/GetState        |
+| /sensor_node/change_state     | lifecycle_msgs/srv/ChangeState     |
+| /sensor_node/transition_event | lifecycle_msgs/srv/TransitionEvent |
 
