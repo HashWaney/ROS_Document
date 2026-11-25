@@ -193,5 +193,23 @@ def send(node,event,source=None):
 def test_fsm_reset_source_rejected(fsm):
 	send(fsm,"INIT_SUCCESS")
 	send(fsm,"FAULT_RAISED")
-	send(fsm,)
+	send(fsm,"FAULT_CLEARED")
+	
+	# 故障已清除, 但来源不符合复位规则
+	result = send(
+		fsm, "RESET_FAULT", source="fault_manager"
+	)
+	
+	assert result.accepted is False
+	assert result.current_state == "FAULT"
+	
+	# 正确来源才可请求复位
+	result = send(
+		fsm, "RESET_FAULT", source="operator"
+	)
+	assert result.accepted is True
+	assert result.current_state == "INIT"
+	
+	
+	
 ```
