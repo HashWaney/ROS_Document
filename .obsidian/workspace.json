@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "b14ca2bffe9c4c69",
+        "id": "b1535b90d4fe7ae8",
         "type": "tabs",
         "children": [
           {
-            "id": "815a2ae1ea6784e7",
+            "id": "eb8950a7cc695578",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "ROS2机器人基础框架/Step12-整机系统集成.md",
-                "mode": "source",
-                "source": false
+                "file": "未命名.canvas",
+                "viewState": {
+                  "x": 37,
+                  "y": 9,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "Step12-整机系统集成"
+              "icon": "lucide-layout-dashboard",
+              "title": "未命名"
             }
           }
         ]
@@ -198,10 +201,13 @@
       "obsidian-day-and-night:Toggle Theme": false
     }
   },
-  "active": "815a2ae1ea6784e7",
+  "active": "eb8950a7cc695578",
   "lastOpenFiles": [
-    "ROS2机器人基础框架/Step11-机器人仿真.md",
+    "未命名 1.canvas",
+    "未命名.canvas",
+    "2026-11-25.md",
     "ROS2机器人基础框架/Step12-整机系统集成.md",
+    "ROS2机器人基础框架/Step11-机器人仿真.md",
     "ROS2机器人基础框架/Step10-定位与导航.md",
     "ROS2机器人基础框架/Step2.5-建立机器人底盘坐标系.md",
     "ROS2机器人基础框架/Step9-感知模块接入.md",
@@ -228,13 +234,10 @@
     "ROS2机器人基础框架/Step3.4-实现机器人运行模式切换(IDLE-MANUAL-AUTO).md",
     "ROS2机器人基础框架/Step3.3-建立FSM通用事件接口.md",
     "ROS2机器人基础框架/Step3.2-实现第一个FSM状态转换(INIT->IDLE).md",
-    "ROS2机器人基础框架/Step2.9-配置机器人质量与惯性参数(Inertial).md",
-    "ROS2机器人基础框架/Step2.8-完善机器人URDF碰撞模型(Collision).md",
     "Pasted image 20261120152613.png",
     "Pasted image 20261120113811.png",
     "Pasted image 20261119164701.png",
     "Pasted image 20261119143805.png",
-    "未命名.canvas",
     "Pasted image 20261117172816.png",
     "Pasted image 20261117163156.png",
     "ROS2机器人基础框架",
