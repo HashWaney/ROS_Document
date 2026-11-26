@@ -400,10 +400,47 @@ ros2 lifecycle set /sensor_node configure
 
 ros2 lifecycle get /sensor_node
 
-ros2 lifecyc
+ros2 lifecycle set /sensor_node activate
+
+ros2 lifecycle get /sensor_node
 ```
 预期输出:
 ```
 inactive [2]
+
+active [3]
 ```
 
+3、终端C订阅
+```
+ros2 topic echo /sensor/data
+```
+
+应该持续收到:
+```
+data: sensor_data_0
+---
+data: sensor_data_1
+---
+data: sensor_data_2
+```
+4、回到终端B
+```
+ros2 lifecycle set /sensor_node deactivate
+
+ros2 lifecycle set /sensor_node cleanup
+```
+此时数据停止发布、节点重新回到`Unconfigured`, 这就完成了一次完整的节点生命周期循环
+
+**实验B: Lifecycle与整机FSM联动**
+
+保持Sensor Node 运行在`Unconfigured` 状态. 另外打开终端, 启动之前的System Manager:
+```
+source install/setup.bash
+
+ros2 run robot_system_manager system_manager_node
+```
+整机初始状态应该是`INIT`, 现在执行管理节点:
+```
+ros2 run robot_lifecycle_manager lifecycle_manager_node
+```
