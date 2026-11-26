@@ -506,4 +506,8 @@ ros2 lifecycle get /sensor_node
 ```
 finalized [4]
 ```
-`Finalized` 是终止状态. 如果需要重新执行整个实验, 请停止
+`Finalized` 是终止状态. 如果需要重新执行整个实验, 请停止重新启动Sensor Node  和 System Manager 进程.
+
+
+
+
