@@ -444,3 +444,20 @@ ros2 run robot_system_manager system_manager_node
 ```
 ros2 run robot_lifecycle_manager lifecycle_manager_node
 ```
+整体调用过程如下:
+![[Step4-node.svg]]
+管理节点预期输出以下内容:
+```
+Sensor state: inactive 
+Sensor state: active
+System state: IDLE
+Robot startup completed
+```
+此时Lifecycle Manager 进程正常退出, 但Sensor Node 和 SystemManager仍然持续运行, 查询两种状态:
+```
+ros2 lifecycle get /sensor_node
+
+ros2 service call /system/get_state std_srvs/srv/Trigger '{}'
+```
+
+预期输出:
