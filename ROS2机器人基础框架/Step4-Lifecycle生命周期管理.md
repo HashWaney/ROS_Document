@@ -473,4 +473,37 @@ std_srvs.srv.Trigger_Response(success=True, message='IDLE')
 
 ```
 
-至此, 第一次打通了两个独立状态管理zhi jai
+至此, 第一次打通了两个独立状态管理系统之间的通信.
+
+
+**实验C: 统一停用模块**
+执行指令:
+```
+ros2 run robot_lifecycle_manager lifecycle_manager_node --ros-args -p operation:=stop
+```
+预期输出内容:
+```
+[INFO] [1795662793.567367802] [robot_lifecycle_manager]: System state: FAULT
+[INFO] [1795662793.571228393] [robot_lifecycle_manager]: Sensor state: inactive
+[INFO] [1795662793.571445238] [robot_lifecycle_manager]: Sensor node stopped
+```
+
+| 模块             | 预期状态     |
+| -------------- | -------- |
+| Sensor Node    | Inactive |
+| System Manager | FAULT    |
+| /sensor/data   | 停止产生新数据  |
+最后验证资源清理和生命周期终止:
+```
+ros2 lifecycle set /sensor_node cleanup
+
+ros2 lifecycle set /sensro_node shutdown 
+
+ros2 lifecycle get /sensor_node
+```
+
+预期输出:
+```
+finalized [4]
+```
+`Finalized` 是终止状态. 如果需要重新执行整个实验, 请停止
