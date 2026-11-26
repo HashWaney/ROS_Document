@@ -365,6 +365,45 @@ entry_points = {
 构建
 ```
 source /opt/ros/jazzy/setup.bash
+
 colcon build --packages-up-to robot_lifecycle_manager --symlink-install
+
 source install/setup.bash
 ```
+
+### 七、运行与整体架构验收
+
+**实验A: 理解原生Lifecycle**
+
+1、 终端A启动Sensor Node:
+
+```
+ros2 run robot_lifecycle_manager sensor_node
+```
+2、终端B执行:
+```
+source install/setup.bash
+
+ros2 lifecycle nodes
+
+ros2 lifecycle get /sensor_node
+```
+
+预期输出:
+```
+unconfigured [1]
+```
+
+然后依次操作:
+```
+ros2 lifecycle set /sensor_node configure 
+
+ros2 lifecycle get /sensor_node
+
+ros2 lifecyc
+```
+预期输出:
+```
+inactive [2]
+```
+
