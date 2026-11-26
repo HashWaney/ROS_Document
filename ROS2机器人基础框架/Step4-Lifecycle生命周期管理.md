@@ -461,3 +461,16 @@ ros2 service call /system/get_state std_srvs/srv/Trigger '{}'
 ```
 
 预期输出:
+```
+hash@ros:~/robot_foundation_ws$ ros2 lifecycle get /sensor_node
+active [3]
+hash@ros:~/robot_foundation_ws$ ros2 service call /system/get_state std_srvs/srv/Trigger '{}'
+waiting for service to become available...
+requester: making request: std_srvs.srv.Trigger_Request()
+
+response:
+std_srvs.srv.Trigger_Response(success=True, message='IDLE')
+
+```
+
+至此, 第一次打通了两个独立状态管理zhi jai
